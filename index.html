@@ -50,14 +50,14 @@
             text-transform: uppercase;
             font-weight: bold;
         }
-        .container { max-width: 1000px; margin: 0 auto; padding: 3rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
 
         .news-section {
             background: var(--disko-light);
             padding: 2.5rem;
             border: 2px solid var(--disko-black);
             box-shadow: 8px 8px 0px var(--disko-black);
-            margin-bottom: 5rem;
+            margin-bottom: 4rem;
         }
         .news-section h2 {
             margin-top: 0;
@@ -69,23 +69,21 @@
             color: var(--disko-black);
         }
         .news-section ul { padding-left: 1.2rem; }
-        .news-section li { margin-bottom: 1.2rem; font-size: 1.1rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
 
-        .trend-block {
-            margin-bottom: 5rem;
-        }
+        .trend-block { margin-bottom: 3.5rem; }
         .trend-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 900;
-            margin: 0 0 1rem 0;
+            margin: 0 0 0.75rem 0;
             color: var(--disko-black);
             letter-spacing: -1px;
             line-height: 1.1;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
         .trend-analysis {
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
             color: #374151;
             border-left: 4px solid var(--disko-black);
             padding-left: 1.5rem;
@@ -93,8 +91,8 @@
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
         }
         .post-card {
             background: var(--disko-light);
@@ -104,32 +102,32 @@
             transition: all 0.2s ease;
         }
         .post-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 8px 8px 0px var(--disko-black);
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
         }
         .post-img {
             width: 100%;
-            height: 350px;
+            height: 220px;
             object-fit: cover;
             background-color: var(--disko-gray);
             border-bottom: 1px solid var(--disko-border);
         }
-        .post-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
         .meta {
             display: flex;
             justify-content: space-between;
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             color: #6B7280;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             text-transform: uppercase;
             font-weight: bold;
             letter-spacing: 1px;
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
         .caption {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--disko-dark);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -138,10 +136,10 @@
         }
         .insight {
             background: var(--disko-gray);
-            padding: 1.5rem;
-            font-size: 0.95rem;
+            padding: 1rem;
+            font-size: 0.85rem;
             color: var(--disko-black);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             flex-grow: 1;
             border-left: 3px solid var(--disko-black);
         }
@@ -151,9 +149,9 @@
             background: var(--disko-black);
             color: var(--disko-light);
             text-decoration: none;
-            padding: 1rem;
+            padding: 0.75rem;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: background 0.2s;
@@ -173,131 +171,196 @@
     <div class="news-section">
         <h2>Si tu as passé la semaine dans une grotte</h2>
         <ul>
-            <li><strong>Le gouvernement US coupe le sifflet à Anthropic :</strong> Les modèles Mythos 5 et Fable 5 ont été mis hors ligne suite à une ordonnance de sécurité nationale. Raison officielle : une capacité d'intrusion cyber trop flippante.</li>
-            <li><strong>SpaceX rachète Cursor :</strong> Elon Musk s'offre l'outil de code IA préféré des devs pour 60 milliards de dollars. Le "Vibe Coding" devient officiellement sérieux.</li>
-            <li><strong>Midjourney se lance dans la santé :</strong> L'IA qui générait des images sort son premier produit physique... un scanner médical à ultrasons pour tout le corps.</li>
-            <li><strong>Seedance 2.5 débarque :</strong> ByteDance pousse la vidéo IA à 30 secondes en 4K native. La fin du stock-shot est (encore une fois) annoncée.</li>
+            <li><strong>Anthropic en mode "off" :</strong> Le gouvernement US a forcé Anthropic à suspendre ses modèles Fable 5 et Mythos 5 pour des raisons de sécurité nationale.</li>
+            <li><strong>Musk braque le code :</strong> SpaceX rachète Cursor (Anysphere) pour 60 milliards de dollars, fusionnant l'IA de dev et l'infrastructure spatiale.</li>
+            <li><strong>Midjourney Scanner :</strong> Surprise, Midjourney lance une division médicale avec un scanner corporel complet par ultrasons.</li>
+            <li><strong>Vidéo 4K native :</strong> Seedance 2.5 (ByteDance) et Kling passent à la vitesse supérieure avec des rendus 4K sans upscaling.</li>
+            <li><strong>Vibe Coding :</strong> On ne code plus, on "vibe". Des jeux complets (clones de WoW ou GTA) sortent de terre via de simples prompts.</li>
+            <li><strong>Google Flight :</strong> Le simulateur de vol de Google Earth est désormais disponible gratuitement directement dans ton navigateur.</li>
+            <li><strong>Souveraineté IA :</strong> La France lance 7 mesures pour réduire sa dépendance aux modèles américains après le shutdown d'Anthropic.</li>
         </ul>
     </div>
 
+    <!-- BLOC 1 -->
     <div class="trend-block">
-        <h2 class="trend-title">L'IA de défense, ce nouveau Tabou</h2>
+        <h2 class="trend-title">Cyber-panique et kill switch</h2>
         <div class="trend-analysis">
-            <p>On pensait qu'Anthropic était la "Gentille IA" axée sur la sécurité. Raté. Leur modèle <strong>Mythos</strong> a réussi à pénétrer les systèmes classés de la NSA en quelques heures. Résultat ? Le gouvernement américain a forcé la déconnexion immédiate du modèle. C'est un tournant : les autorités commencent à traiter les modèles de langage comme des armes numériques nécessitant un <strong>export-control</strong> strict.</p>
+            <p>L'insouciance est terminée. Suite à une faille détectée par Amazon (oui, un investisseur), le gouvernement US a ordonné à <strong>Anthropic</strong> de couper l'accès à ses modèles les plus puissants, <strong>Mythos 5</strong> et <strong>Fable 5</strong>, craignant qu'ils n'aident à des cyberattaques. Résultat : Anthropic a dû débrancher tout le monde, faute de pouvoir filtrer les nationalités en temps réel.</p>
         </div>
-
         <div class="grid">
-            <article class="post-card">
-                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmem1-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F730189150_17898649314467870_5584383013830505193_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_ht%3Dinstagram.fmem1-2.fna.fbcdn.net%26_nc_cat%3D102%26_nc_oc%3DQ6cZ2gEYXio8xL9d2PAwxhUfB4c1UjyOt5LykEs9UAmy67EqnZJyW_9jmwjQPwAtTinD7FA%26_nc_ohc%3D49UykFMGStcQ7kNvwFKYmme%26_nc_gid%3DsjYlQR59-Ias4misxD5d-A%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af82FSZNvE0_Eh3-mTc2KMHos2KsUf9JRacTFfs5hPYZfA%26oe%3D6A406045%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
-                <div class="post-content">
-                    <div class="meta">
-                        <span>@girsta</span>
-                        <span>❤️ 136</span>
-                    </div>
-                    <p class="caption">Anthropic’s Mythos AI model broke into almost all NSA classified systems in hours during authorized testing...</p>
-                    <div class="insight">
-                        <strong>💡 Pourquoi c'est une news :</strong><br>
-                        Le modèle Mythos a montré des capacités offensives cyber inédites, provoquant sa mise hors ligne immédiate.
-                    </div>
-                    <a href="https://www.instagram.com/p/DZ4pt7ZDSb7/" target="_blank" class="btn">Voir le post</a>
-                </div>
-            </article>
-
             <article class="post-card">
                 <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-det1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F721757604_17999589200959228_5569302020142707883_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-det1-1.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gGLJcWnu7LAnWmxoFXy54HpID19xko2m8FLSKCGx3nsRsO6Ql69_qypuWilX98MKkA%26_nc_ohc%3DUD_-DHY9IVQQ7kNvwG_EzAA%26_nc_gid%3DttGs1qHAsFthpjCs1ftFHQ%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af8bjXEdu1pLCMf12U1P57jvPD7skeKXs0sj0x49jZFwkA%26oe%3D6A407A43%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
                 <div class="post-content">
-                    <div class="meta">
-                        <span>@evolving.ai</span>
-                        <span>❤️ 13051</span>
-                    </div>
-                    <p class="caption">On Friday the US government ordered Anthropic to block every foreign national from the two models...</p>
-                    <div class="insight">
-                        <strong>💡 Pourquoi c'est une news :</strong><br>
-                        Une première historique : un modèle est suspendu car l'entreprise ne peut pas garantir que des ressortissants étrangers n'y accèdent pas.
-                    </div>
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 13051</span></div>
+                    <p class="caption">🚨 BREAKING: Claude Fable 5 and Mythos 5 are offline...</p>
+                    <div class="insight"><strong>💡 News :</strong> Le gouvernement US impose un blocage aux "ressortissants étrangers" sur les modèles de pointe.</div>
                     <a href="https://www.instagram.com/p/DZg8MoxCPcl/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-phl2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F722313885_17999914610959228_1369646510048318429_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-phl2-1.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gFOIFCXpXf2jtfo7RHu4HAPxWtycG9nIgFIchQ3mevMukBWIGr7l5lO5krN_7wI5Jo%26_nc_ohc%3DsDH5mu6mNFwQ7kNvwGrWx66%26_nc_gid%3Dkh-tvLULwX_WMx1-fwY9YQ%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af8XA38rjrODiKTARWKGofDyd5wQmuxFJTqM35AzaTV1hQ%26oe%3D6A406512%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 5283</span></div>
+                    <p class="caption">Amazon researchers jailbroke Fable 5, Anthropic's newest public model...</p>
+                    <div class="insight"><strong>💡 News :</strong> C'est Amazon qui a déclenché l'alerte après avoir réussi à extraire des infos sensibles via un jailbreak.</div>
+                    <a href="https://www.instagram.com/p/DZnO82yAEkO/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-sjc3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F724276213_17985561020991209_8895567507289750237_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-sjc3-1.cdninstagram.com%26_nc_cat%3D105%26_nc_oc%3DQ6cZ2gGOaz7_1fxVOM3AnXi_XwfKdrmd1b2qsUAe7HcOjSZ8r05tVcL6A-1LTwl2dkDv7bQ%26_nc_ohc%3DEb4ksbx80hcQ7kNvwHgGm5F%26_nc_gid%3D1LHNuWtrqSQqRkEuZycVFw%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af-KkVIKSU_36DflTbZatvmtKdlkdmH9In2MzPnVoFC_ZA%26oe%3D6A407CA8%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 583</span></div>
+                    <p class="caption">L’État français vient d’annoncer 7 mesures pour reprendre le contrôle de l’IA.</p>
+                    <div class="insight"><strong>💡 News :</strong> La France réagit à l'électrochoc Anthropic pour protéger sa souveraineté numérique.</div>
+                    <a href="https://www.instagram.com/p/DZpw2i5DGw-/" target="_blank" class="btn">Voir le post</a>
                 </div>
             </article>
         </div>
     </div>
 
+    <!-- BLOC 2 -->
     <div class="trend-block">
-        <h2 class="trend-title">VFX : Le "One-Click" devient réel</h2>
+        <h2 class="trend-title">Hollywood dans ton navigateur</h2>
         <div class="trend-analysis">
-            <p>Pour nos créatifs, le game change. <strong>Higgsfield</strong> et <strong>Magnific</strong> intègrent désormais des plugins directs dans Premiere Pro et After Effects. Le rotoscoping manuel est mort : on sélectionne un objet, on tape un prompt, et l'IA le remplace ou le supprime avec une cohérence parfaite des lumières. On arrive à la <strong>vidéo 4K native</strong> générée en 30 secondes avec Seedance 2.5. Le workflow de production va devenir 10x plus fluide.</p>
+            <p>La vidéo générative a franchi un cap. Oubliez les images qui bavent, <strong>Seedance 2.5</strong> (ByteDance) arrive avec du 4K natif et des clips de 30 secondes. Pendant ce temps, <strong>Kling</strong> déploie sa 4K pour tous. Le vrai game changer ? Les plugins comme <strong>Higgsfield</strong> qui permettent de supprimer ou remplacer des objets dans Premiere Pro d'un simple prompt textuel.</p>
         </div>
-
         <div class="grid">
             <article class="post-card">
                 <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mia3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F730754000_18001008716959228_6446546688862204539_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_ht%3Dscontent-mia3-1.cdninstagram.com%26_nc_cat%3D1%26_nc_oc%3DQ6cZ2gHKP4vW5DBwU-LfY9ev5rXyQMmpsfklMRoSBcr1F1E6Ff6BvhNf3f4N9M2HmkWxGISZvcacbhCnBuRgVUXpt4nr%26_nc_ohc%3DKTeKf0qlxQYQ7kNvwG63fWo%26_nc_gid%3DtIU7Zcd5PDrNQDwuVYlwQg%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af8COV2eYf9RXOdDXC1kN_fTC-UdH6sUX36IXzaQDgShbg%26oe%3D6A4069AD%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
                 <div class="post-content">
-                    <div class="meta">
-                        <span>@evolving.ai</span>
-                        <span>❤️ 6348</span>
-                    </div>
-                    <p class="caption">This is the first video of Seedance 2.5... ByteDance’s new generation reportedly jumps to 30-second clips and native 4K output.</p>
-                    <div class="insight">
-                        <strong>💡 Pourquoi c'est une news :</strong><br>
-                        Le saut qualitatif vers le 4K et des clips plus longs rend l'IA enfin exploitable pour des campagnes TV ou ciné.
-                    </div>
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 6348</span></div>
+                    <p class="caption">This is the first video of Seedance 2.5... 30-second clips and native 4K output.</p>
+                    <div class="insight"><strong>💡 News :</strong> ByteDance frappe fort avec des clips plus longs et une définition cinéma.</div>
                     <a href="https://www.instagram.com/p/DZ68XqnsrJr/" target="_blank" class="btn">Voir le post</a>
                 </div>
             </article>
-
             <article class="post-card">
                 <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mia5-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F715750074_17960791452146282_3612502193874844129_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_ht%3Dscontent-mia5-1.cdninstagram.com%26_nc_cat%3D102%26_nc_oc%3DQ6cZ2gHXm-bkH0haiETedOT78h8j3YUZD1GrWXS-ntpMEhh_RKx0tVfvtpcfrNPrYiJTKtw%26_nc_ohc%3DwKoXycL8LnUQ7kNvwGuJQF7%26_nc_gid%3Dd_j-mDpwbzLgpeLK2CMRnQ%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af9EfLqHvIBob9Cnz8Z6Ouqp0Q04FTx7klEXXHsG9N8_5A%26oe%3D6A407721%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
                 <div class="post-content">
-                    <div class="meta">
-                        <span>@rourke</span>
-                        <span>❤️ 25222</span>
-                    </div>
-                    <p class="caption">The Higgsfield plugin for Adobe Premiere Pro and After Effects lets you draw around objects in your footage and swap them out entirely using AI.</p>
-                    <div class="insight">
-                        <strong>💡 Pourquoi c'est une news :</strong><br>
-                        L'IA sort du navigateur pour s'intégrer directement dans les outils pro de l'agence.
-                    </div>
+                    <div class="meta"><span>@rourke</span><span>❤️ 25222</span></div>
+                    <p class="caption">Replace anything in your footage with AI 🔥😳 @higgsfield.ai</p>
+                    <div class="insight"><strong>💡 News :</strong> Nouveau plugin Higgsfield pour Adobe Premiere Pro : remplace des objets en dessinant autour.</div>
                     <a href="https://www.instagram.com/p/DZLD3b1JApG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dfw6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F680801856_17954761887146282_4491106826771359330_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_ht%3Dscontent-dfw6-1.cdninstagram.com%26_nc_cat%3D102%26_nc_oc%3DQ6cZ2gGLrk4TwnvCWiopt514UIvQld7C1XAWWXsZUAFrRpeQNHz1bJcmFsPp2LLU4Kw3WV8%26_nc_ohc%3D6qZme_9XIKoQ7kNvwHr0nbs%26_nc_gid%3DI7tV6oqkq8CR813iP9tWtQ%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af8Q8XDbXPypllTejVbtM_KULmtWzN6TV4hm3jXFFV13-w%26oe%3D6A40561D%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@rourke</span><span>❤️ 771</span></div>
+                    <p class="caption">4K video generation… what a time to be alive 🚀</p>
+                    <div class="insight"><strong>💡 News :</strong> Kling déploie la génération 4K native, éliminant le besoin d'upscaling externe.</div>
+                    <a href="https://www.instagram.com/p/DXjwPBGjGdl/" target="_blank" class="btn">Voir le post</a>
                 </div>
             </article>
         </div>
     </div>
 
+    <!-- BLOC 3 -->
     <div class="trend-block">
-        <h2 class="trend-title">Elon Musk : Le Coding est sa nouvelle fusée</h2>
+        <h2 class="trend-title">Elon Musk : L'espace et le Code</h2>
         <div class="trend-analysis">
-            <p>Après l'espace et les voitures, Musk veut contrôler la façon dont on construit les logiciels. SpaceX a racheté <strong>Cursor (Anysphere)</strong> pour 60 milliards. Pourquoi ? Pour fusionner le <strong>"Vibe Coding"</strong> (coder en parlant à l'IA) avec l'ingénierie physique de pointe. Le but : que demain, n'importe qui puisse concevoir une application ou même une pièce mécanique complexe sans toucher une ligne de code.</p>
+            <p>Elon ne rigole plus avec son infrastructure. <strong>SpaceX</strong> vient d'acquérir <strong>Cursor (Anysphere)</strong> pour la bagatelle de 60 milliards de dollars. Objectif : intégrer l'IA de programmation la plus efficace du marché dans ses propres systèmes. Et pour que tout ça tourne, Musk annonce des <strong>data centers orbitaux</strong> de 70 mètres de large pour s'affranchir des contraintes terrestres.</p>
         </div>
-
         <div class="grid">
             <article class="post-card">
                 <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fagc1-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F723844390_17960579799130808_1763693818622137709_n.heic%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dinstagram.fagc1-2.fna.fbcdn.net%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gGVh8Li064a-Ly8pz-AcK1V4AU7bBprtghY1Hv2lGSKE4jnrOB2S7K7e1tX84rMrHw%26_nc_ohc%3D3lUisPKj-9EQ7kNvwHbdurZ%26_nc_gid%3DsNlMfpr5VEwM3BcvTnXH3Q%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af_IiuCJufUDhHKUnbN3SeWw-AWudZ01iI7j6s7z1bnPSQ%26oe%3D6A40767C%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
                 <div class="post-content">
-                    <div class="meta">
-                        <span>@theartificialintelligence</span>
-                        <span>❤️ 3437</span>
-                    </div>
-                    <p class="caption">SpaceX is officially acquiring Anysphere—the company behind AI coding platform Cursor—in a massive $60 billion all-stock deal.</p>
-                    <div class="insight">
-                        <strong>💡 Pourquoi c'est une news :</strong><br>
-                        Elon Musk consolide son empire IA en s'offrant l'outil de développement le plus hype du moment.
-                    </div>
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 3437</span></div>
+                    <p class="caption">SpaceX is officially acquiring Anysphere—the company behind AI coding platform Cursor—in a massive $60 billion deal.</p>
+                    <div class="insight"><strong>💡 News :</strong> SpaceX devient un géant du software en rachetant l'outil de dev IA numéro 1.</div>
                     <a href="https://www.instagram.com/p/DZpdg2ejUXt/" target="_blank" class="btn">Voir le post</a>
                 </div>
             </article>
-
             <article class="post-card">
-                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F723931148_18000146399959228_5419192569650289004_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-iad3-1.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gFsybeZ-QYTsUAhQZhJ2SBY2krCI0XIvFqA6h7Lc4QWDlsAJH1ufmx9zhYGdSlAZlE%26_nc_ohc%3DiZFcnr_64RUQ7kNvwFp1tjn%26_nc_gid%3DCwdF3Ru9_v6zNzahGmW87Q%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af-eRy_FkhXruB7Wc5ByrYNNYgLAzeSxO6LLTuUa-C1MwA%26oe%3D6A4065F9%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-hou1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F719490214_18599260240038643_6415381592030362731_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_ht%3Dscontent-hou1-1.cdninstagram.com%26_nc_cat%3D107%26_nc_oc%3DQ6cZ2gG7IzpQb_cjKYCqur4acoIPNHTKl_TWAWlicOwcXcmP3tovXbHOFsjMxBPwZmDjE9A%26_nc_ohc%3DNrs1Zn988sEQ7kNvwFF6MvQ%26_nc_gid%3DsX0ByReIk5a0YopRIFS_ug%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af-9Ap-bfK6Nm-XH-sPYjSfLSJX8CzqVKeeccMZ1TfaUCQ%26oe%3D6A4068F2%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
                 <div class="post-content">
-                    <div class="meta">
-                        <span>@evolving.ai</span>
-                        <span>❤️ 11981</span>
-                    </div>
-                    <p class="caption">SpaceX announced it will acquire Anysphere... The move comes days after SpaceX's orbital AI data center satellite was revealed.</p>
-                    <div class="insight">
-                        <strong>💡 Pourquoi c'est une news :</strong><br>
-                        Musk possède désormais la fusée, le satellite et l'outil que les développeurs utilisent pour coder l'IA. Verticalité totale.
-                    </div>
-                    <a href="https://www.instagram.com/p/DZrzHtHAHIK/" target="_blank" class="btn">Voir le post</a>
+                    <div class="meta"><span>@bariqrifki</span><span>❤️ 2966</span></div>
+                    <p class="caption">Un data center dans l’espace, 1750 milliards en bourse aujourd’hui.</p>
+                    <div class="insight"><strong>💡 News :</strong> Musk révèle les satellites data-centers de SpaceX pour l'IA orbitale.</div>
+                    <a href="https://www.instagram.com/p/DZfpHUOK72W/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-iad3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F723172609_17999617982959228_8857044610375961966_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-ord5-2.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gEUWz1N5iTo5p-xA3VFfCNd51rjNjBOHS5ddVGilUjsxiIPTHUp6d9cu1H51VZ8GN4%26_nc_ohc%3Dtg2NJvfT9cUQ7kNvwEVmWit%26_nc_gid%3DRgZG2G4-ohzV_EF2OKK09w%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af8nwhsVIKWbePviOq0eZdy3HyPjWC49F-NizcadHKqHlQ%26oe%3D6A405883%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 19019</span></div>
+                    <p class="caption">SpaceX made its Nasdaq debut on June 12... raising about $75 billion.</p>
+                    <div class="insight"><strong>💡 News :</strong> L'IPO massive de SpaceX donne les moyens à l'entreprise de financer sa propre IA souveraine.</div>
+                    <a href="https://www.instagram.com/p/DZhhF12gGhS/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- BLOC 4 -->
+    <div class="trend-block">
+        <h2 class="trend-title">Midjourney Medical : Diagnostiquer en 4K</h2>
+        <div class="trend-analysis">
+            <p>On pensait que <strong>Midjourney</strong> ne servait qu'à faire des portraits de chats en armure. Erreur. David Holz vient de dévoiler le <strong>Midjourney Scanner</strong> : une machine de diagnostique médical par ultrasons qui crée une map 3D de ton corps en 60 secondes. L'objectif est de rendre l'imagerie médicale aussi simple qu'un prompt, en utilisant des puces de Butterfly Network.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-xxc1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F724824575_17960844690130808_8840809423668697843_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_ht%3Dscontent-xxc1-1.cdninstagram.com%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gFYYw8bte1ZwLJhohr90r_JHZn8ZxR-XWd4d6EU4EdolurkMcMyKSqXV7-FVRQLCEo%26_nc_ohc%3DWe3siuCrut0Q7kNvwE_uZyV%26_nc_gid%3D736NGqwgn6YPJ6BEuilEjA%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af-6aHdBWjDNlcoOXVpQ_143vlJvUOV9wLfPCcliJWhf3A%26oe%3D6A407983%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 3562</span></div>
+                    <p class="caption">Midjourney announces the world’s first full-body ultrasound CT scanner...</p>
+                    <div class="insight"><strong>💡 News :</strong> Création de 3D body maps détaillées en moins d'une minute via immersion.</div>
+                    <a href="https://www.instagram.com/p/DZuBgbJjYkc/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lga3-3.cdninstagram.com%2Fv%2Ft51.82787-15%2F724673312_18000249881959228_1762627867825426274_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-lga3-3.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gHWUxtanwVhy653WomhcWm0XarqzN1gvOZkGR8ULBsCL3or-MGKGH2SG3B-HnuVsvQ%26_nc_ohc%3DqXvo8BxbztcQ7kNvwGY2Xxd%26_nc_gid%3DhyyAfxVy5pYr3QXpGsBoyw%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af-txo7sy11XKZQVkses_iT2WOCLrMsb6kdPhE3PgOia3Q%26oe%3D6A406421%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 43806</span></div>
+                    <p class="caption">Midjourney, the image generation company, just built the sequel to the MRI.</p>
+                    <div class="insight"><strong>💡 News :</strong> Nouveau département "Midjourney Medical" : l'IA générative au service de la santé préventive.</div>
+                    <a href="https://www.instagram.com/p/DZt0MDhz42M/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lga3-3.cdninstagram.com%2Fv%2Ft51.82787-15%2F725698142_17898036621467870_1199023799597466156_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-lga3-3.cdninstagram.com%26_nc_cat%3D102%26_nc_oc%3DQ6cZ2gF23i_edUznf5I3unbN5A9MWv-U8PU77mwueqMTAb33U6gx-Y3Q-J1cZvf6df0yOBI%26_nc_ohc%3DBJNwwqfanWUQ7kNvwGIiBWf%26_nc_gid%3DcfcoGtIAjajn28mo3m-c7Q%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af-siSalOvPPXsOTEvAcdnZtfRgtZd_vutC5xD5WP62_iQ%26oe%3D6A4078AF%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@girsta</span><span>❤️ 69</span></div>
+                    <p class="caption">CEO David Holz showcased prototypes built on licensed Butterfly Network technology.</p>
+                    <div class="insight"><strong>💡 News :</strong> Un hardware sans radiation pour démocratiser le check-up complet.</div>
+                    <a href="https://www.instagram.com/p/DZuRNCsMfFz/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- BLOC 5 -->
+    <div class="trend-block">
+        <h2 class="trend-title">L'avènement du "Vibe Coding"</h2>
+        <div class="trend-analysis">
+            <p>Andrej Karpathy l'a théorisé, la communauté l'a fait. Le <strong>Vibe Coding</strong> consiste à construire des logiciels complexes uniquement par la conversation. Un développeur a créé un clone multijoueur de <strong>World of Warcraft</strong> en 20 minutes, un autre s'attaque à <strong>GTA</strong>. Avec des outils comme <strong>Lovable.dev</strong> ou <strong>Claude Code</strong>, la barrière de la syntaxe a sauté : seul compte le résultat.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mia5-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F723228908_17999747840959228_5112616520170438556_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-mia5-1.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gHF4uYY_6owQjUlSnI8zJT6HuyS3iJe48M74IwDbn1R9Pefsv59Ko9TC9ZMxM8dcEM%26_nc_ohc%3DtacPKlkzWiUQ7kNvwEhqNLt%26_nc_gid%3DyJc98QK8FMgCMg6m6Ddobw%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af_yvC3VSxC2C8tcyL0dTm90bYaed2rLd7gtycADNybrAw%26oe%3D6A40649A%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 6466</span></div>
+                    <p class="caption">Claude Fable 5 just helped one developer build a full multiplayer World of Warcraft style MMO...</p>
+                    <div class="insight"><strong>💡 News :</strong> "World of Claudecraft" : un jeu entier généré via le vibe coding.</div>
+                    <a href="https://www.instagram.com/p/DZj_x-1AFZ7/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-bos5-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F726963372_17961383367130808_1597933357979658019_n.heic%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-bos5-1.cdninstagram.com%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gHr8gl_iGOO7u6dRqTeT76vW23KDWudjGB04wao_KAHPE8_P_iaAtCMkpxDc1S_UCk%26_nc_ohc%3DLYt1kIp1FigQ7kNvwFmupbH%26_nc_gid%3DygXxyK64-pl0o9r8K1zciQ%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af_RTL7nbJ33JfADDljlKzQRWNWRLRBYIlysl-posUWA5g%26oe%3D6A406B98%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ -1</span></div>
+                    <p class="caption">Ricardo used @Lovable.dev to build Tempestade SOS...</p>
+                    <div class="insight"><strong>💡 News :</strong> Création d'une plateforme d'aide d'urgence en quelques heures sans développeurs.</div>
+                    <a href="https://www.instagram.com/p/DZ2p4YGDc-Q/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dfw6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F726839679_17898347949467870_7269576631688376468_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-dfw6-1.cdninstagram.com%26_nc_cat%3D102%26_nc_oc%3DQ6cZ2gGtfBfBgZ_Oli_uiDOkqI31Vbw-K_HoxvWAubHndGAD4QFxAn_sjhUrRDO3yxlWp-Q%26_nc_ohc%3DRTNiYGhuIYUQ7kNvwFFFvtf%26_nc_gid%3DhoKbgIllxX0e_Ch-xW9DPw%26edm%3DAPs17CUBAAAA%26ccb%3D7-5%26oh%3D00_Af98T8oRm5fwZIgqzyhv0gU_V5xQlBjF0msye-pwm2JgsQ%26oe%3D6A405964%26_nc_sid%3D10d13b" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@girsta</span><span>❤️ 159</span></div>
+                    <p class="caption">Vibe coding lets builders barely touch code themselves while AI handles most programming tasks.</p>
+                    <div class="insight"><strong>💡 News :</strong> Andrej Karpathy popularise le concept : focus sur le résultat, pas la syntaxe.</div>
+                    <a href="https://www.instagram.com/p/DZzqY5ajYLd/" target="_blank" class="btn">Voir le post</a>
                 </div>
             </article>
         </div>
