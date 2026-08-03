@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 03 août 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Guerre des trillions :</strong> Alibaba et Moonshot lancent des modèles dépassant les 2,4 trillions de paramètres (Qwen 3.8-Max et Kimi K3).</li>
+            <li><strong>Anti-Slop :</strong> LinkedIn déploie un bouton pour signaler les contenus "AI Slop" et nettoyer les flux pollués par l'automatisation.</li>
+            <li><strong>Astra Mathématicien :</strong> Un modèle OpenAI non publié aurait résolu 10 problèmes complexes de maths/CS pour seulement 2 000 $.</li>
+            <li><strong>Hardware sous pression :</strong> La pénurie de puces IA fait exploser le prix de tout, même des rééditions de consoles rétro (N64).</li>
+            <li><strong>Gmail au tribunal :</strong> Une plainte accuse Google d'activer Gemini par défaut pour scanner les inboxes sans consentement explicite.</li>
+            <li><strong>Vidéo record :</strong> Seedance 2.5 débarque avec des générations de 30 secondes en un seul pass et un réalisme bluffant.</li>
+            <li><strong>Google Earth Fail :</strong> La fonction de génération d'images satellite a été retirée en 24h après des dérives utilisateurs.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">La guerre des Trillions</h2>
+        <div class="trend-analysis">
+            <p>Pendant que l'Occident peaufine ses blogs, les labos chinois (Alibaba et Moonshot) balancent des modèles à <b>plus de 2,4 trillions de paramètres</b>. On est sur du très lourd : vision native, fenêtre de contexte de 1 million de tokens et performances de code qui titillent Claude 3.5 Sonnet. Le twist ? Alibaba détient 36% de son concurrent Moonshot. C'est du "sprint contre soi-même" à une cadence hebdomadaire.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lga3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F764654860_17935228419346976_1811543068255029730_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D105%26ig_cache_key%3DMzk1NTUxMTgxODk0MzgxMTY1Ng%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzI3Ny5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DKyCY2hfJUxIQ7kNvwHctjyD%26_nc_oc%3DAdqJVH9Mjk8Fw7MAWN5PVkd_Vta3YX59opQEEywfpnuCLckFptBmf8nKSyyib4Mhmj9-8UAy6GzCSWWnmfHo4AJB%26_nc_zt%3D23%26_nc_ht%3Dscontent-lga3-2.cdninstagram.com%26_nc_gid%3DHk65ZX6Ny1iDiNY_oGvA0g%26_nc_ss%3D7c289%26oh%3D00_AQFX-xSpMMetTZEFjA04QDy2u48eQeH0RUH0j6JISX1FeA%26oe%3D6A768E3D" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligens</span><span>❤️ 510</span></div>
+                    <p class="caption">Alibaba launched its biggest AI model ever today...</p>
+                    <div class="insight"><strong>💡 News :</strong> Alibaba Qwen 3.8-Max (2.4T paramètres) défie Kimi K3 (2.8T) avec des perfs de code massives.</div>
+                    <a href="https://www.instagram.com/p/DbkzQ-EgTjx/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmel15-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F762864364_17992698062991209_8820464176903421055_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dinstagram.fmel15-1.fna.fbcdn.net%26_nc_cat%3D105%26_nc_oc%3DQ6cZ2gGQyWt8KBK3_q5tGRLI_VAz_yrGECRNkfTQVTQCqODuAMZGMVPl9usVS7gPY2QXMWQ%26_nc_ohc%3DiM81exjNIqYQ7kNvwF6bW47%26_nc_gid%3Dn9Fc3UXkUy6pBfFlSqx56A%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQFX1SLVquWgCOgYujbqDLt17sY-Hoq_Fc9t6qMDpchjeQ%26oe%3D6A76A228%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 53</span></div>
+                    <p class="caption">L’IA n’a pas ralenti une seule seconde cette semaine...</p>
+                    <div class="insight"><strong>💡 News :</strong> Kimi K3 (Moonshot) devient le plus gros modèle open-source avec 2 800 milliards de paramètres.</div>
+                    <a href="https://www.instagram.com/p/DblWDwAjGfH/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpoz3-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F764719663_18007114484959228_2584199029894261896_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dinstagram.fpoz3-1.fna.fbcdn.net%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gExmlJqYdXx8oDEm_67l_WksMae9EGj7v5SrmgTUJbd_j07rrCnep7YvYmGw5VI1Mk%26_nc_ohc%3Dgd7MWrVIgAcQ7kNvwEunvy7%26_nc_gid%3D84GE3xemDylyBLGo0dJm2w%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQGOF8bZB_U8V-RZk0UGb0eNll1wcOk-4XYUL7wtO6uH1w%26oe%3D6A768255%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 4060</span></div>
+                    <p class="caption">OpenAI says its unreleased Astra model (GPT-6?) produced 10 advances...</p>
+                    <div class="insight"><strong>💡 News :</strong> Le modèle Astra résout des problèmes de maths théoriques complexes pour un coût de 2000$.</div>
+                    <a href="https://www.instagram.com/p/Dbihv5FgPhH/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">L'agent qui valait 100 ingénieurs</h2>
+        <div class="trend-analysis">
+            <p>Chez Meta, le Chief AI Officer Alexandr Wang ne mâche pas ses mots : des essaims d'agents ("agent swarms") ont battu des équipes de <b>100 ingénieurs</b> sur des tâches mesurables. On passe de l'intelligence comme goulot d'étranglement à l'<b>ambition</b> comme ressource rare. Les outils comme <b>Claude Code</b> transforment déjà le workflow : certains créent des jeux entiers (Katamari clone, Fallout-like) en quelques heures avec un seul prompt.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpvh6-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F761497271_17967792864130808_986314810337588309_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dinstagram.fpvh6-1.fna.fbcdn.net%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gFpG6mFx2Z-Ma7E8e9UFLE3UTkRrfZ7Hory4kALRvMQwDUgI4KPtedF7kBC3x9ukD4%26_nc_ohc%3D2PBgZ-4ch4UQ7kNvwGDkPNA%26_nc_gid%3DVdk3dtl7DTs_LhZa-Bc6mw%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQG9hZZMXjkHvH4HRvJbUi4IdpiqF70n2GjQ3nILZdDviQ%26oe%3D6A769862%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 1830</span></div>
+                    <p class="caption">Meta Chief AI Officer Alexandr Wang says AI agents at Meta already outperform...</p>
+                    <div class="insight"><strong>💡 News :</strong> La "4ème vague" de l'IA (les essaims d'agents) rend les larges équipes d'ingénieurs optionnelles.</div>
+                    <a href="https://www.instagram.com/p/Dbf_qnFjbmv/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F762864392_18006926675959228_8307641442702325229_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gFxT3BTBxXAQxS0M7ImMrlcmTLjOPBqfCtfLgrdvK9hQRO-1zeUWLBNCnUKpQECXMs%26_nc_ohc%3DGa--1mCDTKoQ7kNvwEWrnjV%26_nc_gid%3D7TbqC_ESb1u9vawnL1VX0w%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQGvc06MKrLVelUFZ-hcHXhACGzis9MBptEnvRpZS8wYJg%26oe%3D6A767443%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 12796</span></div>
+                    <p class="caption">One person, one prompt, Claude Opus 5, and a playable game...</p>
+                    <div class="insight"><strong>💡 News :</strong> 10 démos de jeux AAA (physique de neige, clones Pokémon) bâtis par une seule personne via Claude Opus 5.</div>
+                    <a href="https://www.instagram.com/p/DbfsV2kAAod/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fman4-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F762864378_17992366721991209_3053687438837845441_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dinstagram.fman4-1.fna.fbcdn.net%26_nc_cat%3D105%26_nc_oc%3DQ6cZ2gG1VPJ3uLGRLMmdEsJoWE0WBc7unQJTMKPo7at3v3PAb4wosAn8H4D00mXTcwmL3XM%26_nc_ohc%3DQu6qSrJ3ZF8Q7kNvwHwHc2d%26_nc_gid%3D-XAdYz9tXK_qgrG6o0l9Kg%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQGzIN3KBnhqLxAVdi33f4aVRq2NWv9zCLMqZq6q1r03XA%26oe%3D6A767795%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 3017</span></div>
+                    <p class="caption">Un développeur a utilisé Claude Code pour créer un système de transfert de fichiers...</p>
+                    <div class="insight"><strong>💡 News :</strong> Transfert de données entre deux téléphones par QR codes animés, sans WiFi ni Bluetooth, codé via Claude.</div>
+                    <a href="https://www.instagram.com/p/DbgAK6cs6em/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mxp2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F762864413_17992566824991209_2174800920060069996_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-mxp2-1.cdninstagram.com%26_nc_cat%3D105%26_nc_oc%3DQ6cZ2gG0sCgor3n_F2QcF7gN5EqF9-08p441AuxdYKxgPvWPgEM7jpbbEnnqlxIwGTzXPtY%26_nc_ohc%3DYayRMyPS-w0Q7kNvwF_nA2U%26_nc_gid%3D16871LNZacefvI4o_XFUYQ%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQGF65Yh2iSXpCFVWZY765BqNTLT7uhq2z6BqIhJumwpmQ%26oe%3D6A7672DE%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 393</span></div>
+                    <p class="caption">Les étudiants découvrent une nouvelle façon de réviser...</p>
+                    <div class="insight"><strong>💡 News :</strong> Google Gemini prédit désormais les questions d'examens avec 70 à 80% de réussite via l'analyse des annales.</div>
+                    <a href="https://www.instagram.com/p/Dbi8dfNjF9I/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">L'IA mange tes puces (et tes factures)</h2>
+        <div class="trend-analysis">
+            <p>La boulimie énergétique de l'IA n'est plus une théorie. Trump appelle les Américains à "ne pas combattre les Data Centers", car l'argent ira ailleurs sinon. Plus concret : Palmer Luckey sort sa N64 "ModRetro" à 229$ au lieu de 199$ à cause de la <b>pénurie de puces mémoire</b>, raflées par les data centers. Même les consoles rétro subissent la taxe IA. Et côté finance, le gamin de 25 ans qui gérait 45Mds$ via son fonds IA s'est fait rincer par Citadel après un pari risqué sur l'infra.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F762310619_17968078413130808_9049986591574063589_n.jpg%3Fstp%3Ddst-jpg_e15_fr_p1080x1080_tt6%26_nc_ht%3Dscontent-fra3-1.cdninstagram.com%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gGsmJZUMg-sRqsWBXVK7EEzzi2ib9cUEP7KjuGMSEWg--i1ceJOzi269dA8dmgic6g%26_nc_ohc%3DSP96eFj2eP0Q7kNvwEIHQ_W%26_nc_gid%3DHFB_hVQY-y3B-pFKlus43w%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQFHLcQaaKrKB4CQW3rL5zhsqRR8qXkiZDXdkGFs3ciH0A%26oe%3D6A767354%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 824</span></div>
+                    <p class="caption">Palmer Luckey's ModRetro M64 — a rebuilt Nintendo 64...</p>
+                    <div class="insight"><strong>💡 News :</strong> Le prix de la mémoire a bondi de 700% en un an, impactant tout le hardware grand public.</div>
+                    <a href="https://www.instagram.com/p/DbkJ4aojc4f/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.frkh1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F763102976_18007276667959228_4713502850851785848_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dinstagram.frkh1-1.fna.fbcdn.net%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gEhDpQHhtxsgAQuUiBEhpspyjDLU0MpYCRz6ZwW-QHxPs2P-anHwzJsOoKbU92enL0%26_nc_ohc%3D7QPgWfX5q4MQ7kNvwEtRhht%26_nc_gid%3DMi84O8HHO6YOMkoizkLhMg%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQGDkWdTuAzsLxsspBZtxE_36E4NplugK12jqfSI7NmPLw%26oe%3D6A76A653%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 1282</span></div>
+                    <p class="caption">President Trump's pitch to towns fighting data centers...</p>
+                    <div class="insight"><strong>💡 News :</strong> Trump défend le buildout massif des data centers et lance le "Ratepayer Protection Pledge".</div>
+                    <a href="https://www.instagram.com/p/DblO7PujXhI/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F763064886_18006952991959228_4907906040443851281_n.heic%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-fra3-2.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gGYxl_07H3GztUxhIs0FglfLuR09Uwy5VwdvixJ2c_2mAq9ocTqHdiF7414XRwpTXE%26_nc_ohc%3DMzpClfQbsNwQ7kNvwH-ZuOz%26_nc_gid%3Dbrgi7EaULR2Tz5S4S6t_AA%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQGxXDSbEhj9wZ1QFyOM81QcpGvRW5lQ1VarRZ9xMg6KDw%26oe%3D6A769CDA%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 6042</span></div>
+                    <p class="caption">Leopold Aschenbrenner, the 25-year-old former OpenAI researcher...</p>
+                    <div class="insight"><strong>💡 News :</strong> Crash spectaculaire du fonds "Situational Awareness" après un pari ultra-levier sur l'infra IA.</div>
+                    <a href="https://www.instagram.com/p/DbgBHU1gA7M/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">LinkedIn vs Le Slop</h2>
+        <div class="trend-analysis">
+            <p>Le terme <b>"AI Slop"</b> est officiellement entré dans le dictionnaire de LinkedIn. La plateforme vient d'ajouter un bouton pour signaler les posts trop automatisés. C'est la fin de l'impunité pour les "IA Evangelists" qui polluent nos feeds. Parallèlement, Google fait face à une class-action pour avoir activé ses "smart features" par défaut sur 1,8 milliard de comptes Gmail : le scanning d'emails sans opt-in pourrait être qualifié d'écoute illégale.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F763700824_18007278365959228_5451495328727026145_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-fra3-2.cdninstagram.com%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gHogZ6Jd33f6EL6JmIjGdOeV0F4HSjqf5JLul9-phJ1Kfz3vB-En0tBOeXddDey87I%26_nc_ohc%3DhQaJ3_U2frcQ7kNvwEcF9kf%26_nc_gid%3Dv28-uW-ood7V9vSWonyePw%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQF2mrMk0GZWQkuldx7p5atgB40H-Y0yRsuBqy0GypjyTA%26oe%3D6A769A60%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 2174</span></div>
+                    <p class="caption">AI slop is now a category on LinkedIn...</p>
+                    <div class="insight"><strong>💡 News :</strong> LinkedIn permet désormais de flagger le "slop" pour entraîner ses filtres anti-IA.</div>
+                    <a href="https://www.instagram.com/p/DblQ7EMjUvi/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-man2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F761291914_17967970110130808_8515956031731647684_n.heic%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-man2-1.cdninstagram.com%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gHNvPis199D4u0hE8j-N5uCchZ0PXpVgwzTtKi3bC-waj0eoMsAcUnN_x8Gmz7qhC0%26_nc_ohc%3DkeeuUm95pPQQ7kNvwGGN1yv%26_nc_gid%3DvTdRW_DIHQGz6_6-iKtgYA%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQFJTwXrVakcCecKYb2c1Xwcqxnjpyqls6QnNPehkU703w%26oe%3D6A769353%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 2128</span></div>
+                    <p class="caption">Google Gmail's Gemini AI smart features are at the center of a class-action lawsuit...</p>
+                    <div class="insight"><strong>💡 News :</strong> La justice examine si le scanning automatique des mails Gemini est une violation de la vie privée.</div>
+                    <a href="https://www.instagram.com/p/DbieDWnAUDO/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fsyd14-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F764608178_17968152303130808_3276780512971784616_n.heic%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dinstagram.fsyd14-1.fna.fbcdn.net%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gHUcK2fkWKWSUFB7dKnxNf0cCgPVSvX6VbVjDgojcjVXozPohG76uAby2K159pQobo%26_nc_ohc%3Dig4SQuVeTQgQ7kNvwF0REEj%26_nc_gid%3Dts-zKT5D-cc5_gy6dA7DTg%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQH5rFckjSb1Ob8e8ixplthOLUaPeniDf00SAK59ViQqfw%26oe%3D6A76A98F%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 85</span></div>
+                    <p class="caption">Ask an AI whether to walk or drive to a car wash 50 meters from home...</p>
+                    <div class="insight"><strong>💡 News :</strong> Le "salience bias" identifié par ByteDance : les IA bloquent sur les chiffres et ratent le bon sens.</div>
+                    <a href="https://www.instagram.com/p/DblWH65gRk4/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Vidéo : Le mur des 30 secondes</h2>
+        <div class="trend-analysis">
+            <p>Bye-bye les clips de 3 secondes qui glitchaient. <b>Seedance 2.5</b> (ByteDance) vient de mettre tout le monde d'accord : 30 secondes de génération fluide en un seul pass, audio natif et une cohérence de personnage qui permet enfin de faire du "vrai" storytelling. Les trailers de fans (One Piece, Game of Thrones) atteignent un niveau de réalisme qui commence à faire transpirer Hollywood. La guerre des prix est finie, on est dans la <b>guerre des subventions de calcul</b> (Higgsfield offre 14 jours d'illimité pour flooder le marché).</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F762866869_17967723417130808_3237461479586341836_n.heic%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dscontent-fra3-2.cdninstagram.com%26_nc_cat%3D108%26_nc_oc%3DQ6cZ2gEB5EZHdfTAlK4Be_FOI0cts-3ukWN-Iy-LByzsgSopVaseKiyspHfwgUd_cNfbhaI%26_nc_ohc%3DkvdcGG2PBvcQ7kNvwEsP0tt%26_nc_gid%3D-Cviq7P6rlQ1YSmagxsrNA%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQHaLRTpwQfvjwUxSZKigCXA3dSEyAznMuZSjDPeWigADA%26oe%3D6A769657%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ -1</span></div>
+                    <p class="caption">Unlimited Seedance 2.5 coming on Higgsfield...</p>
+                    <div class="insight"><strong>💡 News :</strong> Seedance 2.5 permet des plans de 30s avec une cohérence visuelle bluffante.</div>
+                    <a href="https://www.instagram.com/p/Dbe4DtzCB5C/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fktw1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F761084757_18006844646959228_5069767443054303828_n.jpg%3Fstp%3Ddst-jpg_e35_p1080x1080_sh2.08_tt6%26_nc_ht%3Dinstagram.fktw1-1.fna.fbcdn.net%26_nc_cat%3D104%26_nc_oc%3DQ6cZ2gGyRMLJqklIMWAGIz3okSqQkMSqfLiQ6oXLKT7NL2pp_TBNAXJ3ZJXHGSfOwFjJzkg%26_nc_ohc%3DdCv64NYnbw4Q7kNvwFfyCIc%26_nc_gid%3DYVAQMljChqQkPP4Wn-keUA%26edm%3DADp7STQBAAAA%26ccb%3D7-5%26oh%3D00_AQHqxPq9cIFmDmkq4Qt0_376fUfyonc4E9sR9sOOVY9zBw%26oe%3D6A769BB4%26_nc_sid%3Dc6f216" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 11079</span></div>
+                    <p class="caption">This is a full Genghis Khan cinematic epic made with China’s latest Seedance 2.5...</p>
+                    <div class="insight"><strong>💡 News :</strong> Démo épique d'un film sur Gengis Khan montrant le bond qualitatif de l'IA vidéo en 4 mois.</div>
+                    <a href="https://www.instagram.com/p/DbeK9fFglna/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F762864018_18007126520959228_1689210691542722313_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26ig_cache_key%3DMzk1NDkxMzgxMDMxNjU4NTc2MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D6YOQa5qH8J0Q7kNvwGwf0fZ%26_nc_oc%3DAdod_I7oR0Sjev6I4QErv016U0wXqeKgwovHLvtZs6WFcEZqjlugusxXzhC5yo-GkQs%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3D5XWTyabqjkk_hEe0JFiUlw%26_nc_ss%3D72a8c%26oh%3D00_AQG9uw4DkKtXDG_Z7UCpZOXlTny_UJ9ZW885bJjAuRcQCg%26oe%3D6A768C1B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 4762</span></div>
+                    <p class="caption">One Piece's most haunting untold story has finally been brought to life...</p>
+                    <div class="insight"><strong>💡 News :</strong> Fan film One Piece (God Valley) utilisant l'IA pour les visuels de base retravaillés manuellement.</div>
+                    <a href="https://www.instagram.com/p/Dbir8EXDZvB/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
