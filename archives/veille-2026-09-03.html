@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 03 septembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Claude Fable 5.1</strong> est là : deux fois plus performant sur les benchmarks scientifiques et 25% moins cher.</li>
+            <li><strong>Dyson</strong> lance une brosse à dents à 499$ avec caméra 100k pixels et IA pour traquer la plaque dentaire.</li>
+            <li><strong>Tim Cook</strong> quitte officiellement son poste de CEO d'Apple après 15 ans de règne.</li>
+            <li><strong>Higgsfield</strong> sort "Genjutsu", un modèle vidéo-to-video qui permet de "remaker" n'importe quel clip frame par frame.</li>
+            <li><strong>OpenAI</strong> a acheté des milliers de Mac Mini pour entraîner des agents capables d'utiliser un ordi comme un humain.</li>
+            <li>L'UE a officiellement classé <strong>ChatGPT comme un moteur de recherche</strong> (VLOSE) sous le Digital Services Act.</li>
+            <li><strong>Tesla Robotaxi</strong> casse les prix à Austin : des trajets 45% moins chers que chez Uber.</li>
+            <li><strong>NVIDIA</strong> préparerait le rachat de Hugging Face pour la bagatelle de 12,9 milliards de dollars.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Anthropic sort les muscles</h2>
+        <div class="trend-analysis">
+            <p>Pendant qu'OpenAI peaufine ses modèles, Anthropic dégaine <strong>Claude Fable 5.1</strong>. C'est plus qu'une mise à jour : les performances en agentique (l'IA qui fait des trucs toute seule) ont doublé. Bonus pour nous : la lecture du cache devient 75% moins chère, idéal pour les projets à base de prompts XXL. On sent que la bataille pour le "cerveau" de l'IA se joue sur l'efficacité pure.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fsyd8-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F791493323_17972735700130808_6004688002357727430_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk3NzM4NTU2MzE0NTE2MjQwNw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DCgcbkiZtnCgQ7kNvwF00RDN%26_nc_oc%3DAdommA2zIbGqEjIaqA-FG_5daiBvQW-tDfdxIwQae9MRqT0LkazpkMDtdXB82HGpu8yW9wl7GGHzQpgFktE6oS8Y%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fsyd8-1.fna%26_nc_gid%3DZdEFrbxcl9E42EpduIe3aw%26_nc_ss%3D7a22e%26oh%3D00_AQLSEyTOugLQdxaTu7dyjQp6ly99NhMCuZO0OvzHzZmboA%26oe%3D6A9EE3BD" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">Anthropic just shipped Claude Fable 5.1...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le nouveau modèle Fable 5.1 explose les scores sur les benchmarks scientifiques (52% vs 24% pour son prédécesseur).
+                    </div>
+                    <a href="https://www.instagram.com/p/DcygztZIy4_/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg4-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F791942660_18011658140959228_408368562695435648_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk3Njc3ODE3ODgyNzAxMzg1OA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Dq-LbfczjgKMQ7kNvwEpgqs1%26_nc_oc%3DAdoJ1MeAav2FN41pcOBd_H8_O3uAIl6fs0zRD9xYA36X4lP-yeej2iFrHHL-RddWEdI%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg4-2.cdninstagram.com%26_nc_gid%3D9t02LctQIydr-6M50TY5Ww%26_nc_ss%3D7a22e%26oh%3D00_AQKpdr3KavDiQ4Fb4MgFoBoA67GqEXLimkTRtz3ChbTegQ%26oe%3D6A9EFB99" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 7263</span>
+                    </div>
+                    <p class="caption">Claude Fable 5.1 is cheaper, much stronger...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Réduction drastique des coûts (jusqu'à -75% sur les cache reads) pour un modèle plus "concis" et moins de refus inutiles.
+                    </div>
+                    <a href="https://www.instagram.com/p/DcwWwPngITB/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcia5-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F791129781_17972760162130808_7107850331300806738_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ig_cache_key%3DMzk3NzQ5MDg2NDk5OTE5MjU4OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DbAnpvwSOIG4Q7kNvwFzmjUO%26_nc_oc%3DAdpNOHOBMr95rbE22AJyDC_-O0-xB5KA5gkTcdE_qXEqLu_9KsCijQg5I9_NvWQ26zE%26_nc_ad%3Dz-m%26_nc_cid%3D1028%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcia5-1.fna%26_nc_gid%3DsWA5OVnQmnIFKZzy7qeH2w%26_nc_ss%3D7a22e%26oh%3D00_AQKhAAXmBAl4TQjNuqteTkjXQvisol7W4C6_tO7qX5icCQ%26oe%3D6A9EE177" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 1421</span>
+                    </div>
+                    <p class="caption">Anthropic is reportedly pitching a market above $30 trillion...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Anthropic voit grand et pitche un marché potentiel de 30 000 milliards de dollars pour l'IA, soit la taille de l'économie US.
+                    </div>
+                    <a href="https://www.instagram.com/p/DczC652I-SK/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le bouton "Remake" existe enfin</h2>
+        <div class="trend-analysis">
+            <p>La vidéo IA franchit un cap technique cette semaine avec <strong>Genjutsu</strong> d'Higgsfield. Contrairement aux modèles qui inventent tout, celui-ci fait du "vidéo-vers-vidéo" fidèle : il garde le mouvement et la structure, mais change le décor ou les acteurs. Pour la créa, c'est l'outil ultime pour tester des variations de scripts sans retourner une seule image. Et pendant ce temps, la vidéo générée dépasse le temps réel sur Twitch via MiniMax.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fqsr1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F791778421_17921701905426313_5034499325735700149_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26ig_cache_key%3DMzk3NzMwNDU0MDQ4MjU2MzkxMA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DQzCqIdNPGwYQ7kNvwGec2Si%26_nc_oc%3DAdrHfu8FbhQb4_7dKeyna3QVICh7S5EFuqiSAWJAjX60W691xne4vLxSVEli__SqkZs%26_nc_ad%3Dz-m%26_nc_cid%3D1093%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fqsr1-1.fna%26_nc_gid%3DuM3ulZTLgki78akBITYBlA%26_nc_ss%3D7a22e%26oh%3D00_AQIbg1D3cLPkpaPGanUOFzM7n8bo8H9J0anvwE4cfB0vFw%26oe%3D6A9EF9A7" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 1244</span>
+                    </div>
+                    <p class="caption">AI can now remake ANY video, frame for frame...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Higgsfield Genjutsu permet de transformer n'importe quel clip en préservant le mouvement exact image par image.
+                    </div>
+                    <a href="https://www.instagram.com/p/DcyOibqFqal/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fyqr2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F791129780_17972592201130808_4733375173016132021_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk3Njc4MTQ5MjI0NTg2NjM0OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DdDhnw1sJNMIQ7kNvwE9rHPe%26_nc_oc%3DAdrXXGezM9wtDTKlrHgwautHzmR-Jb_BndObQitgVBmmGVgzrDEZSdUoPdg_I5Q-rtM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3DDK6qSOCp5ecLwlyAJTB2iA%26_nc_ss%3D7a22e%26oh%3D00_AQLN4a9ZnFZqavYxl3T2kun6bd9XpIS_C4TwkF-_U51teg%26oe%3D6A9EC82E" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 412</span>
+                    </div>
+                    <p class="caption">AI video now generates faster than you can watch it...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le modèle MiniMax H3 génère 5s de vidéo en 3s. Résultat : une chaîne Twitch tourne en continu avec le chat qui scénarise.
+                    </div>
+                    <a href="https://www.instagram.com/p/DcwPZcCo9KG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mad1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F789108540_17996647064991209_2889282039289310197_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D102%26ig_cache_key%3DMzk3NTEzODU2NDcwNDg4OTIwODE3OTk2NjQ3MDYxOTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3Dp_9IKgKAQx0Q7kNvwEF56Dw%26_nc_oc%3DAdqRYUcZCzBozid6MsG7ZC3lg8YDbE6JVbWWgxhfsPcUVUF2U3ckmP1nKUl0hsqgrBY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mad1-1.cdninstagram.com%26_nc_gid%3DvIttyGoXjfYncSvTV2jjnQ%26_nc_ss%3D7a22e%26oh%3D00_AQLfhA9gmcbseglRGTVUfCx9rlkTwl4mI0y7sACha52Naw%26oe%3D6A9EC76A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 1643</span>
+                    </div>
+                    <p class="caption">L'IA n'était même pas capable de faire manger des pâtes à Will Smith...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le mème "Will Smith eating spaghetti" sert désormais de benchmark pour montrer les progrès fulgurants de la cohérence vidéo.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dcqh3aiMOl4/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Hardware : Brossage 2.0 et Mac Mini à gogo</h2>
+        <div class="trend-analysis">
+            <p>L'IA sort de l'écran. <strong>Dyson</strong> claque 499$ dans une brosse à dents qui vous filme la bouche pour ne rater aucune plaque (le futur est étrange). De son côté, <strong>OpenAI</strong> dévalise les stocks de Mac Mini et Mac Studio d'Apple. Pourquoi ? Pour faire du "Reinforcement Learning" sur des agents capables d'utiliser un OS comme nous. L'idée : l'IA ne se contente plus de parler, elle prend le contrôle de la souris.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fntr6-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F792053281_17909281596467870_2378176857841494158_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk3NzIzNjAxNDgxMTMwOTcwMA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DWvZzv2WexsAQ7kNvwEZKGNi%26_nc_oc%3DAdrtPL9UVSRok-OBSErYuPE9QugnHvxxX1uhXg04WrVZgaMf2ACLvi-o23V5Uw3HFc6D4oTSO3zGv_QUBbXbbuY8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fntr6-1.fna%26_nc_gid%3DJW8rwfHc_mp1symemfqeRw%26_nc_ss%3D7a22e%26oh%3D00_AQIa47_EqPPrnWktMdWllMJ5QPcTvC8OUhXj_g1XAioeNg%26oe%3D6A9EDCD9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@girsta</span>
+                        <span>❤️ 67</span>
+                    </div>
+                    <p class="caption">Dyson launched the AI-powered CameraJet...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le Dyson CameraJet analyse 28 images/sec via une macro-lentille pour nettoyer les espaces interdentaires précisément.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dcx-0-Uje00/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ssn1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F791586578_17909081472467870_9035807341122065163_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk3NjEyMTUxODk2NTM3MjM2OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DKGWLGH0qmUQQ7kNvwHGOr_l%26_nc_oc%3DAdrdfjdKav82uMH-G1ogOX7MKz1wxjgFN0Vf5tSQxPYRPY1AC83USbMmUGk6js_j9Bo%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ssn1-1.cdninstagram.com%26_nc_gid%3DU0b1qJSoQXM7XJD49uhzMg%26_nc_ss%3D7a22e%26oh%3D00_AQK2EhJkGJpz50IaPUlETOPDp_yDTP0ZR9oqaFupu_2SVA%26oe%3D6A9EDC00" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@girsta</span>
+                        <span>❤️ 151</span>
+                    </div>
+                    <p class="caption">OpenAI has purchased tens of thousands of Mac minis...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        OpenAI utilise le hardware Apple pour entraîner des agents à manipuler les interfaces logicielles (computer-use).
+                    </div>
+                    <a href="https://www.instagram.com/p/DcuBkjwjS-W/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mad1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F791974241_17972802261130808_44696075095718605_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk3Nzc3MjYxMDcwMTM2Nzg3NQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D1Yntnlud7noQ7kNvwEJZNcA%26_nc_oc%3DAdpVeoW2AkiVT0EI0PtWFMFy2ODbpB1KdpbvD4OlvyADfjTn0dtwUo4l6fxj7FO6fCc%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mad1-1.cdninstagram.com%26_nc_gid%3DKLBCbzZ7t8YxeesfDsOmwA%26_nc_ss%3D7a22e%26oh%3D00_AQK7suVtIaXgv-0__5xyY7SD0_PJtH6EwJhMB6I8UxZmNg%26oe%3D6A9ECA71" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 409</span>
+                    </div>
+                    <p class="caption">A Tesla Robotaxi ride in Austin: $14.17 vs Uber: $25.42...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le service Robotaxi de Tesla est déjà opérationnel à Austin et affiche des tarifs presque deux fois inférieurs à ceux d'Uber.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dcz4zJUIwsn/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Gaming : GTA 6 joue la carte artisanale</h2>
+        <div class="trend-analysis">
+            <p>Contre-pied total : Rockstar annonce que <strong>GTA 6</strong> a été construit sans IA générative. Tout est "handcrafted", un argument de luxe à l'heure du tout-algorithmique. Pendant ce temps, les modders s'amusent avec le leak de NVIDIA <strong>DLSS 5</strong> qui promet du rendu neuronal encore plus fou sur les jeux actuels, et les fans utilisent l'IA pour créer les fins de GTA V qu'ils n'ont jamais eues.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ssn1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F791778413_17921567454426313_2074394790450586619_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DMzk3NjY0MTg5MDAyNzYxNjY4Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Dn2G9dmMMkvQQ7kNvwGtQ_UF%26_nc_oc%3DAdoDOggvSX_nWI3vfLo370aJR1bIircaLLuwYO171kX2__TOMiBTyu2HsCZhVeSu-w0%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ssn1-1.cdninstagram.com%26_nc_gid%3DstA7ctKLS1rV0wE5WIVR3A%26_nc_ss%3D7a22e%26oh%3D00_AQL5hG7S0rHSac8sGj4hag2RRwifGjEkRJ7lHUHvj6Gtcw%26oe%3D6A9EF77C" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 1120</span>
+                    </div>
+                    <p class="caption">Rockstar says GTA 6 was built without generative AI...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Take-Two affirme que l'IA générative n'a joué aucun rôle dans la création des mondes de GTA 6, privilégiant le fait-main.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dcv3zcOlvhm/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F791922776_18011719595959228_7592280664120207260_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk3NzE4ODU1NDU4ODc1MjM3NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DWw8-MZa5yKYQ7kNvwFy-azf%26_nc_oc%3DAdr03HZFy1hMEch4rqo8hRJ9xoKrZWzOTqbAvR8ZXJfRb2fKhlMM4vaTPmt4Vjkcy4c%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DeBYL-Mfsj9NyQCqGydU_yg%26_nc_ss%3D7a22e%26oh%3D00_AQLl865i6ebfcWMbceHJI9MSeZEGxn9VCPfAF7AMEPUewA%26oe%3D6A9EE7A6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 30086</span>
+                    </div>
+                    <p class="caption">NVIDIA’s unreleased DLSS 5 tech appears to have leaked...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Des fichiers de DLSS 5 auraient fuité via NBA 2K27, promettant un rendu neuronal encore plus poussé.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dcx0SYaANpP/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg4-3.cdninstagram.com%2Fv%2Ft51.82787-15%2F791388343_17921587620426313_7798860542792809025_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ig_cache_key%3DMzk3NjcxMDg1Nzg4NDcyOTI0MTE3OTIxNTg3NjIzNDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3Du-b6ObzSnrQQ7kNvwGglUHK%26_nc_oc%3DAdp7ohcdArxTId4MdZrv0NQ8mTZKMoaQojRytN8dk37-vfxFAGj3pwbex5SsVdYY2D5XziytvDEZaNkAezFoAZrq%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg4-3.cdninstagram.com%26_nc_gid%3D4jkX5kybyHad6EntQWPpSg%26_nc_ss%3D7a22e%26oh%3D00_AQKMfa5uxPMks9zuDKybiFxbDkd9sNF5jvyQueo8-oMM1w%26oe%3D6A9EC883" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 4854</span>
+                    </div>
+                    <p class="caption">Michael, Franklin, and Trevor together for one final meetup...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'IA permet aux fans de créer des contenus nostalgiques ultra-réalistes, prolongeant la durée de vie des franchises cultes.
+                    </div>
+                    <a href="https://www.instagram.com/p/DcwHXSqqH-Z/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
