@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        /* BANDEAU HEADER FULL WIDTH */
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        /* SECTION NEWS / SYNTHÈSE */
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        /* SECTION TENDANCES */
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        /* GRILLE ET CARTES — DENSIFIÉE */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 10 septembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>L'AGI est là :</strong> Jensen Huang (Nvidia) affirme que GPT-6 Astra marque officiellement l'arrivée de l'Intelligence Artificielle Générale.</li>
+            <li><strong>Maths de génie :</strong> Un modèle interne d'OpenAI a résolu l'équation de Navier–Stokes, un des 7 problèmes du millénaire à 1M$.</li>
+            <li><strong>Astra vs Fable :</strong> Le nouveau modèle d'OpenAI écrase Claude Fable 5.1 en génération 3D et rapidité d'exécution.</li>
+            <li><strong>Drama Anthropic :</strong> Démission choc d'un chercheur et prédiction de 10% de chances d'extinction humaine par le lead alignement.</li>
+            <li><strong>Cinéma :</strong> Le biopic "Artificial" arrive, avec Andrew Garfield dans le rôle d'un Sam Altman en pleine crise.</li>
+            <li><strong>Tesla Robotaxi :</strong> Le Cybercab est testé en réel et dispose même d'un robot dédié pour nettoyer l'habitacle.</li>
+            <li><strong>Espionnage TV :</strong> Les TV LG accusées d'enregistrer des transcripts de conversations en veille pour leur régie pub.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Astra : L'AGI au petit déj</h2>
+        <div class="trend-analysis">
+            <p>On y est. Jensen Huang a décrété que l'AGI était arrivée avec <strong>GPT-6 Astra</strong>. Ce n'est plus juste un chatbot : le modèle résout des problèmes mathématiques insolubles depuis un siècle (Navier-Stokes) et s'intègre via des plugins comme <strong>Higgsfield</strong> pour piloter Blender ou Unreal Engine comme un pro. OpenAI prend une longueur d'avance indécente sur la concurrence.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F799487200_18071756489543013_4745353744707301386_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DMzk4MDk5ODQyMTU1NDE1MjEzMw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Dcy81Wzj7tGQQ7kNvwE8JeP1%26_nc_oc%3DAdqPHaLsX2ik58eepvuRn73bGnPq7DEtR0V1gXFT3rrnHTqaVecbR8ZYueJttTjdeWo%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DT8p5VL4Q2Gd6zi3_qhQ3hw%26_nc_ss%3D7a22e%26oh%3D00_AQJSZM83uEYmGQ0c0HLcf2mdfvcV0Wp1blxDVSz9DBUGlQ%26oe%3D6AA807B3" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@weexplore.ai</span>
+                        <span>❤️ 80</span>
+                    </div>
+                    <p class="caption">NVIDIA CEO Jensen Huang posted on X that AGI has arrived...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le patron de NVIDIA valide GPT-6 Astra comme le premier jalon de l'AGI (Intelligence Artificielle Générale).
+                    </div>
+                    <a href="https://www.instagram.com/p/Dc_WVMaiBWc/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.ffab1-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F800810922_18012618704959228_2544313762614858201_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26ig_cache_key%3DMzk4MTgxNTk5ODgxNzc3ODk2Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DkflmIobV-DQQ7kNvwHrYS53%26_nc_oc%3DAdpv65sUBQwh3r26zi738sM3HcrQNUow4egs8-fwRLqUpFkllcxipNw_1Kc35MKFeH6JzdN0e8mFfrwpk-tucdh3%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.ffab1-2.fna%26_nc_gid%3De1hnzbt8udVpNx4mHS4lEQ%26_nc_ss%3D7a22e%26oh%3D00_AQKUYzGTwd0-LhCIe5p1aWbL0O1nYDVLCs6t1YNdRyj6xw%26oe%3D6AA80333" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 15568</span>
+                    </div>
+                    <p class="caption">OpenAI says its AI has solved one of the biggest open problems in mathematics...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Astra a résolu le problème de Navier-Stokes, un défi mathématique vieux de 90 ans avec 1 million de dollars à la clé.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdCQJJSAAW6/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F800993351_18012626093959228_3376651977213055221_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D104%26ig_cache_key%3DMzk4MTg1Mzg4OTYzMTY0NjA5OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3D-ii8LNm-evwQ7kNvwGTi1H6%26_nc_oc%3DAdq4vaL9sLlSVeWk5MM0KBssTBhYe9ZSIof2QjmsEjo3hVqDIfftbjTSVBid0CWcjA8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fra3-2.cdninstagram.com%26_nc_gid%3Di2f4prwWn4M4kYs7fLnc6Q%26_nc_ss%3D7a22e%26oh%3D00_AQJOUC1sl0FGVmM0i1F164ltlYLbnNH5KahMWSD9iG-OHQ%26oe%3D6AA8269A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 17721</span>
+                    </div>
+                    <p class="caption">GPT-6 Astra + the Higgsfield plugin just cooked the entire competition...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Astra combiné à Higgsfield permet de transformer un téléphone en caméra virtuelle pro directement dans Blender.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdCY25LgHQy/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.frtm1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F802119895_17923100733426313_1714396694949758663_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DMzk4MjU5MTQwOTk5OTMxNzIzODE3OTIzMTAwNzI3NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3D1xc6t9RN88MQ7kNvwFnYatg%26_nc_oc%3DAdpJTTQK-InjptPk2k2nSlGghLzafxz-gjMJbgJdaKH3gVmxrSMk9ihqrTJrBfILSYg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.frtm1-1.fna%26_nc_gid%3D-QmoHaC-hya2_xt4uyqPpw%26_nc_ss%3D7a22e%26oh%3D00_AQIVXO4nxjo21uSairwj24oqWb6MVLX4RUcEeSvxALGMig%26oe%3D6AA804D9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">GPT-6 Astra just completed all 48 levels of “I’m Not a Robot”...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Bye bye les CAPTCHA : Astra a terminé un jeu conçu pour prouver qu'on est humain en un temps record.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdFAclmiAj2/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Drama, Doomsday & Hollywood</h2>
+        <div class="trend-analysis">
+            <p>Ambiance électrique dans la Silicon Valley. Entre les démissions pour "risque existentiel" et les prédictions sombres sur la fin de l'humanité, l'IA devient un thriller en temps réel. Tellement vrai que le premier trailer du film sur le board d'OpenAI vient de sortir, avec un casting 5 étoiles.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbfh9-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F801056258_18012674426959228_7661478292389798764_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26ig_cache_key%3DMzk4MjE0OTE5NzExMzQ0MzA3Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DUKaVd33SR9wQ7kNvwFK009O%26_nc_oc%3DAdpnOhSWLOvZ-4lZ7AKshfzgSGquIw1RTBg2kJrjb9nUyBKVarYOTU5RlDgZQJzfKwQ%26_nc_ad%3Dz-m%26_nc_cid%3D1155%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbfh9-1.fna%26_nc_gid%3DgLUMI5vkqI6Egl57RWdL5w%26_nc_ss%3D7a22e%26oh%3D00_AQLznmc5vj7q5BDrQYKj9j1AD_dbURcNbK-TYsAupZn8pA%26oe%3D6AA81D4B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 22459</span>
+                    </div>
+                    <p class="caption">Anthropic researcher Jacob Coxon has just resigned...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Jacob Coxon démissionne d'Anthropic en alertant sur la course dangereuse vers la superintelligence.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdDb5ywDRHj/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ber1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F801580908_18012726203959228_179901284021520299_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26ig_cache_key%3DMzk4MjQzODU3NDAyMzc3NjgwMg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DTp77XMkVqJcQ7kNvwGDttbY%26_nc_oc%3DAdqnuY3YTCFlOwEpwG97kq1QeY_QGlKS3POozgrluRS1t4jRJTeuyY45UuTFX6rpymg%26_nc_ad%3Dz-m%26_nc_cid%3D1365%26_nc_zt%3D23%26_nc_ht%3Dscontent-ber1-1.cdninstagram.com%26_nc_gid%3DG_fqkBhKiMyMRW3vpMSHYw%26_nc_ss%3D7a22e%26oh%3D00_AQKV38LSBklUnmEF66XbO1rC5fiYouKza3OFvIJbmt75ew%26oe%3D6AA8247C" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 4776</span>
+                    </div>
+                    <p class="caption">The first trailer for 'Artificial' is here, with Andrew Garfield...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le trailer du film "Artificial" retrace la semaine où Sam Altman a été viré puis réembauché par OpenAI.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdEdz4xgK0f/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcuu1-1.fna.fbcdn.net%2Fv%2Ft15.5256-10%2F802030527_1589337206251232_4571788622409093714_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26ig_cache_key%3DMzk4MjQzMTk3Mzk4NzIwMzEyNw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DG6cs9t_-Hk0Q7kNvwHux4z2%26_nc_oc%3DAdo2JxAo-wlxMw3DdS4NiP7KZpKHRAx6UkStmeaFNt944IMjFEutvMWSbM0AZLyUH7rhYUpu4ddkgybCsdCiIFM3%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcuu1-1.fna%26_nc_gid%3DSYhsO402J8ivbGbBHdFaGQ%26_nc_ss%3D7a22e%26oh%3D00_AQLEaIbH7vxpxSwA-K2s6HXiz1OlrJTe4UO6eOPVPS25Qw%26oe%3D6AA82D07" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@bariqrifki</span>
+                        <span>❤️ 2137</span>
+                    </div>
+                    <p class="caption">Anthropic. L’homme qui casse ses modèles donne plus de 10% de chances que l’IA tue tout le monde...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le lead alignement d'Anthropic estime à plus de 10% le risque que l'IA cause l'extinction humaine d'ici 10 ans.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdEcMfPqjg3/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.flhr14-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F802596468_18012814337959228_6215730646395145633_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26ig_cache_key%3DMzk4MjkwNjgyODcwNjA1OTIwNzE4MDE2ODE0MzMxOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DCnUXbHhQkN8Q7kNvwERLg_g%26_nc_oc%3DAdoNF2-Nve3WadYNQhnZ4S8HJS5zd1zfvB86ezknjeaQRvhqbnAb2ZDoOA2kmFnk7vqvtFw_Tq89nfQ1POebIF9m%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.flhr14-1.fna%26_nc_gid%3DWyqd_CF4BZiu8AUMxS10hw%26_nc_ss%3D7a22e%26oh%3D00_AQKFz2qNlhLXtB8TD6Wf8X_5lr_b2yZVYR_6Agw49C2bgg%26oe%3D6AA810B6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 325</span>
+                    </div>
+                    <p class="caption">Around 30 robots joined a demonstration in Warsaw...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Des robots ont littéralement manifesté à Varsovie pour demander une régulation plus stricte de l'IA.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdGIKiKgJPH/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Cybercab : Le futur roule (sans pédales)</h2>
+        <div class="trend-analysis">
+            <p>Tesla passe aux choses sérieuses avec le Cybercab. On a vu le robotaxi effectuer ses premières courses réelles à Austin. Pour rassurer les sceptiques, les tests de "Moss stop" (un humain qui saute devant la voiture) montrent une réactivité bluffante. Bonus : un robot aspirateur est déjà prêt pour nettoyer les miettes entre deux rides.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F800965393_18012610967959228_7552079009934104062_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk4MTc4MDM0NTY3ODYwODIwMTE4MDEyNjEwOTYxOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3D-Odvi4F3a4wQ7kNvwHcut9o%26_nc_oc%3DAdqA4bf1um5_R1j13hNQv1BhSoTXw13Erx83KenRJOXpF36tj7ycm2RDV1_KDv61Br8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fra3-1.cdninstagram.com%26_nc_gid%3DWIoRunf30QdPDKTlIbU3hg%26_nc_ss%3D7a22e%26oh%3D00_AQKuTzIvtpMQZLgH8s4-wD1VmOynasJ-NJySAvNKf6bG2w%26oe%3D6AA815EE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 8393</span>
+                    </div>
+                    <p class="caption">A person suddenly steps into the path of Tesla’s Cybercab...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le Cybercab utilise ses caméras pour prédire les trajectoires piétonnes et piler en cas de risque de collision.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdCICDFzjdJ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg4-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F801181329_17922928119426313_5633069352196251608_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26ig_cache_key%3DMzk4MTg2NjQyMTczNzk0NTQ2MDE3OTIyOTI4MTEzNDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3De4VnCXR1hjEQ7kNvwE2QVnE%26_nc_oc%3DAdrHaqqF6vw8p6Q_vTT6Mo6AS7QJ4ly70aB1hhsbQQm-toQRzgZhv3puIjII_frnRvyO3DAty2zywUgJhsV6Yz9n%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg4-1.cdninstagram.com%26_nc_gid%3DBc4zVJvdP0kmOc98McnhQg%26_nc_ss%3D7a22e%26oh%3D00_AQK1R1z3vQ5TTtWNYP5QKoKoTBm03RsrHVpBPO4YTXE2Iw%26oe%3D6AA80FD6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 768</span>
+                    </div>
+                    <p class="caption">A Tesla Cybercab just pulled up to a hotel pickup like a normal rideshare...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le Robotaxi de Tesla a été filmé en train d'ouvrir ses portes papillon pour un client devant un hôtel.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdCbmnqvvl0/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F799868284_17922746961426313_6366746793762647551_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk4MTEzMDQ5MDU3NDI4OTQ2NzE3OTIyNzQ2OTU4NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DlXHL9PBgFa0Q7kNvwHjEtNb%26_nc_oc%3DAdr6txidK-dzIuutO8hrFv2l0wNiggnYTOLlrCSxmhC2x2GEcUXvZ7sC2QhYioFI9pU%26_nc_ad%3Dz-m%26_nc_cid%3D1753%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3Dxv2mRy19oS3CCg0EyyT4EA%26_nc_ss%3D7a22e%26oh%3D00_AQKtwZJziSuDMA18QmJ5rTk9iNtZ0ra3jyEXnekdNgR6JA%26oe%3D6AA80DEB" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 30482</span>
+                    </div>
+                    <p class="caption">Tesla showed a robot built to clean Cybercabs between rides...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Tesla a dévoilé un bras robotisé capable de nettoyer, passer l'aspirateur et désinfecter les écrans du Cybercab.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dc_0RaXKDo7/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F800034892_18085638326451620_3803221770511329563_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk4MTAyNTY4MjE0NjIyOTQyNA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3Dvv_BCjN1Th4Q7kNvwEJUmbu%26_nc_oc%3DAdpqdV-_VAmPVcyy2m64vT1f9ltB40TGcqPc3tlcuWa3qIDXe8OaFMXwArjLOnLMUPW1fq0s30eLzuPraH9NYWP1%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fra3-1.cdninstagram.com%26_nc_gid%3DKYO5hh-m4KLrJX7XukDj4A%26_nc_ss%3D7a22e%26oh%3D00_AQIc20Fc_CUhHLeUGoPZ8CUEEqJi6jswzcd6I0gCZM_LyA%26oe%3D6AA8003F" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@weexplore.tech</span>
+                        <span>❤️ 178</span>
+                    </div>
+                    <p class="caption">Tesla began offering paid public rides in its Cybercab robotaxi service...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le service de robotaxi payant a été lancé à Austin le 4 septembre dernier sans volant ni pédales.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dc_cj0TCDlG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Créas sous stéroïdes</h2>
+        <div class="trend-analysis">
+            <p>La barrière entre le réel et le généré s'effondre. <strong>Seedance 2.5</strong> (ByteDance) permet désormais de remplacer des décors entiers sans fond vert. On voit même des créateurs re-générer des matchs d'échecs historiques en scènes de guerre ultra-cinématiques avec Higgsfield. La 3D devient accessible en un prompt, et c'est terrifiant de réalisme.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra5-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F800780498_17975739096146282_3062997558400632026_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26ig_cache_key%3DMzk4MTczNjU1NDQ1ODAyNzY0MDE3OTc1NzM5MDkzMTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjYwOC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DRs6jsbAlPMYQ7kNvwGVpv45%26_nc_oc%3DAdrM2eCkdQykBg3ovoiNl-q3y_WnuABWp5G1M3jZAD-RC7D7-RVqjUF1IFbyLAX1Q2M%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fra5-1.cdninstagram.com%26_nc_gid%3DsqHPpf1saaNHnGim0WEsDA%26_nc_ss%3D7a22e%26oh%3D00_AQKpzyXC2r4EZJVU1GyMFtluucwgXsweBro2TxAXpR5OWQ%26oe%3D6AA81339" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 1264</span>
+                    </div>
+                    <p class="caption">No more Green Screens? replace your entire environment...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Seedance 2.5 permet de swapper tout l'environnement d'une vidéo filmée au smartphone sans outils de post-prod complexes.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdB-EzVqJZ4/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-yyz1-1.cdninstagram.com%2Fv%2Ft51.71878-15%2F800449770_1604376687728876_4094081635298252273_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk4MTM1NTYzMTAxNDYwODI2Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DZx2-obwBx6cQ7kNvwFgy6ku%26_nc_oc%3DAdqaUTfC6JTh7SYN-Dyr-f7DldV-x-u-uQvxbTm5czv6Dbt1UBKdqiV6CXoWGdLZSeE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-yyz1-1.cdninstagram.com%26_nc_gid%3DXqzyFM_YzViA0LTDpNhVbw%26_nc_ss%3D7a22e%26oh%3D00_AQJzveva4m3rCgrfCarLlIGzAW_nuuopTKnUkJqPfn9Blw%26oe%3D6AA82284" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 754</span>
+                    </div>
+                    <p class="caption">A chess game played 175 years ago just became a war film...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Higgsfield a transformé les coups d'une célèbre partie d'échecs de 1851 en un champ de bataille cinématographique.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdAndovIH2L/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fyyc2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F801044779_17922907668426313_1719623738883963432_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk4MTc5NDgwMjMyNDI3MDU2NzE3OTIyOTA3NjYyNDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DrxYrY2EImxUQ7kNvwH7-pcL%26_nc_oc%3DAdpE40DG--I-W-_fDAcT8LJw2p5yC01Y8v190m-Kb1cFItADg4PRAPnBx-U68gLT73XeDgUqRIWGSJ0Emew6r4Fw%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fyyc2-1.fna%26_nc_gid%3D_LR89eBZp5SYmdsN6EZzpg%26_nc_ss%3D7a22e%26oh%3D00_AQLlJW0XLO-WI4LKLggkJ8IIetmro89KLgt969uEROnWbA%26oe%3D6AA81890" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 6983</span>
+                    </div>
+                    <p class="caption">GPT-6 Astra + Seedance 2.5 looks uncomfortably close to real phone footage...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le combo Astra + Seedance 2.5 produit des vidéos de type "smartphone" au réalisme troublant.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdCLUa5CO3n/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fvlc7-1.fna.fbcdn.net%2Fv%2Ft51.71878-15%2F801555779_1088428624116222_3300049941232687932_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk4MjQ2MTg4MzMzOTc5Nzg5NQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3Dj47TgXFLapAQ7kNvwERD57p%26_nc_oc%3DAdoUMqw7jthf5BP6C8EcupM5Jc30QJTJ4g8mlZajAQlsfrR5c-DMuiZgCtUoTn7xNlo%26_nc_ad%3Dz-m%26_nc_cid%3D3033%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fvlc7-1.fna%26_nc_gid%3DrzEJqZ02DC7OMUV17VmJDg%26_nc_ss%3D7a22e%26oh%3D00_AQIMMKHfqlWjKz-ojuMSlNN16uXAlZ7ClExKKcy69DAcpw%26oe%3D6AA7FEE3" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 8213</span>
+                    </div>
+                    <p class="caption">This is what Dragon Ball Super could have looked like in the 90s...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'IA a été utilisée pour recréer Dragon Ball Super avec le grain et le style exact des années 90 (DBZ).
+                    </div>
+                    <a href="https://www.instagram.com/p/DdEi_ugAHWH/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Apple : Pliable & Privé</h2>
+        <div class="trend-analysis">
+            <p>La conférence "Surprise and Shine" approche, et les fuites pleuvent. Entre un iPhone 17 qui flambe en prix et l'annonce probable d'un <strong>iPhone Duo</strong> (le premier pliable d'Apple), la marque à la pomme veut reprendre le leadership. Côté infrastructure, des photos des serveurs "Private Cloud Compute" révèlent une architecture massive basée sur des puces M5.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbri2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F801963049_18068545088764888_4275812833469419609_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26ig_cache_key%3DMzk4MjYyNTk0NjQ1MjgzMDc1Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DRDR-j_uEgbUQ7kNvwF0m5D7%26_nc_oc%3DAdoM6vqH-J5As854ijHBgPLaYmbaxg8Ya2jhtH_QgACJSa0nEGBWXbe8i5bsD6o8YrI%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbri2-1.fna%26_nc_gid%3D3Qfyi3vzjAfttdQdEwdWJw%26_nc_ss%3D7a22e%26oh%3D00_AQJ57cCRmwKXZnxuTjB25-rtT1uy6kVurIYDGU-a-3jNAQ%26oe%3D6AA82C48" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@appinventiv4ai</span>
+                        <span>❤️ 27</span>
+                    </div>
+                    <p class="caption">Apple has officially entered the foldable smartphone race with the iPhone Duo...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le "iPhone Duo" serait le premier iPhone pliable avec un écran interne de 7,6 pouces et une puce A20 Pro.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdFIZSBE-C2/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmad6-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F800934787_17973534678130808_4158616812582972366_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D108%26ig_cache_key%3DMzk4MTU1MTQ1NjAyMTk4NzYzMA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DZmKjyUojigcQ7kNvwHzOzkJ%26_nc_oc%3DAdqja3lI3nYVgkBsW8ncq_7iTjydW2CIFFheD-CgVSWVRpka_ShCdBLrcJQup9ZMAxw%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmad6-1.fna%26_nc_gid%3DSf-Gs9OO0tMlJUig_Bs95w%26_nc_ss%3D7a22e%26oh%3D00_AQL_gOVPCC_MbTeDAAxUYNgmgaUYby0HdExW3qdopvpK4Q%26oe%3D6AA8291B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 550</span>
+                    </div>
+                    <p class="caption">Photos of what looks like Apple's Private Cloud Compute server just surfaced...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Apple utilise des serveurs "maison" avec 32 puces M5 par unité pour gérer son IA en toute confidentialité.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdBUAPno0Tw/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F801580921_18068495225764888_7638764150890729090_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DMzk4MjQ0MjAxMzg4MTY2OTY1NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DJ9LwE9rZOAMQ7kNvwHWprfY%26_nc_oc%3DAdo2zCOp9SkyMELjUjwywdfx6re3TKWyFm3fAn7mxYEuOlep61B05o8VFW9fVsdYw5w%26_nc_ad%3Dz-m%26_nc_cid%3D1753%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3DY_oh_P8EA40TUzgdXF49BQ%26_nc_ss%3D7a22e%26oh%3D00_AQLrMleuZs4LKadvd5jW9BAMQtqthOTl8tpaOOjt9utglw%26oe%3D6AA80457" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@appinventiv4ai</span>
+                        <span>❤️ 111</span>
+                    </div>
+                    <p class="caption">Apple’s “Surprise and Shine” event is happening tonight...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'événement de ce soir est crucial pour la stratégie IA d'Apple et le renouvellement de son hardware.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdEejRZmVoH/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
