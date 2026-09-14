@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 14 septembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Cerveau de mouche :</strong> Google a mappé les 166 000 neurones du système nerveux d'une mouche mâle. Résultat ? Les gens l'utilisent déjà pour simuler des mouches jouant à <em>Minecraft</em> et <em>Overwatch</em>.</li>
+            <li><strong>Astra prend le contrôle :</strong> GPT-6 Astra ne se contente plus de parler, il agit directement dans After Effects et DaVinci Resolve pour créer des calques et faire du tracking.</li>
+            <li><strong>Panique au sommet :</strong> Les patrons d'OpenAI et Anthropic préviennent d'un risque d'extinction humaine de 10% d'ici 10 ans. Trump, lui, refuse de ralentir le développement pour rester devant la Chine.</li>
+            <li><strong>Atrophie Cognitive :</strong> Goldman Sachs s'inquiète officiellement : à force de tout déléguer à l'IA, ses banquiers perdent leur capacité de raisonnement critique.</li>
+            <li><strong>Yémen & Claude :</strong> Anthropic révèle que des cellules d'armement au Yémen ont utilisé Claude pour des programmes de missiles balistiques.</li>
+            <li><strong>iPhone Duo & Huawei :</strong> Huawei lance son téléphone tri-plié, tandis qu'Apple se fait lourdement troller par Samsung et Duolingo sur son retard dans les pliables.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">La mouche qui valait des milliards</h2>
+        <div class="trend-analysis">
+            <p>Google vient de publier le "Connectome" complet d'une mouche des fruits. C'est le Graal de la neuroscience (166k neurones, 125M de synapses). Mais comme on est en 2026, l'Internet s'est immédiatement emparé de la data pour entraîner des simulations de mouches à jouer à <em>Overwatch</em> et <em>Minecraft</em>. Entre science fondamentale et gaming absurde, la frontière n'a jamais été aussi fine.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fwaw3-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F807868416_17923643277426313_3659185915728681755_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26ig_cache_key%3DMzk4NDYxNzM3MTAyMDIxMzc0Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3D1Ks2Pgwcab0Q7kNvwF-r2WU%26_nc_oc%3DAdquWusH8cRvkxkb_Cj94_7x5TjP3mObOD43TReW4VcDbdctPrp-6FHUXF4t79R3etY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fwaw3-1.fna%26_nc_gid%3D-_lIkCkwpA7-avMQ6TaqIA%26_nc_ss%3D7a22e%26oh%3D00_AQIi1sIGNiUBK2EoHIsrkicslaoqImfOwKQct179bA5N8g%26oe%3D6AAD69DD" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 16667</span></div>
+                    <p class="caption">Google helped map the complete brain and central nervous system of an adult male fruit fly...</p>
+                    <div class="insight"><strong>💡 News :</strong> Mapping complet du cerveau d'une mouche pour des simulations de jeux.</div>
+                    <a href="https://www.instagram.com/p/DdMbGFijHJr/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fgdl10-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F805119428_17998273802991209_1278993181645707184_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26ig_cache_key%3DMzk4Mzc4MDM3NjM2OTg2MDQ0NjE3OTk4MjczTzk2OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DRVANi_ycno4Q7kNvwEW4iz9%26_nc_oc%3DAdo4mgIVj_x-97NsqaHR6McEAepGb_nxT2jnhiyEo_MFbXy27Yc0k30XlILMJ_Yx7PU%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fgdl10-1.fna%26_nc_gid%3Dp_qsKQpPlKH-BiZq88lAFA%26_nc_ss%3D7a22e%26oh%3D00_AQK44OLb6ISf5NAUwsvS9LuvYEtug8txKIT-axRdLLStKA%26oe%3D6AAD4FC5" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 188</span></div>
+                    <p class="caption">Des scientifiques de Google ont publié la première carte complète du système nerveux central...</p>
+                    <div class="insight"><strong>💡 News :</strong> Données rendues publiques pour l'expérimentation tech.</div>
+                    <a href="https://www.instagram.com/p/DdJOyU0so9e/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fblq4-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F808285070_18013289102959228_4963300649974971650_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk4NTE3MzY2MzU5ODA3MjU4OTE4MDEzMjg5MDk2OTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DCnLfDsI2mCgQ7kNvwEAeqxZ%26_nc_oc%3DAdrV_Eo0poPVGmgxXV1OxSOawEF6RYaqJMq_OtPqfzgsxlLY4Klw9QqYhqga_mZGOZM%26_nc_ad%3Dz-m%26_nc_cid%3D1093%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fblq4-1.fna%26_nc_gid%3DAvQ4uN61jEpiCA9oRM53_Q%26_nc_ss%3D7a22e%26oh%3D00_AQLB8M60oiWZbSibDlU8K2pkInW_XLuxicdGx_SJXO7o2w%26oe%3D6AAD532E" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 11759</span></div>
+                    <p class="caption">Flylock is a demo built on a whole-brain simulation of the fruit fly. Trained to play Overwatch.</p>
+                    <div class="insight"><strong>💡 News :</strong> Démonstration d'une IA "biologique" virtuelle jouant à un FPS.</div>
+                    <a href="https://www.instagram.com/p/DdOLlUrAVMN/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Adieu les clics, bonjour Astra</h2>
+        <div class="trend-analysis">
+            <p>Le modèle Astra de GPT-6 ne se contente plus de vous dire comment faire : il prend les manettes. Plugins After Effects, DaVinci Resolve... l'IA manipule désormais directement les calques, les expressions et le color grading. Pour un créatif, c'est comme avoir un monteur senior qui exécute vos ordres en langage naturel, tout en laissant les fichiers 100% éditables. Le futur de la prod est là.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmad24-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F808462210_17923698312426313_3430142458357389528_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk4NDc5MjI2MDE2ODMyNjQ2Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DU4w6ig6yw6AQ7kNvwHiPjOj%26_nc_oc%3DAdqwIalIfseLSWEyhGjrr-Gr6iHKPlLXQ6RNO1qZWCl1aWOEsSJKVksk-L9k_6G_6cU%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmad24-1.fna%26_nc_gid%3DvA1ISd0M2jjvh2VdbnRjNw%26_nc_ss%3D7a22e%26oh%3D00_AQLvTbpYgWEe_sNUd7gM9idvFaOq6-1fqZVD6eqLtP1Vyw%26oe%3D6AAD6417" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 2334</span></div>
+                    <p class="caption">GPT-6 Astra can now work directly inside After Effects instead of just telling you what to do...</p>
+                    <div class="insight"><strong>💡 News :</strong> Intégration directe de l'IA dans la timeline Adobe.</div>
+                    <a href="https://www.instagram.com/p/DdM1QrHD_FM/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F806514573_17976313776146282_2076459469359100962_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26ig_cache_key%3DMzk4NDczNDc3NTUzMDkxMDIxNDE3OTc2MzEzNzcwMTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DBw-Q5Ibu5VcQ7kNvwHY0Dz8%26_nc_oc%3DAdry_uQGb1z3scXuIjZTHkGVAg2yeI_QgCu5wpU50AX4Alc2oe8rRZ2thI3vSqcpjz8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DU2JJhiLx0LcP5_CmKYCSjA%26_nc_ss%3D7a22e%26oh%3D00_AQIOioONs2Re5m5YbpU7O7TTGjTEOZVhQ2Yis0vIf7lfiQ%26oe%3D6AAD67C4" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@rourke</span><span>❤️ 3578</span></div>
+                    <p class="caption">ChatGPT can now colour grade your videos inside Davinci 😳🔥</p>
+                    <div class="insight"><strong>💡 News :</strong> Contrôle des nodes de DaVinci Resolve via texte.</div>
+                    <a href="https://www.instagram.com/p/DdMnyqTqnIG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcgh39-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F808883313_17976441402146282_7192053589249445473_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk4NTMzNDA3MzcyNTQyMzg1MDE3OTc2NDQxMzk2MTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DCat46xED-skQ7kNvwFlSCcS%26_nc_oc%3DAdoohl0xrx4ncWxt6J4Sx_uikLJPxSPc7VlglyMdm3YQFt9SymyvoHOcau22Py-oF4kO7qcT_f1K_EGyEytBGHvc%26_nc_ad%3Dz-m%26_nc_cid%3D1138%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcgh39-1.fna%26_nc_gid%3Dkmd2mmIHOzYV-0G_lrs-kA%26_nc_ss%3D7a22e%26oh%3D00_AQJ2jlujXf8GCmrhOGOrnxaJVgmPuS6OOZncp42xI6T-dw%26oe%3D6AAD69D2" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@rourke</span><span>❤️ 3441</span></div>
+                    <p class="caption">AI can do screen replacements for you 🔥</p>
+                    <div class="insight"><strong>💡 News :</strong> Remplacement d'écran automatique avec masquage complexe.</div>
+                    <a href="https://www.instagram.com/p/DdOwDmPqhDq/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">"10% de chances qu'on y passe"</h2>
+        <div class="trend-analysis">
+            <p>Ambiance électrique chez les géants de l'IA. Geoffrey Hinton et Dario Amodei (Anthropic) lâchent des chiffres qui font froid dans le dos sur les risques existentiels. Mais en face, la Realpolitik reprend le dessus : Donald Trump rejette officiellement toute pause dans le développement, invoquant la menace chinoise. On continue d'accélérer, même si le mur se rapproche.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F808883283_18013356083959228_5039485436693944507_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26ig_cache_key%3DMzk4NTQ1OTg1NTIzNzM0Nzg3Ng%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMiJ9%26_nc_ohc%3DPNOxRFNimcgQ7kNvwH2EUE3%26_nc_oc%3DAdra109qeGNUKBbb8C7m9Av7MvGYSI9upTU5Ofx9DEZ91jUeCYLaGMw13YVCxcyfWB4%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-2.cdninstagram.com%26_nc_gid%3DrNtV7bm1yTg-gOszDGRZYQ%26_nc_ss%3D7a22e%26oh%3D00_AQKInYZDhQCfGal_dthHuHmaAo8-57xmW3hKn3yfmpCPRw%26oe%3D6AAD485A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 11162</span></div>
+                    <p class="caption">President Trump has now officially rejected calls to slow the development of frontier AI.</p>
+                    <div class="insight"><strong>💡 News :</strong> Refus de régulation stricte aux USA pour la course à l'IA.</div>
+                    <a href="https://www.instagram.com/p/DdPMqIYAMUa/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmel14-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F802242828_17910331587467870_6215253527779378144_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DMzk4Mjk4Mzc4Nzk3NzczNjkzMQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DKulseH_OZV0Q7kNvwG2oHnc%26_nc_oc%3DAdovC5v1VJGqDiwDyv0WMx3I2XicDjB1Q2AF4YftomTdMRI5QmkI6SIzTEeoZ2x-X2k%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmel14-1.fna%26_nc_gid%3DpbPk3nRLqfGuW3iOXWB_GQ%26_nc_ss%3D7a22e%26oh%3D00_AQIgkQ7W40O7ym3KVhhsgsTX9daJiHHZzza34ZG77XvSvQ%26oe%3D6AAD69A2" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@girsta</span><span>❤️ 40</span></div>
+                    <p class="caption">Geoffrey Hinton: a 10 percent chance of AI killing all humans within a decade.</p>
+                    <div class="insight"><strong>💡 News :</strong> Alerte rouge du "Père de l'IA" sur la survie de l'humanité.</div>
+                    <a href="https://www.instagram.com/p/DdGZvX3jUmF/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fsvq6-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F807577898_17998452338991209_1349439558586154399_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DMzk4NDY3ODcyNDg3NDI3ODk5MA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DIlnwr0S_ZtoQ7kNvwEtA144%26_nc_oc%3DAdp9RCs9lKX9jygJoXofRdnbVHTZhzL6Mw65FPcVBvVuIyvOFkq8hdkfDqM8x-Jteq9V-ji-zJeHvFJvwzBMjpgw%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fsvq6-1.fna%26_nc_gid%3DMwh6i5AsJ11FeIyFm2EZhA%26_nc_ss%3D7a22e%26oh%3D00_AQKzkj3xYQP2Yh-ShlvMqrXzXxJKfVZSuhKxVQXYES0nsQ%26oe%3D6AAD6743" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 597</span></div>
+                    <p class="caption">Un chercheur quitte Anthropic en accusant les labos de jouer avec nos vies...</p>
+                    <div class="insight"><strong>💡 News :</strong> Démission fracassante pour dénoncer le manque de sécurité.</div>
+                    <a href="https://www.instagram.com/p/DdMbGFijHJr/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Salsa et kick dans les valseuses</h2>
+        <div class="trend-analysis">
+            <p>Côté robotique, on ne s'ennuie pas. Entre les humanoïdes de Figure qui font leur jogging en solo et le robot MIGO qui danse la salsa avec une fluidité déroutante en Colombie, la frontière avec le vivant s'estompe. Mais la réalité nous rattrape : un ingénieur chinois s'est fait botter les fesses (littéralement) par son propre robot en plein test. Karma numérique ?</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F808929623_17923882881426313_4045477604864389681_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D104%26ig_cache_key%3DMzk4NTQ3OTQwOTc3MTEzNzE1MzE3OTIzODgyODc1NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D7vDaDXeTqwgQ7kNvwHsRIjz%26_nc_oc%3DAdpulR1NMKDBrv7ffE-DOX7Xu5cShiAN3CVn7dO9QItEkCdBzbU0fUURVIQDZpmzQ6M%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3Db1d1H8DqGMrhnTErjAbtMQ%26_nc_ss%3D7a22e%26oh%3D00_AQLxpW47EvORMLdp_Z-q4Of6Q_02lePN2nBUOV8UHAKeSw%26oe%3D6AAD62A4" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 778</span></div>
+                    <p class="caption">A humanoid robot named MIGO was filmed dancing with a woman in Cartagena.</p>
+                    <div class="insight"><strong>💡 News :</strong> Fluidité incroyable des mouvements de hanches chez un humanoïde.</div>
+                    <a href="https://www.instagram.com/p/DdPRGg_CsiB/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lga3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F808929620_17923865919426313_8097248260432420253_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk4NTQxNDkxNDgzMDc5MDM2OTE3OTIzODY1OTE2NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3D-wOdXHSCa7QQ7kNvwE6VyWh%26_nc_oc%3DAdrM62N9yv8N0RrupJcGovry1e_1Eiz17m3kkBWFqqE7Geyv0SNBubDCTfYoCmawHzn4z2wHqHR2FG_Uuc5JwJLy%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-lga3-2.cdninstagram.com%26_nc_gid%3DaKRHDoTX1JO4HHYkbE6aXA%26_nc_ss%3D7a22e%26oh%3D00_AQKdCToxxqcm5reRc72kg3qC7OjVRLYBloXd9OtaairmZQ%26oe%3D6AAD6FB1" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ -1</span></div>
+                    <p class="caption">A robot in China just kicked the remote out of an engineer’s hand during a test.</p>
+                    <div class="insight"><strong>💡 News :</strong> Réaction imprévue (et violente) d'un robot contre son créateur.</div>
+                    <a href="https://www.instagram.com/p/DdPCb_ZCG7h/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dus1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F803635264_17973863865130808_627583954110386590_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ig_cache_key%3DMzk4MzI0OTQyNDAzMDg1MTQyOA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DGITTsDmz-2kQ7kNvwF5HPvi%26_nc_oc%3DAdotFGA80BnVAYaKSWeFYFXkschjufhXwjM_0Rk--dZgDy5sfDIX21B2eKMz19NhyCg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dus1-1.cdninstagram.com%26_nc_gid%3Dk8dOXSxg0C_ulyZjsN25Uw%26_nc_ss%3D7a22e%26oh%3D00_AQIpM6dUAOvcEbEZ1P0kNhTHfLyyfnqz_w-OlzSAuS-dIQ%26oe%3D6AAD4E85" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 2882</span></div>
+                    <p class="caption">Figure's humanoid robots are now walking around their own headquarters on their own.</p>
+                    <div class="insight"><strong>💡 News :</strong> Déploiement autonome des robots dans les bureaux de l'entreprise.</div>
+                    <a href="https://www.instagram.com/p/DdHsvLjI3_I/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le cerveau en mode avion</h2>
+        <div class="trend-analysis">
+            <p>On délègue tout, et ça commence à se voir. Goldman Sachs lance l'alerte sur l'atrophie cognitive : ses analystes juniors ne savent plus réfléchir sans GPT. Et le danger est aussi chez vous : les scams à la voix clonée sont devenus terrifiants de réalisme. Un homme a reçu un appel de sa "femme" demandant sa carte bleue alors qu'elle dormait juste à côté. Le clonage vocal n'est plus une option, c'est une arme de pointe.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmxp13-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F808906038_17998593521991209_4494790591142060386_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk4NTM4MDM5MDIyNTUwNzE3Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DNFc_UbJIzucQ7kNvwEbA1ey%26_nc_oc%3DAdrsF_bXW_VAuyCXE0fd4Q8qLD1yUT7Yn0xLxE3ZNw5Mj4Ekmik-e6w-_QyhaVPqhQoA0M0WrnVIkdBHJADowRa1%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmxp13-1.fna%26_nc_gid%3DmxO56vlB_9Rs3IYsV83MSA%26_nc_ss%3D7a22e%26oh%3D00_AQKboDxMG13ecIACBltUEWITuw4NiPsx2mc4xAIpZJrnHg%26oe%3D6AAD4C14" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 77</span></div>
+                    <p class="caption">Goldman Sachs le dit à voix haute : ses banquiers risquent l'atrophie cognitive.</p>
+                    <div class="insight"><strong>💡 News :</strong> La perte de compétences critiques due à la dépendance aux LLM.</div>
+                    <a href="https://www.instagram.com/p/DdO6p8yjOHG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra5-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F807577905_18013145717959228_6345894047144427252_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk4NDUzMjY0MDc2MDg3OTk1MA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DmmVoz2H10ioQ7kNvwGZUgOS%26_nc_oc%3DAdqw4QZYu2eTQ_yQwxoCH22TBQmTn7IyQYTu-alS48-mfzLXRnC8Bwncn1NbSGAYspr9gCZeZ09s25vGZuvlvKJM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fra5-1.cdninstagram.com%26_nc_gid%3DUZuZi9uy9NbXyoOuSQV6Cw%26_nc_ss%3D7a22e%26oh%3D00_AQJALq6czg12Jn-XiynX7lLli1z0vgbQNOyZOtjq2rPScg%26oe%3D6AAD6AD6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 14000</span></div>
+                    <p class="caption">A man says he got a call from his wife asking for his credit card... except she was sitting right next to him.</p>
+                    <div class="insight"><strong>💡 News :</strong> Les arnaques par clonage vocal atteignent un niveau de réalisme parfait.</div>
+                    <a href="https://www.instagram.com/p/DdL51b9ALJ-/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fntr11-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F802596445_17998134080991209_8073800832434299102_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk4MzAyMTU4MjQwODk2MjI5NTE3OTk4MTM0MDc3OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DIMWYohPThHIQ7kNvwHSFgTt%26_nc_oc%3DAdqwSJhpO4rFWU8IaVXOtpXz8O9x3ayQvodokQ7Fndn4MpVLl4ZKsCvZaLYDP7wlAwvwiRC4foORI5e6N1I7EQJy%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fntr11-1.fna%26_nc_gid%3Du-L8iguuFfnpJevEtJ6jCQ%26_nc_ss%3D7a22e%26oh%3D00_AQKrDEo6JoQHbbyNZnw86kr7N5CWmTZSVOoaknLDnpPoHw%26oe%3D6AAD6990" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 178</span></div>
+                    <p class="caption">18% des Américains de 18 à 29 ans disent avoir une amitié suivie avec un chatbot.</p>
+                    <div class="insight"><strong>💡 News :</strong> La montée de la solitude compensée par les compagnons IA.</div>
+                    <a href="https://www.instagram.com/p/DdGiQa4M1D3/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
