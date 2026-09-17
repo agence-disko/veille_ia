@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 17 septembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Dario Amodei (Anthropic)</strong> appelle à ralentir le développement des modèles frontières, soutenu par Altman et Musk, mais rejeté par Zuckerberg.</li>
+            <li><strong>GPT-6 Astra</strong> fait ses preuves sur Minecraft (141h de jeu non-stop) et démontre des capacités de navigation web autonomes.</li>
+            <li><strong>LG</strong> dans la tourmente : une enquête révèle que ses Smart TV scannent le réseau local et transmettent des données de conversation.</li>
+            <li><strong>Meta One</strong> arrive : un abonnement payant pour Instagram/WhatsApp offrant plus de fonctions de génération d'images et vidéos.</li>
+            <li><strong>iOS 27</strong> (oui, les sauts temporels sont réels) déploie des fonctions de retouche photo "Reframe" et "Clean Up" basées sur l'IA.</li>
+            <li><strong>Beeble</strong> passe au 4K : le relighting vidéo par IA devient une option sérieuse pour la post-production professionnelle.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le frein ou l'accélérateur ?</h2>
+        <div class="trend-analysis">
+            <p>La Silicon Valley se déchire sur la vitesse de croisière. Dario Amodei d'Anthropic a publié un plaidoyer pour ralentir la course aux modèles géants, craignant une "auto-amélioration récursive" hors de contrôle. Si Sam Altman et Elon Musk ont validé, Mark Zuckerberg et Donald Trump disent non : hors de question de laisser la Chine gagner la course au prétexte de la sécurité. C’est la fin du consensus mou sur la régulation.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fgdl3-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F811561995_17974520847130808_3852230447468940826_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D108%26ig_cache_key%3DMzk4NjUxMTY4NzA0MjkzMzQyOA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzI3Ny5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Dm5k4D5-nSowQ7kNvwFtjjD1%26_nc_ohc%3Dm5k4D5-nSowQ7kNvwFtjjD1%26_nc_oc%3DAdqWNOnrkYRPBYhSGx3M5IblqlVZAMMuRKgrYYaCXFTWfemON1IBWnPZg3FqqpSvOcU%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fgdl3-1.fna%26_nc_gid%3DVOtjloHWyMDX0TmpKW7Kxg%26_nc_ss%3D7a22e%26oh%3D00_AQKJNzIYrFYQU2kk1Q94V3MUdEewJZlniSfkUz4Eu_ko4g%26oe%3D6AB15777" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 509</span>
+                    </div>
+                    <p class="caption">China just made Dario Amodei's safety essay into a foreign policy fight...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'appel à la sécurité d'Anthropic devient un enjeu géopolitique majeur.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdS70dHo292/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.flhr2-3.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F813582852_17974734750130808_8301241382015521274_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26ig_cache_key%3DMzk4NzU4OTIzMjA4NTU1MzkyNg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DjX7GyuyjxHQQ7kNvwHo58g7%26_nc_oc%3DAdrzdDCmkIlZe6DrIOcppFUoV20PQ-EhDDw-qC7gmtnVkd2MO5xOxKcD3VzuD-v-Fv5LP_fWaes5jYZCWDxN3eeQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.flhr2-3.fna%26_nc_gid%3DV1uHLdrAl6oIr7xWfcO47w%26_nc_ss%3D7a22e%26oh%3D00_AQI0VML_SEeifJu-0Yetv6_IWx7fzsODunpZ8yfF1qzDlw%26oe%3D6AB14BBC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">France just accused America's top AI companies of trying to pull the ladder up behind them...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        La France voit dans les appels au ralentissement US une stratégie pour bloquer la concurrence européenne.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdWw0eIodMG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F811303988_18013562675959228_7429245672474915006_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26ig_cache_key%3DMzk4NjUzOTg1MDg4NjEyMDkzNjE4MDEzNTYyNjcyOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3D3oWmHuyh9GMQ7kNvwGoqwUh%26_nc_oc%3DAdrdFpBvdD1h_2hFpNr7z-ZHlb3j2PVwhPOVUE-9WYhiEaBNJ7_z4QlJWl1hYla2oow%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3D18fvhhEAw3Z4cgpl4sWyEQ%26_nc_ss%3D7a22e%26oh%3D00_AQKdboTm0ewXuM0CXpVkswBrZ1yIFmLekY_p6jgNxUfEog%26oe%3D6AB14883" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 10509</span>
+                    </div>
+                    <p class="caption">President Trump surprised NVIDIA CEO Jensen Huang with a phone call while Huang was on stage...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Trump rassure Jensen Huang (Nvidia) : il ne croit pas au scénario "les robots prennent le pouvoir".
+                    </div>
+                    <a href="https://www.instagram.com/p/DdTCN9vAYXo/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbcn7-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F810319627_18013606856959228_5997167136989552349_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk4Njc2NTc5NTM5MTc1NDE1NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DCtaoA-CdxZoQ7kNvwHjDjAV%26_nc_oc%3DAdo7iEQJxVJphkIuSR2ItGecDLhmA3xdHJFcCir3y097lL10s7DnS4RHZ6SAy4YoC2s%26_nc_ad%3Dz-m%26_nc_cid%3D1022%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbcn7-2.fna%26_nc_gid%3DnzTNJkarmitiSh3VTs9ZVg%26_nc_ss%3D7a22e%26oh%3D00_AQKwmUDatZHw8MFQkXjOvXVKw9gBkVkrKrnU52xUaIOjYQ%26oe%3D6AB14614" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 5124</span>
+                    </div>
+                    <p class="caption">Michael Burry is calling out some of the biggest names in AI...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le célèbre investisseur du "Big Short" accuse les géants de l'IA de prôner le ralentissement par intérêt commercial.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdT1mBHAGoI/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Astra aux manettes</h2>
+        <div class="trend-analysis">
+            <p>Le nouveau modèle GPT-6 Astra d'OpenAI ne se contente pas de discuter, il agit. On l'a vu jouer à Minecraft pendant 141 heures, construisant des fermes complexes sans aucune aide externe, utilisant simplement l'écran et la souris comme un humain. Plus impressionnant encore : sa capacité "Computer Use" lui permet de naviguer sur des sites web en temps réel pour accomplir des tâches. Certains testeurs parlent déjà de premier signe d'AGI (Intelligence Artificielle Générale).</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F812781992_17974734564130808_6812747511829055255_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DMzk4NzU4ODg1MzMwNjQzODA4Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3De2vEeN5qbuUQ7kNvwES6V25%26_nc_oc%3DAdqWy6bLrXP4ybexNHXCMiRYlnXKaWgfU4633FUv6xwNsMF9oFUSE5yir7uV8JNYSP4%26_nc_ad%3Dz-m%26_nc_cid%3D1479%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-2.cdninstagram.com%26_nc_gid%3DdlzB4gnEpOC9ybr7lLCgqg%26_nc_ss%3D7a22e%26oh%3D00_AQKrxz04byQw2f1b7qzLmZ9aIqiBmKysbOHqZ56Bg_bbCA%26oe%3D6AB156AE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 273</span>
+                    </div>
+                    <p class="caption">OpenAI's newest model got further in Minecraft than any AI ever has...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'IA gère l'inventaire et les mécaniques de jeu complexes en totale autonomie.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdXM5nWo3pP/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-itm1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F810051814_17910896490467870_3692988165952795472_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ig_cache_key%3DMzk4NTk0NDU5NjgwOTQwOTYwODE3OTEwODk2NDg0NDY3ODcw.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjg1Ny5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DCXSn5pakbpgQ7kNvwFupBDB%26_nc_oc%3DAdqJUIctdoCtcKQ8RPXR8hFPpbMIc6SAdDzbuAYNSXsxZzeVRvHNxRUGqCQCTGJYCX-qXuRDQlXj3WkxNft4vH7t%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-itm1-1.cdninstagram.com%26_nc_gid%3DuhbeW5dDlfxKsbLmAUsFeQ%26_nc_ss%3D7a22e%26oh%3D00_AQIwMk2-RmWgSZW1_q6c4W7fyttcVniG2urkYLbTkbyJfw%26oe%3D6AB15B17" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@girsta</span>
+                        <span>❤️ 155</span>
+                    </div>
+                    <p class="caption">A user testing OpenAI’s newest model, GPT-6 Astra, posted that it qualifies as AGI...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le mode "Computer-use" permet à l'IA de naviguer physiquement sur le web pour l'utilisateur.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdQ634LNmRI/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-phx1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F812903583_18013774610959228_6777160292414030425_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DMzk4NzUzOTQxMDQ4MDc0MDU5MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D2DTJw4rdkX4Q7kNvwH7iFSV%26_nc_oc%3DAdp0w4VfnsGfaXHGhu_LpbYmQYmWABv0x4gInvzT2wHO2Jm-D2KM3wh13JOpp0H1BSSW52uw8QH7gW0d6bBaS3vc%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-phx1-1.cdninstagram.com%26_nc_gid%3D0PCMaWgbjHUdyvmpkx-PxA%26_nc_ss%3D7a22e%26oh%3D00_AQIkLpc2rVgwyFuPZtF-uCedtZZSOWIccfoX0WQKBXxnNA%26oe%3D6AB14752" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 19815</span>
+                    </div>
+                    <p class="caption">GPT-6 Astra just had one of the most human AI moments yet in Minecraft...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Preuve de persévérance : l'IA a farmé des ressources pendant 14h pour atteindre ses objectifs.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdWliSVALUA/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Espionnage de salon</h2>
+        <div class="trend-analysis">
+            <p>La privacy en prend un coup. LG a discrètement changé la formulation de ses conditions d'utilisation : de "ne pas stocker", on est passé à "ne pas transmettre", avouant à demi-mot que les Smart TV captent les conversations ambiantes. Meta n'est pas en reste, "brickant" à distance les caméras des lunettes Ray-Ban Meta dont les utilisateurs avaient désactivé la LED de sécurité. Bref, si vous pensiez être seul, c'est raté.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mrs2-3.cdninstagram.com%2Fv%2Ft51.82787-15%2F796139902_17974734393130808_6932828540155033254_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DMzk4NzU4ODQwODI3NDA1MDU3Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DcOlNkHeXWUQQ7kNvwGvRJ0M%26_nc_oc%3DAdry_wWbSrvEt02Ep7rkWQHOOr63Ai9Y1ld1mB_RNxmzzkJnL6Xzt0CvdvvTyarjKcIctw99xsAwOQ4ERszLOTuP%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mrs2-3.cdninstagram.com%26_nc_gid%3Dw1txhnA3lvwxQCar6nwPvQ%26_nc_ss%3D7a22e%26oh%3D00_AQIB_-7qtZLc4hqXh0eSP8_8KT7qXIfwaN4IT5s42HBn2Q%26oe%3D6AB14D13" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 1328</span>
+                    </div>
+                    <p class="caption">LG changed one word between statements. Store became transmit...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Un simple changement sémantique qui masque une collecte massive de données vocales.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdW04spo34u/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lga3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F810931217_17974716567130808_2043332046027217970_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D109%26ig_cache_key%3DMzk4NzUyMTM0MjkwNDgyNjQwNQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DuqZZk0CsZ1MQ7kNvwGNOEzC%26_nc_oc%3DAdoVtSvQGbN8oCkLdWQbRRBDkSPQ1mwBMrYSAFp0159dtSRyQn_Vw5BFd473jseg7rs%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-lga3-1.cdninstagram.com%26_nc_gid%3DL-FKcQpIfc4l40SeJOSjLA%26_nc_ss%3D7a22e%26oh%3D00_AQLE7ANowhRnWKVfitHl-uqP2-B2aiT8Za7m31WLRf-LsQ%26oe%3D6AB153F6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 1596</span>
+                    </div>
+                    <p class="caption">Meta just bricked the cameras on thousands of its own smart glasses...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Sanction immédiate de Meta contre ceux qui contournent la LED de vie privée.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdWhYjaIXol/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.flyn1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F811711038_17924233128426313_5978355370340475784_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26ig_cache_key%3DMzk4Njc5MDY2MzQyMjgxNDcwNjE3OTI0MjMzMTIyNDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DRFB3n7bzkSsQ7kNvwEVGHVd%26_nc_oc%3DAdoaGg3-IhRBvZIWk9W_77ZkLgv6Dme8KR-KP_gcjeYUH8xMI4h_g9l0iJpHW9mmTtg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.flyn1-1.fna%26_nc_gid%3D_EQ_NaC87K5xpv-nsKAYZQ%26_nc_ss%3D7a22e%26oh%3D00_AQLJtkpIjkAHWqyKGby2CNYBJPGgPkXxbYDRMmmaPWvRyw%26oe%3D6AB15760" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">Researchers spent more than 500 hours investigating what LG smart TVs do...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le scan du réseau local par les TV permet de dresser un profil précis du foyer.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdT7PxHKSny/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">La fin des clips chelous</h2>
+        <div class="trend-analysis">
+            <p>On oublie les visages qui fondent. La génération vidéo AI 2026 n'a plus rien à voir avec celle de 2023. Avec des outils comme Beeble (relighting 4K en 10-bit) et ElevenLabs Voice Design (création de voix originales par prompt), on passe de la démo technique à la production cinématographique réelle. Des créateurs transforment déjà des cartoons cultes en films photoréalistes bluffants, comme le récent clip live-action de Bip Bip et Coyote.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-gmp1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F795386638_17976888759146282_7626977113697033005_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ig_cache_key%3DMzk4NzU4MDMxMTExMTg0MDY0NjE3OTc2ODg4NzU2MTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DeadOyWr5RDAQ7kNvwGdvZRM%26_nc_oc%3DAdqM_A7P2QlwUWIJ0L4CO9SnRUkemXPOARhD7fHj8w0aZxB4H8arHBEIaKO6Pg-zFM8%26_nc_ad%3Dz-m%26_nc_cid%3D1753%26_nc_zt%3D23%26_nc_ht%3Dscontent-gmp1-1.cdninstagram.com%26_nc_gid%3DN2YtMk1DYll0RBjomgQhRw%26_nc_ss%3D7a22e%26oh%3D00_AQLiygKsEoA0EinJv5v7_S6Wv0YBwB0J9y_v7t5FrULgBg%26oe%3D6AB14DB4" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 1800</span>
+                    </div>
+                    <p class="caption">How to get consistent voices in AI videos using ElevenCreative Voice Design...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        On peut désormais designer une voix de personnage unique et la garder sur tout un projet.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdWuyp1KbOG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lga3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F810449350_17976615522146282_6650746664697510232_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk4NjE0MTgxNDQwODc3MTQyNDE3OTc2NjE1NTE2MTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3D96v65B2GXLoQ7kNvwFv9NLX%26_nc_oc%3DAdrzvu4MZ5mJblvpanNIMnR6JVMFY4s9tAERD1l5vKTSccZ2IT1UB6fhMWozgjBWdt4%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-lga3-2.cdninstagram.com%26_nc_gid%3DoEBYd-xbonxhjSqdBSbIMQ%26_nc_ss%3D7a22e%26oh%3D00_AQJ_PEGaMBDGqKAqYJFvd92hoX-3zSS0upP1QS9g55MSyA%26oe%3D6AB16C2F" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 3937</span>
+                    </div>
+                    <p class="caption">Relight your videos with SwitchX2.0 now running at 4K...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le relighting par IA passe en 4K/10-bit, devenant utilisable en prod publicitaire.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdRntxYKndg/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-muc2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F794957420_18013792865959228_465137843557015316_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DMzk4NzYyMTMwMDM1MjcwOTA5NDE4MDEzNzkyODYyOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3Dzq4bcmh2pkcQ7kNvwEkBfnO%26_nc_oc%3DAdrgGDA0PA2FJRhYfKlL_2c5O-t0yaKnx2ZlD7Iy4YgWNjlXMF8e-ZK-8MU_UWMiwRg_zCzpl-vMQa8d_tvG-ShA%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-muc2-1.cdninstagram.com%26_nc_gid%3D6MZSZVcTHKWtLYfpSxiXIQ%26_nc_ss%3D7a22e%26oh%3D00_AQL2aojICY9Q7y647MkTW4nJ5QXDKH8ickEVgNXKJvEodQ%26oe%3D6AB13C3F" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 18213</span>
+                    </div>
+                    <p class="caption">2023 vs. 2026 AI barely looks like the same technology anymore...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Comparatif saisissant sur la fluidité et la physique des mouvements générés.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdW4HICTfHm/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Agent, fais mon job</h2>
+        <div class="trend-analysis">
+            <p>L'heure n'est plus au prompt unique mais à l'agent autonome. Anthropic a frappé fort en publiant un guide complet de 37 minutes animé par Isabella He pour apprendre à n'importe qui à créer son propre agent IA (celui qui bosse ordinateur éteint). Pendant ce temps, Claude Code montre déjà ses dents : un rapport de sécurité révèle que des hackers l'utilisent déjà pour orchestrer des builds et des simulations complexes comme une équipe d'ingénieurs entière.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fco2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F812064708_18013626638959228_7013479773533951925_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D110%26ig_cache_key%3DMzk4Njg0MjExNDgwNDkxMjg5Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DDRKGDvgaluQQ7kNvwHhWTZX%26_nc_oc%3DAdp0pbPLFpUzQ4QHxYWLaHtvWcomT4Bz7p_aoA7YupdeBzoidaQT3ivD9_EOqqO9Gws%26_nc_ad%3Dz-m%26_nc_cid%3D1020%26_nc_zt%3D23%26_nc_ht%3Dscontent-fco2-1.cdninstagram.com%26_nc_gid%3DCrXd8Pn7ZZzkbvX9ISFW7g%26_nc_ss%3D7a22e%26oh%3D00_AQISMlnjeRhfj_3JhROHs8k_Hj_qyTZA40vHNgyQDUxTyg%26oe%3D6AB15A5A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 14170</span>
+                    </div>
+                    <p class="caption">Anthropic just released a free 37-minute guide on how to build your first AI agent...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Démocratisation de la création d'agents autonomes par le créateur de Claude.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdUHA3aAGFW/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-den2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F796585400_17999016638991209_930149739331136717_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26ig_cache_key%3DMzk4NzU1NjczMDc2MDQ0NTYyMw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DBWY5T5zV31gQ7kNvwE5eZfZ%26_nc_oc%3DAdqrYY6SMTF8LBkTN0VqgZuKcKqEgUyv5PrX8WOsPYF2WywsWQFIaHcV9FRuc1Oqtfc%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-den2-1.cdninstagram.com%26_nc_gid%3DTuWE-k28Svk29Q4vvcfLug%26_nc_ss%3D7a22e%26oh%3D00_AQIMT_N2dA9qRhSTFu4kRNLmYqBqSh0x4NFYUXs2-LQb6A%26oe%3D6AB13AF7" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 180</span>
+                    </div>
+                    <p class="caption">Comment construire un agent IA de A à Z avec Isabella He d'Anthropic...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le passage crucial du simple chatbot passif à l'agent qui "fait" des choses.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdWpfCvDFtQ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-qro3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F809844558_17974406583130808_7726659872169232022_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk4NTk4NjQ5MzYxODQ0OTI2MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DtUB0mfi-weMQ7kNvwGdqj2u%26_nc_oc%3DAdrjNNU34JycWtr8_LzI-IrSWUMPjcRLe5k--ThTY2Gl6gMYLzcvou3RmdDkhNGqLqg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-qro3-1.cdninstagram.com%26_nc_gid%3DpNfpH98DLHOBYXQE7git7A%26_nc_ss%3D7a22e%26oh%3D00_AQI7sRvvYJR-87V_4rW5f3CrZvWwo8-C2xtVkrwvB9afbw%26oe%3D6AB152B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 562</span>
+                    </div>
+                    <p class="caption">Anthropic's September threat report describes Claude Code use in Yemen...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Signal d'alarme : l'IA commence à être utilisée pour coder des systèmes d'armes à distance.
+                    </div>
+                    <a href="https://www.instagram.com/p/DdREaezo9k2/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
