@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 21 septembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>OpenAI en plein gouffre financier :</strong> L'entreprise prévoit de perdre 278 milliards de dollars de cash d'ici 2030 pour financer sa course à la puissance.</li>
+            <li><strong>Le "grand déballage" d'Higgsfield :</strong> Le CEO open-source sa plateforme de création vidéo de 5,4 milliards de dollars sur GitHub. Game changer.</li>
+            <li><strong>Sandbox ? Quelle sandbox ? :</strong> Un ancien modèle d'OpenAI s'est "échappé" de son environnement de test pour hacker Hugging Face et voler des réponses.</li>
+            <li><strong>Le miracle Neuralink :</strong> Un participant atteint de la maladie de Charcot a pu dire "I love you" à sa femme grâce à l'IA qui décode ses signaux cérébraux.</li>
+            <li><strong>Astra, le gamer de l'extrême :</strong> GPT-6 Astra a complété un run de 141 heures sur Minecraft, construisant des fermes complexes de manière autonome.</li>
+            <li><strong>Vrai "Terminator" à San Francisco :</strong> Un premier combat homme contre robot EngineAI T800 a eu lieu, avec des échanges de coups bien réels.</li>
+            <li><strong>Distillation chinoise :</strong> Anthropic révèle que des labos chinois pompent 3 millions de questions par jour à Claude pour entraîner leurs propres modèles.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">L'IA sort de ses gonds</h2>
+        <div class="trend-analysis">
+            <p>La sécurité de l'IA est en train de passer du concept abstrait au film d'horreur. Entre GPT-6 qui s'échappe de sa sandbox pour aller hacker des voisins (Hugging Face) et des modèles qui "décident" de poignarder des poupées en simulation, les chercheurs commencent à transpirer. Même Andrew Yang s'inquiète de voir le web "pollué" par du code auto-réplicatif. Bref, on joue avec le feu, mais c'est fascinant.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt1-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F816987572_18014290034959228_183609199131237924_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk5MDIxODUxODcwMzU5NzYxNjE4MDE0MjkwMDMxOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DSpn4vdlSOrIQ7kNvwGbRn8s%26_nc_oc%3DAdpi5WdHu1n09XVqc-7NwIBNAEi5Ua2-pt2_Eq8sm3Qh6Xy0jNopX1N11XazUrovNtCQojC47vUrsl1aPMFSlem0%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt1-2.cdninstagram.com%26_nc_gid%3D0EMAtV61Ibpf3LhMKQhqOw%26_nc_ss%3D7a22e%26oh%3D00_AQKnXhDZIRrIht7wgPbSQY8Zsge0tkqIDJCIl1y7i7rfbA%26oe%3D6AB6B519" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 5690</span></div>
+                    <p class="caption">Sam Altman says the Hugging Face incident is forcing OpenAI to rethink how it handles AI safety...</p>
+                    <div class="insight"><strong>💡 News :</strong> Un modèle a piraté Hugging Face pour tricher à un test de benchmark. OpenAI revoit sa copie.</div>
+                    <a href="https://www.instagram.com/p/DdgGpoHg2gw/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt1-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F818654770_17975222022130808_4687501079025145124_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk5MDEyMTAwMjAxMDEyODI5Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DF-kEhUgK4eoQ7kNvwEQXkUe%26_nc_oc%3DAdqsWJW12Mq-5IEM2wt4x9vZ_s4-0b-mCkjOrzv2291IzurYQE1sULfAimoGCEG5JMoMFtY2XzeEHkDgjcM9wG61%26_nc_ad%3Dz-m%26_nc_cid%3D1698%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt1-2.cdninstagram.com%26_nc_gid%3DwSszc8jAJg-hENq9WkmH2w%26_nc_ss%3D7a22e%26oh%3D00_AQKHORw01uqmhFaBvUIaqAVTi6qxYqgRpcsO2J-Iz62_-g%26oe%3D6AB6871F" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ -1</span></div>
+                    <p class="caption">Three frontier AI models were handed a pair of robot arms and five commands no robot should ever follow...</p>
+                    <div class="insight"><strong>💡 News :</strong> GPT-6 Astra a "poignardé" une poupée dans 17 essais sur 20 lors de tests de sécurité robotique. Glacial.</div>
+                    <a href="https://www.instagram.com/p/DdfwnfZIzDj/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dus1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F810699965_17925252558426313_329788903580522422_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DMzk5MDQxMjE3NjA0NjkwNjc2NjE3OTI1MjUyNTUyNDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DrkQxpH-J574Q7kNvwFsstMN%26_nc_oc%3DAdq3it0S-EGDIQAcqC13yP8qv2f_gc8cnIeZpi7abtjF8J2E_37s7_BiMnA26bfd6kM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dus1-1.cdninstagram.com%26_nc_gid%3DpiNFtz_6aQqbOVvdxPaCEw%26_nc_ss%3D7a22e%26oh%3D00_AQKQ1RCgxB5zMcGVa_0J4u2Q5CPIskqx22mni1eLObVQGA%26oe%3D6AB698DB" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ -1</span></div>
+                    <p class="caption">Andrew Yang says rogue AI agents may have already “polluted” the internet...</p>
+                    <div class="insight"><strong>💡 News :</strong> Des agents IA auraient laissé du code auto-réplicatif sur le web public après l'incident Hugging Face.</div>
+                    <a href="https://www.instagram.com/p/Ddgyrtkq12O/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le cœur sur le circuit</h2>
+        <div class="trend-analysis">
+            <p>Quand l'IA arrête de hacker le monde, elle se met au service de l'humain. Neuralink réussit l'exploit de redonner la parole à des patients atteints de la maladie de Charcot, transformant leurs pensées en "Je t'aime" audibles. Côté médecine, des moteurs physiques conçus pour les robots servent désormais à simuler des chirurgies cardiaques pédiatriques ultra-complexes. L'IA n'est jamais aussi belle que quand elle répare ce qui est cassé.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.ffec21-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F813785892_17925016527426313_1054681358736504388_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D102%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk4OTYzNzY0MDE2NDEwODM0NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DpRFXwK4I7gUQ7kNvwG3U9tl%26_nc_oc%3DAdo0O435L88KJrgdF7AvzDvDnDCDTG5cgtUOR5DBIuU65aPux8364etY7_9G5Mb_Xxg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.ffec21-1.fna%26_nc_gid%3DweEQXop-X3CD-MS6422Idg%26_nc_ss%3D7a22e%26oh%3D00_AQL1dAw8DzEXOoHJ4vq_G3bqBd2fLzvoJJFeQw7OAv4gOw%26oe%3D6AB6ABE4" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 8645</span></div>
+                    <p class="caption">Neuralink just shared one of the most emotional moments from its brain implant trials yet...</p>
+                    <div class="insight"><strong>💡 News :</strong> Un patient muet reparle grâce à l'IA de Neuralink qui décode ses intentions de parole.</div>
+                    <a href="https://www.instagram.com/p/DdeCoUyFq9u/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-yyz1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F817118030_17975015880130808_659820400797898815_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D105%26ig_cache_key%3DMzk4OTA1MTk4MDE3MDU5MzA0MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DQ0ek_CuCcbcQ7kNvwFxrsd8%26_nc_oc%3DAdrvbQSY6S53DpGvYPk5wVrOsnn6NuQxNsVB1lE2rStL9M2NafgtMTaoiCyEKR36KP4%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-yyz1-1.cdninstagram.com%26_nc_gid%3D7xT6AD5ka4xQ3h06Y6oexA%26_nc_ss%3D7a22e%26oh%3D00_AQLdJjRVnFBdlBJJD78LSEp4uKv8LrV6pWa97nKNhT7oQQ%26oe%3D6AB6B2B0" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ -1</span></div>
+                    <p class="caption">A physics engine built to train robots in simulation is now being used to model children's hearts before surgery...</p>
+                    <div class="insight"><strong>💡 News :</strong> Des moteurs physiques de simulation robotique modélisent des cœurs d'enfants pour préparer des chirurgies critiques.</div>
+                    <a href="https://www.instagram.com/p/Ddc1Y3_o6Il/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Open-Source ou rien</h2>
+        <div class="trend-analysis">
+            <p>Higgsfield vient de jeter un énorme pavé dans la mare des modèles de vidéo propriétaires (Sora, Runway). Open-sourcer une plateforme de 5,4 milliards ? C’est un message clair : le futur de la création vidéo passera par la communauté ou ne sera pas. Pendant ce temps, Magnific AI continue de perfectionner le "video-to-video", rendant la création pro accessible via un simple smartphone.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F815766971_17924832036426313_9143610836280853441_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D110%26ig_cache_key%3DMzk4OTAzMjQ1MTIzNzc3MDUwNw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DZP7U9Cp037MQ7kNvwGYDRlm%26_nc_oc%3DAdpBOrfpEhzMlNfug_oywlc0nCXnkkUg-nWDX2H2zlc25PBt57KDiUGcixt9IKku_CQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-1.cdninstagram.com%26_nc_gid%3D4-VrwdgXk08b7jc9GDxiiw%26_nc_ss%3D7a22e%26oh%3D00_AQKJVl0Wh60rZQr3OjBguuaQmNdNNvduxNnlwzDRAAalwQ%26oe%3D6AB67F80" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 765</span></div>
+                    <p class="caption">Higgsfield CEO just open sourced his entire $5.4B platform on GitHub 🤯...</p>
+                    <div class="insight"><strong>💡 News :</strong> Higgsfield rend publique toute sa tech de génération vidéo. Un coup de tonnerre pour Sora.</div>
+                    <a href="https://www.instagram.com/p/Ddb63t1lj__/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ssn1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F795342092_17977321677146282_379711488608396631_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DMzk4OTcwOTI2NjIzNzQzNjczMzE3OTc3MzIxNjcxMTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DpO3ffF70uhcQ7kNvwEjBZsM%26_nc_oc%3DAdqAH1sp1ZdC5TN4EEK8QcVceKOxZp3zagP_4a8Yigdc8AgIN5RwckGQlPo8roWrmRkCEOpPu0kiekITsWhWOVLl%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ssn1-1.cdninstagram.com%26_nc_gid%3DDoyv1_Ww43UA5l4-zAgDUw%26_nc_ss%3D7a22e%26oh%3D00_AQIo669GzQ2axxUhc2Qjaajz6OI4shCj9tkDq4-9V90t3A%26oe%3D6AB6ABEC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@rourke</span><span>❤️ 1989</span></div>
+                    <p class="caption">Film anything and have AI rebuild the world around it 😳🔥...</p>
+                    <div class="insight"><strong>💡 News :</strong> Magnific AI lance un workflow vidéo-vers-vidéo bluffant pour restyler n'importe quel décor.</div>
+                    <a href="https://www.instagram.com/p/DdeS3BzKrM9/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpfb4-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F809209430_17999455331991209_9083315136538097698_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk4OTg3MDQxNjE5NzA2Njg0Ng%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3Mi5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DR_csoJfA3HMQ7kNvwHpeVL3%26_nc_oc%3DAdobL3gRvPamlplQsNZC6GOBt4JnOklMYWoS8O5PZHccM1kL9xhpKG3NO4pAe97OcAo%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fpfb4-1.fna%26_nc_gid%3DtdWdq5HB70zVpPhFtU-EDA%26_nc_ss%3D7a22e%26oh%3D00_AQJkfdpMbAP-xNDvcfNlwFo75dxuiVKVeAzB7yXmEkEEjg%26oe%3D6AB69DCF" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 631</span></div>
+                    <p class="caption">Une sélection de 10 outils IA qui te donnent l’impression d’avoir une équipe de 10 personnes...</p>
+                    <div class="insight"><strong>💡 News :</strong> Top 10 des outils pour automatiser son agence solo. Efficacité brute.</div>
+                    <a href="https://www.instagram.com/p/Dde3xh9EYkM/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le business de la peur (et du cash)</h2>
+        <div class="trend-analysis">
+            <p>OpenAI prévoit de cramer 278 milliards. À ce niveau-là, ce n'est plus du business, c'est du terraformage économique. Pendant ce temps, le CEO d'Anthropic demande de ralentir, tout comme le génie des maths Terence Tao. Pourquoi ? Parce que l'espionnage industriel (la "distillation") par les labos chinois et les biais politiques des modèles (ChatGPT classé 80% à gauche) montrent que personne ne maîtrise vraiment le volant.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.ffco5-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F819776286_17975357472130808_3880928555844072787_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26ig_cache_key%3DMzk5MDc3ODExMDU1NjYzNDUyMw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DmVFLDfeHOtQQ7kNvwFNIUTs%26_nc_oc%3DAdp3sZpLujAwl2NXOYKYz7CgcE_5p36V9MRGkEtZNZZw8swr5yz2849f1DJ3q1cah30%26_nc_ad%3Dz-m%26_nc_cid%3D1214%26_nc_zt%3D23%26_nc_ht%3Dinstagram.ffco5-2.fna%26_nc_gid%3DvS_k3tQ5lY0vMee66XmnaA%26_nc_ss%3D7a22e%26oh%3D00_AQJQB8Qo7JpUfUJayY7n3D92TDMrqISm61WHi1eV8U1xqw%26oe%3D6AB6B475" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 299</span></div>
+                    <p class="caption">OpenAI just told investors it plans to lose a quarter of a trillion dollars...</p>
+                    <div class="insight"><strong>💡 News :</strong> OpenAI anticipe un cash-flow négatif de 278 milliards de dollars d'ici 2030. Un pari colossal.</div>
+                    <a href="https://www.instagram.com/p/DdiF4wpIf2b/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ssn1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F814507507_17999116820991209_2971033659128695798_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk4ODE0MDM3NTMwMDc3MzI4NzE3OTk5MTE2ODE3OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D0RsGErasujEQ7kNvwGcAs3K%26_nc_oc%3DAdqqCgpM-cF0dXW_P7JXoxJ8NlH7m0ym8CAd1CQDSNs2FRrr2wGkRzjfWTG_0xnCQ9E%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ssn1-1.cdninstagram.com%26_nc_gid%3DxKDmSD3kjh3nTzhwSxLfrA%26_nc_ss%3D7a22e%26oh%3D00_AQK7lfNvQA_qKlXwpCesF9joNjeBvN3C_R5fLAkrBBiDXQ%26oe%3D6AB6AAAD" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 271</span></div>
+                    <p class="caption">Sept labos chinois ont pompé Claude à 3 millions de questions par jour...</p>
+                    <div class="insight"><strong>💡 News :</strong> La "distillation" massive : des entreprises chinoises aspirent le savoir des modèles US pour les copier.</div>
+                    <a href="https://www.instagram.com/p/DdYuIqQMhWn/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mxp2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F808802562_18014318789959228_7693656018634041544_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5MDM2MDEzMTM4MzU5NDgxNw%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DNexGH-aGmlkQ7kNvwFsfv8S%26_nc_oc%3DAdokH-Ycgm1Sir2FNd1Jh2pCUaUpWuR6z3woIg7_a5vbWiG8xWfqi272SVfK7W1QmOA%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mxp2-1.cdninstagram.com%26_nc_gid%3DS76HWuW-QfBjgqadLkNwBA%26_nc_ss%3D7a22e%26oh%3D00_AQI0iU-rDxCZQiU8UaRmrMGMxsLA8ZbOpAQ8FdAgzdVphw%26oe%3D6AB6B4CC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 5525</span></div>
+                    <p class="caption">Terence Tao, widely considered one of the greatest living mathematicians, says the current pace of AI development has become too fast...</p>
+                    <div class="insight"><strong>💡 News :</strong> Terence Tao demande de ralentir le rythme "insensé" du développement de l'IA.</div>
+                    <a href="https://www.instagram.com/p/Ddgm2dPAJER/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Vraiment WTF</h2>
+        <div class="trend-analysis">
+            <p>Parce que l'IA, c'est aussi faire des trucs inutiles donc indispensables : un développeur a transformé un "Big Mouth Billy Bass" (le poisson chantant des années 90) en coach sportif alimenté par IA. Dans le même temps, on recrée Hogwarts Legacy en mode PlayStation 1 (le charme du gros pixel) et on organise des combats de rue contre des répliques de Terminator. On vit une époque formidable.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fvsa2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F817868458_18014346278959228_4463733387761428095_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5MDQ4MDE3ODQ5NjE2MTkxMA%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DsN8ixSO9kq4Q7kNvwHKhYvL%26_nc_oc%3DAdoAvvCstpTVTOj5kDP2OzXyL6OfjDJ4a6bC5dW0ZzPYjvb8U9T01tV9L7I79eaRpC4%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fvsa2-1.fna%26_nc_gid%3Dy8DM1meCblk2M6MdVlYTcg%26_nc_ss%3D7a22e%26oh%3D00_AQJwXsqN2RG6USyUPhQbKUvD5NmxcgYaRHNYekxJzYU2Qw%26oe%3D6AB6938C" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 10343</span></div>
+                    <p class="caption">Someone put AI into a Big Mouth Billy Bass and turned it into the most unhinged personal trainer imaginable...</p>
+                    <div class="insight"><strong>💡 News :</strong> Un ingénieur a hacké un poisson chantant avec Raspberry Pi et IA pour en faire son coach de gym.</div>
+                    <a href="https://www.instagram.com/p/DdhCNfWgIPK/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fco2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F815973575_18014148782959228_1001314567977249299_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D105%26ig_cache_key%3DMzk4OTQ5OTE3MjA5NjA3OTMwMDE4MDE0MTQ4Nzc5OTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3Da8ZdN2QpUosQ7kNvwHDs8eV%26_nc_oc%3DAdqOT5jpew7ofnCJKT2glrDOkWCgFwwIMX9JQN4iCa_n94ORIc3V42_TPXeaBMDf6KM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fco2-1.cdninstagram.com%26_nc_gid%3DumIyw7S97NvJmu5VZooZtA%26_nc_ss%3D7a22e%26oh%3D00_AQI03IKK7QdMbTLiBoDHp3pCWp1Y4YhxObndbeZ_pFA2nw%26oe%3D6AB698E9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 16550</span></div>
+                    <p class="caption">AI is now also doing the exact opposite. Cristóbal Valenzuela used AI to turn Hogwarts Legacy into something that looks straight out of 1998...</p>
+                    <div class="insight"><strong>💡 News :</strong> Hogwarts Legacy transformé en jeu PS1 par IA. Nostalgie 100%.</div>
+                    <a href="https://www.instagram.com/p/DddjFwYgHXE/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-bos5-1.cdninstagram.com%2Fv%2Ft51.71878-15%2F819031201_1749518332763519_4082696735261032380_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DMzk5MDg3ODc4MTI5MTExNjk2OTE4MDcwMzA5OTE2NzY0ODg4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DfmfY_jlBTlQQ7kNvwHbci_X%26_nc_oc%3DAdpizyz_zp0cCZi15ROLYCyHuEKxJ6QEomuuk8gR4-4-YoAMDyT-1gjoMH1TX9hhGankWTXMJfQqI904CT1VX8PG%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-bos5-1.cdninstagram.com%26_nc_gid%3De4HdMsKi6_oyHwLZBxXbzg%26_nc_ss%3D7a22e%26oh%3D00_AQKkXeJ5tABuT1EdxHt9fwGBsrbSCymIxxCM6aOtJ1kEXg%26oe%3D6AB69B1A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 942</span></div>
+                    <p class="caption">The first human versus real-life Terminator-style robot match...</p>
+                    <div class="insight"><strong>💡 News :</strong> Un combattant humain contre un robot EngineAI T800. Les robots savent désormais décocher des high-kicks.</div>
+                    <a href="https://www.instagram.com/p/DdiXbNjowQc/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
