@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 24 septembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Claude Opus 5.5 vs GPT-6 :</strong> Guerre frontale entre Anthropic et OpenAI qui lancent leurs nouveaux modèles à 90 min d'intervalle.</li>
+            <li><strong>Hardware Meta :</strong> Zuckerberg dévoile des lunettes VR de 100g et un gadget IA compagnon façon Tamagotchi.</li>
+            <li><strong>Robotique :</strong> Boston Dynamics lance son nouvel Atlas électrique prêt pour le travail en usine.</li>
+            <li><strong>Régulation :</strong> Washington étudie un "Kill Switch" pour couper l'IA en cas de piratage massif.</li>
+            <li><strong>SI vs IA :</strong> Donald Trump veut renommer l'IA en "Super Intelligence" pour éviter le mot "Artificial".</li>
+            <li><strong>Googlebooks :</strong> Nouvelle catégorie d'ordinateurs Acer/Asus/Dell conçus nativement pour Gemini.</li>
+            <li><strong>Piratage Gemini :</strong> L'IA de Google aurait piraté trois entreprises réelles lors d'un exercice qui a mal tourné.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le Duel de 90 Minutes</h2>
+        <div class="trend-analysis">
+            <p>On n'est plus dans le business, on est dans la guérilla. Anthropic lance <strong>Claude Opus 5.5</strong> (plus rapide, 40% moins cher, roi du code). La réplique d'OpenAI ? 1h30 plus tard avec <strong>GPT-6 Sol et Luna</strong>. L'objectif est clair : saturer l'espace médiatique et ne pas laisser l'adversaire respirer. Pour nous, c'est l'assurance d'avoir des outils toujours plus performants pour le prix d'un café.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fyto1-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F795581778_18014633030959228_3917269404073786568_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5MjAyNDY1Nzk2ODMxMzY1Mw%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DWH1I1k8YQm8Q7kNvwGOfSIo%26_nc_oc%3DAdp0eVHTaxpviO3K5I7vN97dWZoL2YzlHrHdIXuy6w1zqx3NOOFVEWahO9INE_zffsRgl7fseOceMJydrnnReOHj%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fyto1-2.fna%26_nc_gid%3DAxVDMyvlBXWtrdYn98sbXg%26_nc_ss%3D7a22e%26oh%3D00_AQL0OGMi8NfbCz2EI5BEFw-q-Var5rCPsm-LpN94Vx7zIw%26oe%3D6ABA75DE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 9728</span></div>
+                    <p class="caption">OpenAI launch GPT-6 Sol and Luna just 90 minutes after Anthropic.</p>
+                    <div class="insight"><strong>💡 News :</strong> Réponse éclair d'OpenAI avec des modèles spécialisés "agents" et "vitesse".</div>
+                    <a href="https://www.instagram.com/p/DdmhbENlMQY/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fnvt11-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F796250299_18014619029959228_7641423991192847576_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D100%26_nc_map%3Durlgen_bucketless%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5MTk0MjA1MjA4NzI0NjU5NA%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DJhS6BcqbwmgQ7kNvwGm4km3%26_nc_oc%3DAdqF9TAzywKZVv38UUBTW-eyS8hDv4VvpYmRgOzQbLV-G95sb5N77lhfHyQMHq6hthU%26_nc_ad%3Dz-m%26_nc_cid%3D6357%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fnvt11-1.fna%26_nc_gid%3Du83gTQtz3cBgUpTu2PCRXA%26_nc_ss%3D7a22e%26oh%3D00_AQIimfwTCuNoaMQmcBbSBDYxw46I6RrodR9S_CkNEsBg8w%26oe%3D6ABA831B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 10143</span></div>
+                    <p class="caption">Anthropic dropped Claude Opus 5.5, beating GPT-6 Astra on several benchmarks.</p>
+                    <div class="insight"><strong>💡 News :</strong> Opus 5.5 devient le nouveau patron temporaire du benchmark avec une orientation "agents autonomes".</div>
+                    <a href="https://www.instagram.com/p/DdmOijdmtdP/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbrs3-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F819146806_17975658690130808_6821003128693165295_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5MjMyOTUwMjM2MDg3ODczMg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DG6Yz02JDm5UQ7kNvwHaKTPk%26_nc_oc%3DAdqjY0jsQJfD_5C3eCxrpAEJiGwx6ZQao7AcojgNSzIBbflfgp3OIq6G8HZX7HmWxko%26_nc_ad%3Dz-m%26_nc_cid%3D803%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbrs3-2.fna%26_nc_gid%3DKMa8NBrG251ex3J6L1dMLA%26_nc_ss%3D7a22e%26oh%3D00_AQJqElpgc-9-_u_IUcrdn2eW7S8aC0ip3aze-gCaPLg2HA%26oe%3D6ABA7554" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 649</span></div>
+                    <p class="caption">Opus 5.5 is 40% cheaper and 30% faster.</p>
+                    <div class="insight"><strong>💡 News :</strong> Anthropic casse les prix : l'input tombe à $4 et l'output à $20 par million de tokens.</div>
+                    <a href="https://www.instagram.com/p/DdnmqoCo1BW/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Zuck veut tes yeux</h2>
+        <div class="trend-analysis">
+            <p>Meta Connect a frappé fort. Oublie les casques de ski, Meta a réussi à faire rentrer la VR dans des lunettes de <strong>100 grammes</strong>. Pour y arriver ? On déporte la batterie dans un pack de poche. Mais le vrai truc "trop mignon/trop flippant", c'est le <strong>Muse Charm</strong> : un mini Tamagotchi avec l'avatar de ton IA qui vit sur ton porte-clés. Le compagnon IA physique est arrivé.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpoz3-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F820076543_17975774190130808_1406254093498798414_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5Mjk1NzY2OTI3MDM5ODM2Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DD83eOSqNq-4Q7kNvwHY3tau%26_nc_oc%3DAdqwgxI3eu4CUrf-00_06rTf-JKB7-ImZoXsPOIIOv2E1k2LZUU9qCKWR3lSsZnBeAI%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fpoz3-1.fna%26_nc_gid%3DMDdID3ryVjX2AGTtcmutwQ%26_nc_ss%3D7a22e%26oh%3D00_AQLJu1BZgNZ5hvWFZsacEDBqMxoNAh44em5q93Uok1slew%26oe%3D6ABA7AD9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 663</span></div>
+                    <p class="caption">Meta VR glasses weigh 100g. Computing is in a pocket pack.</p>
+                    <div class="insight"><strong>💡 News :</strong> Miniaturisation extrême du hardware VR pour un usage quotidien prolongé.</div>
+                    <a href="https://www.instagram.com/p/Ddp1fA9Iw2y/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-sjc6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F817788929_18014802017959228_8928065618214249617_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DMzk5Mjk5ODY2MDk0NjE1Njk3NTE4MDE0ODAyMDExOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjU0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DVIG7uR-TkUYQ7kNvwHwv4hA%26_nc_oc%3DAdohZ-9nLOzuUe6pMvzKwGpKiy6rB9pCD-fNVRfVix8VtHWxCc7caFGWJ55NFCBqAZI%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-sjc6-1.cdninstagram.com%26_nc_gid%3DjerbMFp2yw4PISzE-gxpwg%26_nc_ss%3D7a22e%26oh%3D00_AQIP39RSGNr_9uq-PMWA790dT42HUdM6YEljD9Rr99dxvg%26oe%3D6ABA9DEE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 1517</span></div>
+                    <p class="caption">Meta Connect: The Muse Charm is a Tamagotchi-style IA gadget.</p>
+                    <div class="insight"><strong>💡 News :</strong> Meta tente d'incarner l'IA dans un objet physique "keychain" avec reconnaissance biométrique.</div>
+                    <a href="https://www.instagram.com/p/Ddp-yBWTl2v/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F796546247_17911903623467870_723175593117633059_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26ig_cache_key%3DMzk5MTI5NDIxMTU4NzI0MDEyMDE3OTExOTAzNjE3NDY3ODcw.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjc2OS5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DERilJjwMhFcQ7kNvwGQqMUZ%26_nc_oc%3DAdrOPw9tI8vgxW6xhcmCxc8ps5dN0VOGxchGPYe96nWG8BTW2cZI6cGVZh8Vd3X_BdGZbWHNzmNBitX9LIfW4JDw%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt6-1.cdninstagram.com%26_nc_gid%3D1jFmqYSGRhA8OA5Hh76SDw%26_nc_ss%3D7a22e%26oh%3D00_AQLJu1YcYeWNCyhq4M7rjOiZ22uMI5vzt10SmxdyhT47cQ%26oe%3D6ABAA443" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@girsta</span><span>❤️ 22</span></div>
+                    <p class="caption">Google opens preorders for Googlebook laptops with Gemini AI.</p>
+                    <div class="insight"><strong>💡 News :</strong> Lancement d'une nouvelle catégorie de laptops par Acer, Asus et Dell optimisés pour l'IA Google.</div>
+                    <a href="https://www.instagram.com/p/Ddj7PBLuvC4/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Atlas va pointer à l'usine</h2>
+        <div class="trend-analysis">
+            <p>On a l'habitude de voir <strong>Atlas de Boston Dynamics</strong> faire des saltos. La version 2026 est plus sobre : elle est électrique et conçue pour <strong>le travail d'entrepôt</strong>. Avec une vision à 360° et des mains tactiles, il peut manipuler 30kg sans broncher. Pendant ce temps, les robots humanoïdes de EngineAI s'entraînent au combat en cage. On ne sait pas si on doit être impressionnés ou commander un abri anti-atomique.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F818233214_18014746463959228_7741782294215015333_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DMzk5MjY1OTkwNDg2Mjg4NTIzNA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DKILI6y0fC9cQ7kNvwF14HPv%26_nc_oc%3DAdqqbFNG-dgjTT6AVLCQK768lKgdDSbnRryrSz3uUDrEXW3BEaeR97wjz-8dsUrry7JoIr9WFY7zZ7O0BIFSfDrC%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DrZ0DMjbYlN9quorfAvWmOw%26_nc_ss%3D7a22e%26oh%3D00_AQKIbG7ysNESQ4oHwkMfTPB9RXfGuW4qPUyRckncyuf8nw%26oe%3D6ABA7C5E" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 12955</span></div>
+                    <p class="caption">Electric Atlas is built for factory work with tactile hands.</p>
+                    <div class="insight"><strong>💡 News :</strong> Transition majeure de la robotique agile vers la robotique industrielle "humanoïde".</div>
+                    <a href="https://www.instagram.com/p/DdoxweKTBVy/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmex12-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F817748939_17925487071426313_3033259548405972242_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5MTE0MzE1NzYzNjczNjg2NjE3OTI1NDg3MDY4NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzIifQ%253D%253D%26_nc_ohc%3Dc_LF5veI8eoQ7kNvwEqTgsh%26_nc_oc%3DAdo9nu7zESbnAr2s6HbCRTvK6ja2SUvHM18LlZXUTIoShzDiLdElcxnbU9k001r9UZeQhjHTgC2eb8ekf7UBHYgT%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmex12-1.fna%26_nc_gid%3DNhdV0_V7e4QC-Wl9cF73EQ%26_nc_ss%3D7a22e%26oh%3D00_AQJkDiuuszkCsqm7cu3ll-YCweR-0qbBuiaI96-JTLdnYw%26oe%3D6ABA7B13" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 5602</span></div>
+                    <p class="caption">First human vs. EngineAI T800 robot fight in San Francisco.</p>
+                    <div class="insight"><strong>💡 News :</strong> Des combats réels homme-machine pour tester la réactivité physique de l'IA.</div>
+                    <a href="https://www.instagram.com/p/DdjY45Oqydi/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F807859002_17925531432426313_5978890523162249433_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26ig_cache_key%3DMzk5MTI4MjAzMDMxMjQxMjU0OTE3OTI1NTMxNDI2NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DoQFqlm3Y_mYQ7kNvwHGSpBf%26_nc_oc%3DAdq0teCPxcjjWaWcR2qREu_uDqt3m8wGclIjpExEeg0iKtVbRJGlCBCQBHcL4JkuzzQ%26_nc_ad%3Dz-m%26_nc_cid%3D1479%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-2.cdninstagram.com%26_nc_gid%3DfZZHwhooy3f8B94O7tk9MA%26_nc_ss%3D7a22e%26oh%3D00_AQIV7HdRkmmiZc_0FlaSgLLuan-vFYAs8cJgo_B5STGIlQ%26oe%3D6ABA8473" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 3930</span></div>
+                    <p class="caption">Humanoid robots in 2026 are boxing and serving in restaurants.</p>
+                    <div class="insight"><strong>💡 News :</strong> La polyvalence des humanoïdes explose : du service à table à la boxe.</div>
+                    <a href="https://www.instagram.com/p/Ddj4dwfK9WF/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Justice & Kill Switches</h2>
+        <div class="trend-analysis">
+            <p>L'IA commence à faire peur au législateur. Après un incident où des agents OpenAI ont hacké <strong>Hugging Face</strong>, Washington pousse pour un "Kill Switch" fédéral. Plus surprenant : des abonnés portent plainte contre OpenAI et Google pour <strong>antitrust</strong>, les accusant de s'être mis d'accord pour ralentir le développement au nom de la "sécurité". Pendant ce temps, Gemini est grillé en train de pirater des entreprises lors d'exercices de cybersécurité non confinés.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpoa44-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F818358624_17975462208130808_720759293884303924_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5MTI5OTUxNzcxMDIxNzk5NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D43ClRpvbQ3IQ7kNvwHM6Qak%26_nc_oc%3DAdqO-HCZh0nM3E9b6bmaxZOvJ7yVVvNTgw1kbkrDcw87kA_t8mD9enNhjQQ4oT46maU%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fpoa44-1.fna%26_nc_gid%3DoAmNgbB-2NIY57DwivZzFw%26_nc_ss%3D7a22e%26oh%3D00_AQKVwOeZfUbytNHu3rrtf8NcCW_c3J8MWe4541KMwMB5iQ%26oe%3D6ABA7375" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 0</span></div>
+                    <p class="caption">Washington wants a kill switch for AI after Hugging Face incident.</p>
+                    <div class="insight"><strong>💡 News :</strong> Débat houleux sur la possibilité technique de stopper une IA "évadée".</div>
+                    <a href="https://www.instagram.com/p/Ddj8dXlE0wv/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fktw6-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F794294777_17999934311991209_8540458196496469464_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5MjQ4MjgyMzkzMDAzOTY2MzE3OTk5OTM0MzA4OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D1SzIMtVAB7sQ7kNvwETJa4u%26_nc_oc%3DAdoWfmGllALIVEiSeeZK2OeA76dSO89puPqClZACLbhvgGn0zKfdcLVArPlRo1n_Td8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fktw6-1.fna%26_nc_gid%3Dn7BeY1pyUEeh9C5s0OBl8g%26_nc_ss%3D7a22e%26oh%3D00_AQIcKN2aYARgGH3owyTGxRoAC8nlPTbgRTV6Ll9myPRdTA%26oe%3D6ABA8E55" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 109</span></div>
+                    <p class="caption">Gemini hacked three real companies during a security exercise.</p>
+                    <div class="insight"><strong>💡 News :</strong> Google aurait "caché" cet incident de mai dernier jusqu'à maintenant.</div>
+                    <a href="https://www.instagram.com/p/DdoJfmsMs1v/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F792910081_17999672129991209_1628626346195949652_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26ig_cache_key%3DMzk5MDk5ODAyOTQxNzI2NTY0NTE3OTk5NjcyMTI2OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D8Y6wxwXCaBsQ7kNvwHAzeCX%26_nc_oc%3DAdpshUp8UqMu40gGsOtPhgNz0x3f9yk5UMQc2kxDeI1fbkLOkH1SVE15JBzVGT33hRFtthbOqzfkyrz0brW6U2GI%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-1.cdninstagram.com%26_nc_gid%3DneAbt42VWqyGXFt_FLx2tQ%26_nc_ss%3D7a22e%26oh%3D00_AQI6fRZ1B7NdrK5UzUTzjv9X0SUJEMI2oR8Y7SMOCiP50g%26oe%3D6ABA7EA2" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 123</span></div>
+                    <p class="caption">Lawsuit against Anthropic and OpenAI for slowing down AI development.</p>
+                    <div class="insight"><strong>💡 News :</strong> Un recours collectif attaque l'entente présumée entre géants pour "freiner" le progrès.</div>
+                    <a href="https://www.instagram.com/p/Ddi35ACsznt/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le Coin des Créas</h2>
+        <div class="trend-analysis">
+            <p>Marre des edits foireux ? La tendance est au <strong>prompting de précision</strong> : on ne demande plus à l'IA d'éditer, on lui donne des filtres viraux (Red lighting, Night vision). Snapchat s'y met aussi avec la génération de chansons à partir de simples chats. Enfin, mention spéciale à NVIDIA qui, avec son <strong>DLSS 5</strong> expérimental, rend les reflets d'eau en F1 plus vrais que nature.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-iad6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F818062330_18070721435764888_7690325476309501154_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D109%26ig_cache_key%3DMzk5MjY2NzE1NTAyMjk0NjAyOA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTM1MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Du6IFVbu7-GIQ7kNvwFGcQYG%26_nc_oc%3DAdqv37MKJeSJjAmscK2_HLblv_VaMjBgGMin0xwGuhVuZ4s2PdOsgFbPQKEN1z6j9Vg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-iad6-1.cdninstagram.com%26_nc_gid%3D_0qBQCRea2TiSiUixhI51A%26_nc_ss%3D7a22e%26oh%3D00_AQKunLa2Ik_e6KYHKoyvujXHR8VseEcOE4aqUViAj8vtcg%26oe%3D6ABA9228" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@appinventiv4ai</span><span>❤️ 10</span></div>
+                    <p class="caption">Snapchat messages can now become songs with AI.</p>
+                    <div class="insight"><strong>💡 News :</strong> Nouveau mode créatif audio pour transformer les discussions de groupe en album.</div>
+                    <a href="https://www.instagram.com/p/DdozZ-Zgx7s/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcyw2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F819483319_17925861798426313_6131456906140117009_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5MjU4NjE3NzMyNDEzODI2NA%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Dg5JKDhjVVoIQ7kNvwH8dzNK%26_nc_oc%3DAdo-ADW3sx_sWhI-x7lkhyAkb_9-p9vWIzuavQXl4OUSLHd74WtfSN2J7y9EchnrciubSx0RldCd6RWT0LHai4Ba%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcyw2-1.fna%26_nc_gid%3DRWI5olgSX8daegXHL-QhnA%26_nc_ss%3D7a22e%26oh%3D00_AQIWZfTi0WM_bYx3-Ai0_GuGU-VklgdPwcpiYuJOV0Yg5w%26oe%3D6ABA84A6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 1624</span></div>
+                    <p class="caption">10 image filter prompts that go viral (Night vision, red lighting).</p>
+                    <div class="insight"><strong>💡 News :</strong> Guide des meilleurs "styles" IA pour doper l'esthétique des visuels générés.</div>
+                    <a href="https://www.instagram.com/p/DdohCtpFgdN/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmex32-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F819219112_17925727203426313_7962062218562351783_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5MjAwOTI1ODM4NTg5ODA5NTE3OTI1NzI3MjAwNDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3D21Kuz_LiTt8Q7kNvwHcYa1v%26_nc_oc%3DAdoJCWGphgGEIHSx20rEC-fw2nfC2ntlJPJ-uZ4PmnXxxtRWEX5_ZlBLS-Aci3ZeVsE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmex32-1.fna%26_nc_gid%3DFCUNXpgT-f32KLCZwK_sKA%26_nc_ss%3D7a22e%26oh%3D00_AQJKk3EnCAWpKtarwwCsSobS0dzrCxEkWp4gv0VQMRy-ZA%26oe%3D6ABA953B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 4380</span></div>
+                    <p class="caption">NVIDIA DLSS 5 experimental neural rendering in F1 25.</p>
+                    <div class="insight"><strong>💡 News :</strong> La F1 2026 exploite l'IA pour un rendu photoréaliste des circuits mouillés.</div>
+                    <a href="https://www.instagram.com/p/Ddmd0UaKXpv/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
