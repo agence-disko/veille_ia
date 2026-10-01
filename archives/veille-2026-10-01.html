@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 01 octobre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>OpenAI</strong> a dévoilé <strong>Dots</strong>, des agents IA autonomes qui bossent 24/7 pour toi.</li>
+            <li><strong>Google</strong> riposte avec <strong>Gemini 4 Argon</strong>, son modèle le plus puissant à ce jour, taillé pour le business.</li>
+            <li>Adieu "IA", bonjour <strong>"Super Intelligence" (SI)</strong> : c'est le nouveau terme officiel décrété par la Maison Blanche.</li>
+            <li><strong>Anthropic</strong> prépare une <strong>IPO massive</strong> valorisée à plus de 2 000 milliards de dollars.</li>
+            <li><strong>Elon Musk</strong> a trollé OpenAI en redirigeant le domaine <strong>dot.com</strong> vers son bot Grok.</li>
+            <li>Le court-métrage Star Wars de <strong>@karim_yourself</strong> prouve qu'un seul créateur peut désormais égaler une prod à 200M$.</li>
+            <li><strong>Meta</strong> lance <strong>Muse</strong>, un agent pour automatiser la gestion des comptes Instagram.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">OpenAI se démultiplie</h2>
+        <div class="trend-analysis">
+            <p>Le <strong>DevDay 2026</strong> restera comme le moment où ChatGPT a arrêté de nous attendre. Avec <strong>Dots</strong>, OpenAI lance des agents "always-on" qui possèdent leur propre navigateur et ordi cloud pour exécuter des tâches en continu. C'est la fin du simple chat, place au workflow autonome. Petit bémol : Elon Musk a chipé le domaine <strong>dot.com</strong> pour faire une redirection vers Grok. La guerre des agents est déclarée.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fntr10-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F825325782_18015606497959228_3431759742507823754_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26_nc_map%3Durlgen_bucketless%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5NzA2MjQ0NjExOTYzMjYzMA%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DhkRSybYKZIoQ7kNvwHeUIiH%26_nc_oc%3DAdqBHbWfuLyOLXJd2bqswde1MejatEa3IUxPT6CpIae5xc0CJQhkIZpkN4MN2zmP2fM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fntr10-1.fna%26_nc_gid%3DzGioQ-u6In0vUbQKLtnR1Q%26_nc_ss%3D7a22e%26oh%3D00_AQOLiDMPf3r3Eii9OhPKnusGrZrHeMBR2eh2uGY2OM4LuQ%26oe%3D6AC3DE10" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 7017</span></div>
+                    <p class="caption">OpenAI just launched Dots...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> OpenAI lance des agents autonomes capables de travailler sans supervision humaine.</div>
+                    <a href="https://www.instagram.com/p/Dd4a3XVgCpQ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fco2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F829452401_17927176521426313_5433358044947098161_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DMzk5NzU5MjE2NTg3ODAyOTk5Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DW3iCmGTCDR0Q7kNvwF6Fq6g%26_nc_ohc%3DW3iCmGTCDR0Q7kNvwF6Fq6g%26_nc_oc%3DAdoQhcsfCSH8OwD7mFdHJH3FY5MEwLlxKLmVnYvTMFSmZhEulJKI0AKhvSx9KtFiqRaX3iOeKyv2xwW_12s5vE4T%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fco2-1.cdninstagram.com%26_nc_gid%3Df7_Ek2PwaE04gjqg-se-8A%26_nc_ss%3D7a22e%26oh%3D00_AQNtHt7-HwBa2Sx5jfq4_oke-11FTNX3s-Q79pUVdQCkXg%26oe%3D6AC3C8DE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ -1</span></div>
+                    <p class="caption">OpenAI updates at DevDay 2026...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Récap complet du DevDay : Dots, ChatGPT Space et Pages collaboratives.</div>
+                    <a href="https://www.instagram.com/p/Dd6TfIkFmuU/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-yyz1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F825323610_18015611417959228_2173052909634125961_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5NzA4MTU1NDI5NDY3NjU5OQ%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DzpCVxRpXeUMQ7kNvwHAiUy9%26_nc_oc%3DAdoFgO6uxzV49Ajxlta0dBDP52TXBbGNIOMaU0AGJyFnsrlt59y_lnxJSzxYuhC7y6I%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-yyz1-1.cdninstagram.com%26_nc_gid%3DhoOqcK2OwLA_KBu6KsSiWw%26_nc_ss%3D7a22e%26oh%3D00_AQOyg7iG1GpBWGvuBQgy8Pqe6OIjQmp42XTq70acpeju-A%26oe%3D6AC3CD34" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 13353</span></div>
+                    <p class="caption">OpenAI launches Dots vs Dot.com...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Le domaine dot.com redirige vers Grok, le concurrent d'Elon Musk. Fail ou coup de génie marketing ?</div>
+                    <a href="https://www.instagram.com/p/Dd4fIH8AON0/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">La guerre des modèles : Google Argon défonce tout</h2>
+        <div class="trend-analysis">
+            <p>On pensait le trône d'OpenAI intouchable, mais Google vient de lâcher <strong>Gemini 4 Argon</strong>. Les résultats sont violents : il bat ou égale GPT-6 Astra sur 14 des 19 benchmarks majeurs. Sa spécialité ? Les tâches professionnelles lourdes (finance, juridique, automatisation). En parallèle, OpenAI tente de rester dans la course à l'efficience avec <strong>GPT 6.1 Sol</strong>, plus rapide et moins coûteux en tokens que son grand frère Astra.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.frtm1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F829734528_18015758273959228_3376096459740495247_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5Nzg2ODMyOTA4Njc4MTcwOQ%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DUZfoL5vv4jsQ7kNvwGyQlM1%26_nc_oc%3DAdpkKPbVrclLffR8ffpe-2fltFcptNFWGLmbiHGcjfuNg-51z9agW2yFQVeDtc_phtA%26_nc_ad%3Dz-m%26_nc_cid%3D1207%26_nc_zt%3D23%26_nc_ht%3Dinstagram.frtm1-1.fna%26_nc_gid%3Dg4qmbzi-FA_yDamlTD2E2g%26_nc_ss%3D7a22e%26oh%3D00_AQN6niaz0A_IyRH9IVMzAOQYLJXexeLKOjHeXI0dNjT7ww%26oe%3D6AC3B8F0" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 6833</span></div>
+                    <p class="caption">Google revealed Gemini 4 Argon...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Nouveau modèle Google qui dépasse OpenAI et Claude sur la plupart des tests pro.</div>
+                    <a href="https://www.instagram.com/p/Dd7SBR8AE6_/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fco2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F830324728_18015668333959228_3082798384683513675_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D104%26ig_cache_key%3DMzk5NzQ0NzAzMTAxMDIwMTU5OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DCBIBpyn4TEgQ7kNvwG2-iuZ%26_nc_oc%3DAdoFNmyuSfXyocBIkj0UOsYcCpgDPb7KMz4V_pzQxFAJFkEU1uvWQ8BSvkuE0UNJU2I%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fco2-1.cdninstagram.com%26_nc_gid%3DCocQTByVsUQIfNaiK7mIZg%26_nc_ss%3D7a22e%26oh%3D00_AQP3gZg76F_5wCTFVHh6quKdF6bub_ZBM9d37qrObsimQQ%26oe%3D6AC3CFC2" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 4637</span></div>
+                    <p class="caption">Sam Altman announced GPT 6.1 Sol...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> OpenAI mise sur l'efficience avec un modèle optimisé pour le code et les agents.</div>
+                    <a href="https://www.instagram.com/p/Dd5yOUzzY__/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lhr6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F825277397_17978729034146282_4853842181772934926_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D102%26ig_cache_key%3DMzk5NjU0NzM0NzkxNzY0Nzg4ODE3OTc4NzI5MDMxMTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DFgqdSnt8UmAQ7kNvwFSmKiO%26_nc_oc%3DAdo-uAe3qShk1sWCTM01BnCz3CpesfRuBr6FZz2rpcSkqbNr-VPtoCdTWsAkRUhmj1w%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-lhr6-1.cdninstagram.com%26_nc_gid%3DygMyJgvb8Pm2WEOGWt2e-g%26_nc_ss%3D7a22e%26oh%3D00_AQOOMvmbyp1ItaZWjYpZjCE-wFcRbRlldFeSrGqeN8M_EA%26oe%3D6AC3CAD8" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@rourke</span><span>❤️ 4237</span></div>
+                    <p class="caption">Kling 4.0 flash just released...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> La vidéo IA s'accélère aussi avec Kling 4.0, ultra-réaliste.</div>
+                    <a href="https://www.instagram.com/p/Dd2lqNoqTAQ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Washington renomme le futur</h2>
+        <div class="trend-analysis">
+            <p>C'est officiel : l'IA n'existe plus dans les documents du gouvernement américain. Donald Trump a signé un décret imposant le terme <strong>"Super Intelligence" (SI)</strong>. Pour sceller cet accord, un déjeuner au sommet a réuni Zuckerberg, Amodei (Anthropic), Pichai (Google), Huang (Nvidia) et Brockman (OpenAI) à la Maison Blanche. L'idée ? Un pacte volontaire sur la sécurité pour éviter que ces agents SI ne fassent n'importe quoi.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fykz2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F828227816_18071762324764888_2484294900720054289_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D108%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5NzU4NDUwODAwOTMyNjg3Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTM1MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DxtCqcx0rPfwQ7kNvwHLbuJB%26_nc_oc%3DAdrU3nxJVr6MJ9Ma9qX0F-SpVgWA3_DJdlrDII4mXf_97uDiN9ULz0zFal9EdbNUGmQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fykz2-1.fna%26_nc_gid%3Dwmlz2lbeLQ7EBIDnDTlomQ%26_nc_ss%3D7a22e%26oh%3D00_AQMcyuEfEot2E2zILuudVpegPQ34yzc27cWeQHJqYj1Mxw%26oe%3D6AC3E260" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@appinventiv4ai</span><span>❤️ 140</span></div>
+                    <p class="caption">AI just got a new name in the U.S...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Passage officiel du terme "Artificial Intelligence" à "Super Intelligence" pour l'administration US.</div>
+                    <a href="https://www.instagram.com/p/Dd6Re4PgCkY/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fqsr1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F829780648_17976688470130808_5118222687150688349_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DMzk5NzU4MTkxNDI1Mzg4NzQ4MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DEJGrAGALQegQ7kNvwFn9kGi%26_nc_oc%3DAdquZueJSF0CqF8fZ4CC36JutNTChAfF0L3NmELfR-3p4Q5BO9tAPSuGenuWEnt58y0%26_nc_ad%3Dz-m%26_nc_cid%3D1028%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fqsr1-1.fna%26_nc_gid%3DQp0LYTHiDtTsI7Qb43oHcQ%26_nc_ss%3D7a22e%26oh%3D00_AQP_c6w9zBkBvayZZ5ET4hXf1YqPLOKEtxPve5GWoSeK6A%26oe%3D6AC3B6DA" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 621</span></div>
+                    <p class="caption">Trump hosted AI leaders at the White House...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Sommet historique entre les Big Tech de l'IA et le président US pour discuter des "SI" agents.</div>
+                    <a href="https://www.instagram.com/p/Dd6Q6Hho769/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.71878-15%2F828018251_2173597003590726_7896435259302708016_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DMzk5NzQ0NDYwMzQxOTY2MTcwMg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DZ5T5wqNRupgQ7kNvwExnu3o%26_nc_oc%3DAdpBbORmCx3y486-saRu9R9v40qtYN5J4mhlxMJFq5Upx48hZ5-DUzoo0Q0ntedtbyY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DpK4uBcGt709GH1O517ZvmA%26_nc_ss%3D7a22e%26oh%3D00_AQO8Gxdoay97ie5ZXOPIsbn5D0z0sMS7_QA5jlHpVMmrQA%26oe%3D6AC3BFDD" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 282</span></div>
+                    <p class="caption">Dario Amodei with President Trump...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Le CEO d'Anthropic s'affiche publiquement pour soutenir la nouvelle ligne régulatrice.</div>
+                    <a href="https://www.instagram.com/p/Dd5xq_8IZWG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Anthropic : 2 trillions sur la table</h2>
+        <div class="trend-analysis">
+            <p>Pendant qu'OpenAI fait le show, <strong>Anthropic</strong> prépare discrètement le braquage du siècle avec un projet d'<strong>IPO</strong> qui pourrait valoriser la boîte à plus de <strong>2 000 milliards de dollars</strong>. Leurs revenus ont explosé (x12 en un an). Leur dernier coup ? Une étude sur les métiers les plus impactés par Claude : développeurs et service client sont en première ligne. Bonus : les créateurs s'emparent de <strong>Claude 5.5 Opus</strong> pour des démos de simulation d'océan et de jeux 3D bluffants.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.flpa3-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F825323501_18015598073959228_200820160842436434_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D108%26_nc_map%3Durlgen_bucketless%26cb%3D8438d1d6-b026aa3b%26ig_cache_key%3DMzk5NzAxNjA3NjUwMzIyODE5Mg%253D%253D.3-ccb7-5-cb8438d1d6-b026aa3b%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DR0tuE0HV3rwQ7kNvwGfx_CF%26_nc_oc%3DAdoahhuUmSxX719Rz3GjVklwUqGBRnBcBJ47EaVhzDR8Dq7oyG20bAfhRfZKMSMf-oI%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.flpa3-1.fna%26_nc_gid%3DJtedVgwdSUhrUroGtodB9A%26_nc_ss%3D7a22e%26oh%3D00_AQPvCNuN_w4FWSxbNlpGOc_eEe-KoXXvaoIyjt4zqHt6TQ%26oe%3D6AC3C1B9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 6567</span></div>
+                    <p class="caption">Anthropic filed for an IPO...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Vers l'une des plus grosses entrées en bourse de l'histoire pour le créateur de Claude.</div>
+                    <a href="https://www.instagram.com/p/Dd4QPHJgB8g/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F829941200_18000909017991209_3311708408190049877_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D110%26ig_cache_key%3DMzk5NzcyNjkwNzA5MDE5NzU5Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DYgf1FiMR9uUQ7kNvwFm9Ztf%26_nc_ohc%3DYgf1FiMR9uUQ7kNvwFm9Ztf%26_nc_oc%3DAdrr2X0cc4DSIGowakl4JtDXVwNkv37k5IaQ8ehR4AeZEvBV0yk-hjwFIagWo9CFs04x0iWS8gpc8mF2_QncWITd%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-1.cdninstagram.com%26_nc_gid%3DkUvqV5HtMftZhw-dn9XfXw%26_nc_ss%3D7a22e%26oh%3D00_AQNg--OloHvU1Nlb_4J9zFaN8DG_zusBkoJH_kS6yihdLg%26oe%3D6AC3D770" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 182</span></div>
+                    <p class="caption">Anthropic mesure l'impact sur les métiers...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Étude concrète sur les professions déjà transformées par l'IA d'Anthropic.</div>
+                    <a href="https://www.instagram.com/p/Dd6x6y6DLmR/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-itm1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F830883082_17927197308426313_1330901013604638919_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D104%26ig_cache_key%3DMzk5NzY2MTI1OTMwMTUzMzQzNQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3Du_6YB-AzAi4Q7kNvwHPrsIr%26_nc_oc%3DAdru-1GraIkh5pugVeaHFRrVe5_eA8g4-DQj65CDI31I5SiM8WSx-V9Jv5dZiykr-Xc%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-itm1-1.cdninstagram.com%26_nc_gid%3DXJgUowAYWgNKYKmbPmh5Uw%26_nc_ss%3D7a22e%26oh%3D00_AQNS8ISi6mHJXO3PTMFsByaiyS0Az7jJJopQwZ732NiULw%26oe%3D6AC3CA7C" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 2461</span></div>
+                    <p class="caption">Claude Sonnet 5.5 pushed into projects...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> Démonstrations impressionnantes des capacités créatives du nouveau modèle Claude.</div>
+                    <a href="https://www.instagram.com/p/Dd6jNibFuxB/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le créatif n'a plus de limites (ni de budget)</h2>
+        <div class="trend-analysis">
+            <p>Cette semaine, les barrières entre le cinéma, le jeu vidéo et la réalité ont explosé. Un fan a recréé un court-métrage Star Wars qui nargue Disney, pendant que d'autres fusionnent <strong>Elden Ring et Minecraft</strong> grâce à des mods assistés par IA. On voit aussi <strong>Skate 3</strong> s'inviter dans Modern Warfare 2 et Plants vs. Zombies devenir un film d'horreur live-action. Le message est clair : avec l'IA, les idées priment enfin sur les moyens techniques.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F831616017_18015740111959228_1679136710273670296_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DMzk5Nzc0NTg2Njc2OTkwMjM1MzE4MDE1NzQwMTA4OTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DYuleVQOPqKoQ7kNvwF2LyYg%26_nc_oc%3DAdoxXN5mxjOVAdxLxSXrzLTtnLd-29u9K1OUbKBrbUu2TlHr93GdfASI4YIsLd3R8-0LufnUBjpSwrgSqWGKcqPl%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt6-1.cdninstagram.com%26_nc_gid%3DvAFjaTGXu5OdrudfQgjQjg%26_nc_ss%3D7a22e%26oh%3D00_AQNejj6W5JHlTJsSjWTVC7wtWHLcCNMhTyOZJj_bY0VdMA%26oe%3D6AC3AE40" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 25698</span></div>
+                    <p class="caption">One creator builds Star Wars short...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> La preuve qu'un créateur seul peut produire des visuels dignes d'Hollywood.</div>
+                    <a href="https://www.instagram.com/p/Dd68s44gQsR/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ord5-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F825372443_18015598529959228_4813850775593811582_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26ig_cache_key%3DMzk5NzAwNzI2Mzc1MDU2MTk5MDE4MDE1NTk4NTIzOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjU0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DUdXffNdIeX4Q7kNvwEXVnX3%26_nc_oc%3DAdqKWFNjo31QngI8AZsV68YXs03xEfW10PTYkrgRrBzWnhef-fJoid4cku2Ym8tNUMQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ord5-2.cdninstagram.com%26_nc_gid%3DdGYtOrVNW7k6xaa2jC9kmQ%26_nc_ss%3D7a22e%26oh%3D00_AQMjRK-FooUKOJnB2j-epYpjC4UBhYOoVXLsFkcfTKeugQ%26oe%3D6AC3C513" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 34412</span></div>
+                    <p class="caption">Minecraft inside Elden Ring...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> L'IA facilite la fusion de mécaniques de jeux totalement opposés.</div>
+                    <a href="https://www.instagram.com/p/Dd4OO3ogiDG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-itm1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F825277469_17927222037426313_8107110629485020205_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DMzk5NzczNjQzNzM3NzkwMTgwMw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DJpTLHfVf3H8Q7kNvwEk1W77%26_nc_oc%3DAdqHRYssmumHI8sZIxmM7EQeKDMpumelCkbZvUtQ7XGRcmskLYSXcZTZVtvznr5RVdHcGool4kcKN1xarfPsclHs%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-itm1-1.cdninstagram.com%26_nc_gid%3D6zdCLhRYKpbZdTCpup9l8Q%26_nc_ss%3D7a22e%26oh%3D00_AQPzPSRraus_RfOgKSVOfy-zzGeJbk7HTeuKTrmVvc4U1g%26oe%3D6AC3C533" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 981</span></div>
+                    <p class="caption">Skate 3 in Modern Warfare 2...</p>
+                    <div class="insight"><strong>💡 Pourquoi c'est une news :</strong> L'IA permet de réécrire des moteurs de jeux classiques pour créer des expériences hybrides folles.</div>
+                    <a href="https://www.instagram.com/p/Dd60HHPFpQu/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
