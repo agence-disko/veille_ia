@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 08 octobre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Mistral Large 4 "Le Chonk"</strong> : Le nouveau monstre français à 1 trillion de paramètres est là.</li>
+            <li><strong>Claude Haiku 5.5</strong> : Anthropic lance son modèle le plus rapide avec un score de 72% en "computer use".</li>
+            <li><strong>AnyPS5</strong> : Des développeurs réussissent à traduire le code PS5 nativement pour PC (87% de couverture).</li>
+            <li><strong>Privacy Alert</strong> : La Norvège veut bannir les lunettes IA en public pour protéger la vie privée.</li>
+            <li><strong>Justice & IA</strong> : Anthropic a signalé des messages suspects d'un utilisateur à la police de Floride.</li>
+            <li><strong>Hardware</strong> : Un ado de 19 ans lève 11M$ pour "Ghost", une box pour faire tourner son IA localement.</li>
+            <li><strong>Watermark</strong> : OpenAI déploie "textGrain" en Europe pour marquer de façon invisible les textes générés.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le Chonk et la petite bombe</h2>
+        <div class="trend-analysis">
+            <p>La guerre des LLM repart de plus belle. D'un côté, <strong>Mistral</strong> sort les muscles avec "Mistral Large 4" (surnommé "Le Chonk"), un modèle à 1 trillion de paramètres qui gère texte et image nativement. De l'autre, <strong>Anthropic</strong> dégaine Haiku 5.5 : c'est petit, c'est pas cher, mais ça code mieux que les géants d'hier. Le marché se segmente : la force brute pour les gros besoins, l'efficacité chirurgicale pour le quotidien.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.flpa2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F839822582_18016752725959228_456053328011476209_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAwMjkyNzA3ODk0ODIxODEyMg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D58m0l63CCM8Q7kNvwHX_qu1%26_nc_oc%3DAdplR-UEMSPwIsolutFUoACWyvwfvhik_xUNVJPNbt_gosJJUX3A0Sw-DiV9GnFROrc%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.flpa2-1.fna%26_nc_gid%3DY-JjHhB0wlyADLiKHrFuwg%26_nc_ss%3D7a22e%26oh%3D00_AQMqeCaWHg9j2YObFSZDgeb_S1r2tY0Ff_Z-dl-B3q14fg%26oe%3D6ACD15CD" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 4187</span></div>
+                    <p class="caption">Anthropic just released Claude Haiku 5.5...</p>
+                    <div class="insight"><strong>💡 News :</strong> Claude Haiku 5.5 explose les scores en "computer use" (72.4%) et en coding.</div>
+                    <a href="https://www.instagram.com/p/DeNQPsWALA1/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbcn15-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F834296547_18016584689959228_7815652789668781373_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D100%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwMjA3MDQ2MDA1MjMyMTYwNg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D8enEAhjWsKwQ7kNvwHzLFLr%26_nc_oc%3DAdqH-8gpkMvmH3ZZXeHkff2rj_MP5jI1fRm5iGJOSksTvZPs5sH3ZK0f_ZXNdUM0vIY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbcn15-1.fna%26_nc_gid%3D1mwLvAk375yJtHelRVjHMA%26_nc_ss%3D7a22e%26oh%3D00_AQPyVqwKoOz0dD11npsSfP6VjSujPms0hdwixaa6XIEPEg%26oe%3D6ACCF3F2" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 6057</span></div>
+                    <p class="caption">Mistral just turned an AI meme into a real trillion-parameter model...</p>
+                    <div class="insight"><strong>💡 News :</strong> Mistral lance son modèle 1T paramètres, validant le meme "Le Chaton Fat".</div>
+                    <a href="https://www.instagram.com/p/DeKNeP7gKdg/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpbc6-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F840264323_17977715832130808_480193844959015460_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwMjc3MTQ2MjMxOTY1NzE3MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DhgHYqlaKKzYQ7kNvwEruw1s%26_nc_oc%3DAdopkX4wLjOOMee5-fKOxRTCkcdXIg3Nr4MB4QP_nP58oZDylZQ2vtjF3ofwAoGaob7i5AHB-WFi1j0X9MhnZVNj%26_nc_ad%3Dz-m%26_nc_cid%3D3640%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fpbc6-1.fna%26_nc_gid%3Dqu0UsGpJS0FskQ935Ed0bw%26_nc_ss%3D7a22e%26oh%3D00_AQOnhZT2pbBUbumbxoiWIsCw2kjJG8GxRDuYw2XhMfVLDQ%26oe%3D6ACD0FC7" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ -1</span></div>
+                    <p class="caption">Australia just put a model at the top of a leaderboard...</p>
+                    <div class="insight"><strong>💡 News :</strong> Matilda Jev, un modèle australien de 26B, domine les benchmarks de décision.</div>
+                    <a href="https://www.instagram.com/p/DeMs4LRozeb/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Console Wars : Le Hack Total</h2>
+        <div class="trend-analysis">
+            <p>L'IA est en train de réécrire les règles du gaming. Oubliez l'émulation lourde et buggée : avec des projets comme <strong>AnyPS5</strong>, l'IA traduit directement les instructions GPU de la console pour le PC. Résultat ? Des jeux PS5 qui tournent nativement sur Windows. Et si ça ne suffit pas, on voit même <strong>GTA 5</strong> tourner à 60 FPS directement dans Google Chrome via WebAssembly. La barrière hardware est en train de s'effondrer.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F836195967_18016660190959228_7735171099264512314_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAwMjUxNDAwMzI5NzUzMTI2NQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D_Y-Swj_cV18Q7kNvwGKQ2Rf%26_nc_oc%3DAdr-QfiQTBoMrtce5RI2vNwNbKxfWK2oQmA7z2U3y0dwCM0t04VpmaSaQKG-DTcU2GY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt6-1.cdninstagram.com%26_nc_gid%3DdMctcnEwL08bkURQ9iJOxg%26_nc_ss%3D7a22e%26oh%3D00_AQOGvSBp4HswW9GwfW2QV5JK6i38Ma4oGofHXvtRagn4OQ%26oe%3D6ACCF623" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 25519</span></div>
+                    <p class="caption">AnyPS5 is trying to run PS5 games natively on Windows...</p>
+                    <div class="insight"><strong>💡 News :</strong> Traduction directe du code PS5 vers PC sans émulation traditionnelle.</div>
+                    <a href="https://www.instagram.com/p/DeLyXSMAKN5/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt1-2.cdninstagram.com%2Fv%2Ft15.5256-10%2F837062178_1091218919956475_8872410808962096616_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26ig_cache_key%3DNDAwMTg4NjA1MTg4MTk1OTc3MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DCX2hSm9wPnIQ7kNvwGs9CRe%26_nc_oc%3DAdrhGUUfNNhtCCFRMqj2gpRTtJsL4NeEJFBWaYm87cZ3QBQPdIsI230D7S8FyLxmfDY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt1-2.cdninstagram.com%26_nc_gid%3DYirbQG8LQ4ff52LHnFJEtg%26_nc_ss%3D7a22e%26oh%3D00_AQNCCwXdL-8dgoRrRzJT8qvsPRh7RWIPLbe3TI4emTvcWw%26oe%3D6ACD07C2" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 22092</span></div>
+                    <p class="caption">GTA 5 has been ported to WebAssembly using AI...</p>
+                    <div class="insight"><strong>💡 News :</strong> GTA 5 tourne désormais dans Chrome à 60 FPS sans installation.</div>
+                    <a href="https://www.instagram.com/p/DeJjilKA8Fb/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbne8-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F835748647_17928139518426313_8182972963264406484_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D102%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwMTI5NDc5Nzk2ODEzMTI2NQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DHbKp1Pv5FJgQ7kNvwFd4Iuq%26_nc_oc%3DAdotpVIjoh6uB6JZo3NldZ7I4cVwSStyOuEj99BEEwmTWdc8QfWHIKUlJ47m_F8w3LU%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbne8-1.fna%26_nc_gid%3Dncaoox2WmLS8hFVL9A52aA%26_nc_ss%3D7a22e%26oh%3D00_AQNWuB15pbFidFv1N8N35fwomofsOxJ0i2LI2EsVehG6EQ%26oe%3D6ACD0669" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 1564</span></div>
+                    <p class="caption">AI game modding is getting ridiculous...</p>
+                    <div class="insight"><strong>💡 News :</strong> L'IA reverse-engineere les jeux pour créer des mods impossibles (Mario dans Elden Ring).</div>
+                    <a href="https://www.instagram.com/p/DeHdZrEltly/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Balance ton prompt</h2>
+        <div class="trend-analysis">
+            <p>La vie privée en prend un coup. En Norvège, le gouvernement veut stopper l'invasion des lunettes connectées Meta dans les crèches. Plus flippant : aux US, <strong>Anthropic</strong> a alerté la police après avoir analysé les messages menaçants d'une utilisatrice à son IA Claude. Et pour couronner le tout, OpenAI lance <strong>textGrain</strong> en Europe, un watermark invisible pour traquer tout ce qui sort de ChatGPT. Tu es prévenu : l'IA ne garde pas tes secrets.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-bos5-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F834248983_18016563680959228_2232052550732115766_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D110%26ig_cache_key%3DNDAwMTk5NzQyMTgwOTgxODI4Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DIn2D73urUDkQ7kNvwHqwrUw%26_nc_oc%3DAdoStno-tfheGsPKVfWG7SV5jGcDAua8wa0EJm_A3cxozHt2rc2y2Kaf1RUxuU6Fr3qsF2QSS_q8fI87-pwhuh26%26_nc_ad%3Dz-m%26_nc_cid%3D1087%26_nc_zt%3D23%26_nc_ht%3Dscontent-bos5-1.cdninstagram.com%26_nc_gid%3DBII-9hp3wRVOA1EZ9N5x6Q%26_nc_ss%3D7a22e%26oh%3D00_AQMt69HcOWt8e4vZ_UScUuZetVu7LOcjbKOY9vDzhcxnYw%26oe%3D6ACD0C52" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 6545</span></div>
+                    <p class="caption">Norway is moving to temporarily ban AI glasses...</p>
+                    <div class="insight"><strong>💡 News :</strong> La Norvège interdit les lunettes IA dans les lieux publics pour risque de surveillance.</div>
+                    <a href="https://www.instagram.com/p/DeJ83OfANqr/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F838682087_18638328829038643_5421318504222299661_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26ig_cache_key%3DNDAwMjczMzMxNjc0NDM3MDU3OTE4NjM4MzI4ODIzMDM4NjQz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DIT9bZEMEAT4Q7kNvwEpTCeV%26_nc_oc%3DAdooT2ZkSegIQjxMTKyBaHNoaV7lyVY_N-8rXd24Df4fD2vnO34utnwaICRCQ8gwVWw%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3DxCJ8XL1XmmF0-X_3OnXe6A%26_nc_ss%3D7a22e%26oh%3D00_AQNPJMSMRRObqJ2Qe0NyILIKXiIrSGc0Tj7OOl7dDC4xWw%26oe%3D6ACD0104" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@bariqrifki</span><span>❤️ 400</span></div>
+                    <p class="caption">Anthropic a signalé à la police des messages à son IA Claude...</p>
+                    <div class="insight"><strong>💡 News :</strong> L'IA d'Anthropic a dénoncé un utilisateur à la police après des messages menaçants.</div>
+                    <a href="https://www.instagram.com/p/DeMkL6DK1mT/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ber1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F838949081_17913899280467870_4358929342957522443_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DNDAwMTkzNzI5NjAyOTMwMjkzMQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Dun54WeLsWQAQ7kNvwEsINv8%26_nc_oc%3DAdpO3LYKFBLad81ENOC5c56FVoRpOKmGeIn6bjjpf9fg71By0CHigTcXnu1dklxNId4%26_nc_ad%3Dz-m%26_nc_cid%3D1365%26_nc_zt%3D23%26_nc_ht%3Dscontent-ber1-1.cdninstagram.com%26_nc_gid%3DI4xUX-b3LYPfbFGq89c0bA%26_nc_ss%3D7a22e%26oh%3D00_AQNZaSk0bUoIJ3NdIWmF3Hce38ycJJIozuK_8sInQDxCxg%26oe%3D6ACD0BAE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@girsta</span><span>❤️ 22</span></div>
+                    <p class="caption">OpenAI said it will embed an invisible watermark called textGrain...</p>
+                    <div class="insight"><strong>💡 News :</strong> "textGrain" arrive en UE pour marquer secrètement tous les textes ChatGPT.</div>
+                    <a href="https://www.instagram.com/p/DeJvQw4DYr5/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Ben Affleck code en Python</h2>
+        <div class="trend-analysis">
+            <p>Le futur du cinéma n'est plus seulement sur le plateau, mais dans le terminal. Ben Affleck a choqué tout le monde en révélant qu'il codait en Python et qu'il testait en secret les modèles vidéo d'OpenAI. Pendant ce temps, des créateurs utilisent l'IA pour imaginer des crossovers Marvel impossibles ou des films d'action des années 80 ultra-crédibles avec Stallone. La créativité s'affranchit des budgets de production.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmex22-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F839490353_18016666166959228_5122880231828060336_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwMjU1MTY3Mzk4NDg3NzQ5NzE4MDE2NjY2MTYzOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DcXNJYvtHYAEQ7kNvwH-BaHF%26_nc_oc%3DAdpRrjqxLO6nNAkAFYLKJ0HiOIN5OsUsJnWvghfOpm0zsEJhYt8jnhcnmJkU1eG8pHMMxxKVNRsEvun46MvSGc3g%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmex22-1.fna%26_nc_gid%3DC3vd_bg6R4tSgLCxM9LKjA%26_nc_ss%3D7a22e%26oh%3D00_AQNvcFhVvQAdWTkYvqqCeaPcdFueBlJv6Sh0ewvLYWpYMQ%26oe%3D6ACD0D8E" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 9680</span></div>
+                    <p class="caption">Ben Affleck casually reveals he writes Python...</p>
+                    <div class="insight"><strong>💡 News :</strong> L'acteur Ben Affleck est un geek d'IA qui suit de près le dev des modèles vidéo.</div>
+                    <a href="https://www.instagram.com/p/DeL64qDA4O5/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dus1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F838620554_17928347814426313_478655183660318441_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D105%26ig_cache_key%3DNDAwMjA4ODUzOTI4OTk5Njc4NDE3OTI4MzQ3ODA4NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DHrA6QAgdfDQQ7kNvwG0-ddV%26_nc_oc%3DAdpK9buSYKkUUjh3vUsyWkRXtUvFsi-C1xMiKvu9JBBUqIE2j8lyR-D2YimcOlDAGM_GqLak9u6M-kuRwZdhAMv8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dus1-1.cdninstagram.com%26_nc_gid%3D4WtaIWBZfgrX6LRgXQL_qw%26_nc_ss%3D7a22e%26oh%3D00_AQMxis-pr--9CgquaXAFHSDdifUXPCb0WhWgGDPjzJRavg%26oe%3D6ACD04CF" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 3856</span></div>
+                    <p class="caption">AI-generated filmmaking looks like 1980s action movie...</p>
+                    <div class="insight"><strong>💡 News :</strong> Un court-métrage bluffant de Stallone et Schwarzenegger généré par IA.</div>
+                    <a href="https://www.instagram.com/p/DeKRlKQCs3w/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dus1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F839724946_18001865720991209_4312748741712500571_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D105%26ig_cache_key%3DNDAwMjgwMTAzMzAxMTE3NTk3Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Dz0sruM346xYQ7kNvwHrWl-S%26_nc_oc%3DAdoZgR0tFYXQyW32Q_Pb7oudSsyw31N0B04SALOSntLI-X0SB_8W0ZtJmfEcRmOKqHo%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dus1-1.cdninstagram.com%26_nc_gid%3DIdqrw-Y6p8ggaZ4k8aqPpw%26_nc_ss%3D7a22e%26oh%3D00_AQMYRyja5Ct0ZTIaQ7bspdRh1R-uTOl84wjWgeddBntjQA%26oe%3D6ACD179D" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 256</span></div>
+                    <p class="caption">Claude Opus 5.5 branché à Higgsfield meuble une villa...</p>
+                    <div class="insight"><strong>💡 News :</strong> L'IA remplace désormais l'agent immo, le décorateur et le vidéaste en un clic.</div>
+                    <a href="https://www.instagram.com/p/DeMz9lJjNMK/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">IA en chair et en puces</h2>
+        <div class="trend-analysis">
+            <p>L'IA quitte enfin le cloud pour s'incarner. Qu'il s'agisse de robots Unitree qui font de la boxe sur un plateau télé français ou d'une box physique nommée "Ghost" pour héberger sa propre IA à la maison, le hardware devient sexy. Pendant ce temps, NVIDIA flirte avec les 6 000 milliards de dollars de capitalisation. On ne construit plus seulement des modèles, on construit l'infrastructure physique du futur.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F838195611_17977514118130808_6552023225837029975_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DNDAwMTcwMzUyMjIwODAyMjg0MA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzA3Mi5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D-pb7Oyzs4UEQ7kNvwH1wkE5%26_nc_oc%3DAdrDiIBIjaUoyLHQVvoYTFWXAoLX7SaIHOaSekqt6u7LjVmgBGfQSkhcKZPraCNTR88%26_nc_ad%3Dz-m%26_nc_cid%3D1479%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-1.cdninstagram.com%26_nc_gid%3DT6lEfIWb5B8LsjhuuSINsA%26_nc_ss%3D7a22e%26oh%3D00_AQP5r7gx1p2mCHf7fkoDdVuz33oLBcwbXw9ME02ibPVXMg%26oe%3D6ACCEBB8" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 5108</span></div>
+                    <p class="caption">Ghost: a box that keeps your AI at home...</p>
+                    <div class="insight"><strong>💡 News :</strong> "Ghost" lève 11M$ pour vendre une box à 3000$ qui traite l'IA en local.</div>
+                    <a href="https://www.instagram.com/p/DeI6CzyI-PL/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fsdu31-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F837887925_17928118629426313_6567535537769610796_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwMTIxNTU2NDQ1Mzg4NTc0MDE3OTI4MTE4NjI2NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DCG-PlKemWWwQ7kNvwEsBvXM%26_nc_oc%3DAdpCpCBnLg7FX27RhjJueLBpUh7fN0y1iuTfBG4rrzfBj8Ca_r4pMGgnPr5eklbfAP0%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fsdu31-1.fna%26_nc_gid%3DMQ0roN4tO1H9PgLR_t2fiQ%26_nc_ss%3D7a22e%26oh%3D00_AQMXePRRtrIywuxNCg1rjNSXH0c549pDLITpFjKWHMWtPQ%26oe%3D6ACD0EDC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 4335</span></div>
+                    <p class="caption">A French TV host stepped into the ring with two humanoid robots...</p>
+                    <div class="insight"><strong>💡 News :</strong> Démonstration de boxe en direct avec des robots Unitree sur France 2.</div>
+                    <a href="https://www.instagram.com/p/DeHLFtFCbcs/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmty1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F840264305_18072835196764888_4885096353606736449_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D101%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwMjUwNDUyMzE3OTM4NjExMQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTM1MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DGjnAhlJrbtYQ7kNvwGTdRHt%26_nc_oc%3DAdqTanJlda4yuCZ9E4hPGPasNXmX6J-GKePFmCq3ODqsE2_tMaUVwzdUSqyeEgnGIFs%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmty1-1.fna%26_nc_gid%3DXe8iJVJ5NoW4SYu4fEcI2A%26_nc_ss%3D7a22e%26oh%3D00_AQNYZ0kT1vIrrWliOR7i82oTFGSr9bAyf7gzU1T6coVjgA%26oe%3D6ACD0C48" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@appinventiv4ai</span><span>❤️ 91</span></div>
+                    <p class="caption">NVIDIA is closing in on a historic $6 trillion market cap...</p>
+                    <div class="insight"><strong>💡 News :</strong> NVIDIA pourrait devenir la première boîte à 6 trillions grâce à l'IA.</div>
+                    <a href="https://www.instagram.com/p/DeLwKhcAGT_/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
