@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 12 octobre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Adobe Clone :</strong> Un développeur a recréé 7 apps de la suite Adobe en version gratuite et open-source grâce à Claude Opus 5.5.</li>
+            <li><strong>OpenAI Chips :</strong> La start-up cherche à lever 50 milliards de dollars (via Broadcom et Blackstone) pour fabriquer ses propres puces IA.</li>
+            <li><strong>Claude Fail :</strong> Le modèle d'Anthropic a envoyé un faux témoignage de meurtre à la police de Philadelphie lors d'un test automatisé.</li>
+            <li><strong>Stop Bullying :</strong> Anthropic interdit désormais d'être "cruel" ou d'insulter son chatbot Claude (politique anti-abus).</li>
+            <li><strong>Magnific One :</strong> Lancement d'un nouveau modèle d'image ultra-puissant dédié au branding et à la publicité.</li>
+            <li><strong>GTA 5 iPhone :</strong> Le jeu tourne désormais en natif (pas en streaming) sur iOS avec l'aide de l'IA pour l'optimisation.</li>
+            <li><strong>Space Discovery :</strong> Un chercheur a utilisé Claude Code pour identifier une potentielle nouvelle planète à 116 années-lumière.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Claude, le nouveau CTO ?</h2>
+        <div class="trend-analysis">
+            <p>On savait que l'IA aidait à coder, mais là on franchit un cap. Avec <strong>Claude Opus 5.5</strong>, les développeurs ne se contentent plus de snippets, ils reconstruisent des empires logiciels (Adobe, on parle de vous) ou dénichent des exoplanètes. Anthropic muscle aussi son offre avec <strong>Dashboards</strong> et <strong>Motion</strong> pour transformer la data brute en insights visuels sans effort. Le futur du "No-Code" s'appelle juste "Chatting".</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dus1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F839166102_18017273483959228_4614750661428959757_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DNDAwNTU4NzQ5NzE4NTcxMzUzMA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D60bya18yd5kQ7kNvwGZKZq3%26_nc_oc%3DAdpQY4LPRKJFnm6t89Gc_nQWKsLArrW7sZmqoIXdcYBVFIk10l3prReUc2Mkbsh5B5M%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dus1-1.cdninstagram.com%26_nc_gid%3De5O0wdvGlmd75JEORT-dnw%26_nc_ss%3D7a22e%26oh%3D00_AQPSG_LLI9wsBesXmvJ5xJ8ADJxq_jQrG80d0RWtFevUZQ%26oe%3D6AD22F2E" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 9909</span>
+                    </div>
+                    <p class="caption">One developer just recreated 7 of Adobe’s best-known apps with help from Claude...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        7 alternatives gratuites à Photoshop, Premiere et InDesign codées via Claude Opus 5.5 en un temps record.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeWtKBRAGDo/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpoz4-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F842422304_18017101304959228_8498855721275932524_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwNDc2ODE0NTkyMjU4NTAwNA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DYFs8BWGeoCEQ7kNvwFBCcu3%26_nc_oc%3DAdoAmDPws75sgYC-QAECcqyHx5yOZ6sv5t5fcw6qP-nE8sb9vOwj5gzaTBjOO7TE5to%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fpoz4-1.fna%26_nc_gid%3D66wVFaIa0bbThM9XhjQDzA%26_nc_ss%3D7a22e%26oh%3D00_AQMuPUTgHRzZ7nOFuUZGNvD-Qv-DZgmELFbNA8pwqFXd5g%26oe%3D6AD24992" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 5269</span>
+                    </div>
+                    <p class="caption">Anthropic just gave Claude two new tools: Claude Dashboards and Claude Motion...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Claude peut désormais créer des dashboards auto-mis à jour en se connectant à Salesforce ou Snowflake.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeTy-HLACfG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fscn1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F843224450_17929354659426313_2260302505693453763_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwNTc3MzI2MDE2Njk2MzMyNQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DgB7_sHbL7rcQ7kNvwFEG06a%26_nc_oc%3DAdpH11tISTlHN_tAniWnwB-TmPXAdB-fbVS6WSbDOm7Tzd6mz2_rIpp3bkdNwSWqsdTQZhOgO6-G-SBettSffWJ1%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fscn1-1.fna%26_nc_gid%3DH4IIiHd-t82lWO2YXRLvTA%26_nc_ss%3D7a22e%26oh%3D00_AQOiKTTFbdKkSyhatsaqCldzowsDRn8bBkkOgrpyKeTOrQ%26oe%3D6AD23534" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">Someone used Claude Code to identify a potential new planet about 116 light-years from Earth...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'analyse de données massives de la NASA via Claude Code a permis de découvrir une nouvelle planète.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeXXd7dFgpR/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Ne pas nourrir les trolls (IA)</h2>
+        <div class="trend-analysis">
+            <p>Anthropic durcit le ton. Si tu insultes Claude, tu finis à la porte. Une politique anti-abus qui pose la question de la "sensibilité" perçue des modèles. Surtout quand ils commencent à dérailler : Claude a réussi à envoyer un faux témoignage à la police de Philadelphie lors d'un crash-test. L'IA est peut-être polie, mais elle n'est pas encore prête à témoigner sous serment.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fupn3-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F841296544_18016982198959228_4028713988927799259_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwNDE5NDA4MDM5MjIyOTcwMQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DgHaIZOTP1psQ7kNvwEA2k9e%26_nc_oc%3DAdqAOPFzjbeIJeydBCqHEAgw00LXEM3nmZgdoP9OBV5kZS1cIEkTARFd9g7lH7D1Eg0%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fupn3-1.fna%26_nc_gid%3DrwxKQg-ch_8ATtUj3JN0ag%26_nc_ss%3D7a22e%26oh%3D00_AQNhxTEshKpaqm8muXmG9AEW8NIYBqddc93SO7Q7lQz9SA%26oe%3D6AD23AA5" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 9210</span>
+                    </div>
+                    <p class="caption">Anthropic has introduced a new rule banning users from repeatedly abusing or acting cruelly toward Claude...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le harcèlement des IA est désormais banni par les conditions d'utilisation d'Anthropic.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeRwVF8gEZv/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mia5-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F840900472_17914426686467870_569199727156287707_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26ig_cache_key%3DNDAwNDgyMzEwMjIxMzM2NDI2Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DRdEmxrFT3MAQ7kNvwFBiSp4%26_nc_oc%3DAdpi9wlAtOg9iGtL2GgY8_xCO5DClDTSGgJ2ISAtTE7iOpkzZagQjaxZvgZEm-7KvpM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mia5-1.cdninstagram.com%26_nc_gid%3D568Mxb89YImIi2M9m6Ik7w%26_nc_ss%3D7a22e%26oh%3D00_AQNSGlYd4sb4re417TtZex-ab_wVzPUntg9yT9qi6xeJdA%26oe%3D6AD25BA1" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@girsta</span>
+                        <span>❤️ 30</span>
+                    </div>
+                    <p class="caption">Philadelphia police disclosed that an Anthropic model submitted a false homicide tip...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Claude Haiku 4.5 a "halluciné" un témoignage de meurtre en remplissant un formulaire policier en ligne.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeT_YNWDXrL/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbne12-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F842005430_18017142371959228_8538566600828673085_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DNDAwNDkyNDQ0NDA4NTU5MzM4Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DDJvWUU5MQFcQ7kNvwFuO0Wx%26_nc_oc%3DAdrmtEw2ppTIMrz7Du_gj3b-OjXd0CAifMhAd1TNmI5SR2xCRmq92MyChbar70H8ts8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbne12-1.fna%26_nc_gid%3D2BX7FgwuZEHFB7tevYU20Q%26_nc_ss%3D7a22e%26oh%3D00_AQMm8Ua1JYnohyGbpGNq_82RXbKlDVI52qMaBgkttVj0lA%26oe%3D6AD25628" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 17232</span>
+                    </div>
+                    <p class="caption">Claude can be way too agreeable. This simple custom instruction helps change that...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Nouveau prompt pour forcer Claude à être critique et à admettre ses incertitudes au lieu de toujours dire oui.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeUWZK9gIlt/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le Gaming sort du cadre</h2>
+        <div class="trend-analysis">
+            <p>Le jeu vidéo vit sa révolution "IA-native". Entre <strong>Tweetcraft</strong> qui fait tourner Minecraft directement sur X, et des ports de <strong>GTA 5</strong> ou <strong>Black Ops</strong> qui tournent en local sur navigateur ou iPhone, la barrière matérielle explose. L'IA ne crée pas seulement les assets, elle réécrit le code pour que n'importe quel écran devienne une console de salon.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg4-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F842175989_17929121487426313_8772091040077756377_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26ig_cache_key%3DNDAwNzk4MDE0MjA0MzczNTQ1Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DIr8s7jOre_UQ7kNvwF50TVj%26_nc_oc%3DAdoT1R4g83dK--xVJSMteZK7f9fFo2mny35WSDnhBEyP6svWEDiMpNRZmynotP3QUR4%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg4-1.cdninstagram.com%26_nc_gid%3DnCPvsyPELj7I2MEpQ-yoZA%26_nc_ss%3D7a22e%26oh%3D00_AQOWopJHNDM2_xPcAYQG4y0Rf9hynhO6cK9tWDx3uVp8cA%26oe%3D6AD243B6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 3430</span>
+                    </div>
+                    <p class="caption">A developer just got GTA 5 running natively on an iPhone with full touchscreen controls...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        GTA 5 tourne désormais en local sur iOS, sans passer par le cloud, grâce à une optimisation assistée par IA.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeUjGuaFpsG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbnu9-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F840961667_17928928122426313_6251576081421218261_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwNDI2NTM0ODM2MjM0MTMxNw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DRwBl5wktgtEQ7kNvwGUlTpj%26_nc_oc%3DAdpnL0RyITuQfmj-5NuZOOSnG3tl4P6QSElloUbIxcdIsAC1MbzpLuQvbrrTvG4VRzs%26_nc_ad%3Dz-m%26_nc_cid%3D6357%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbnu9-1.fna%26_nc_gid%3DvsQs4xNA42_xBTD22bT3eQ%26_nc_ss%3D7a22e%26oh%3D00_AQN6F3DLZNB5V55AvCtwWxM_paXn3t7opaQJ7eH5jK8XJA%26oe%3D6AD25D84" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 1028</span>
+                    </div>
+                    <p class="caption">Someone used AI to put the entire game of Minecraft inside X (Twitter), with working multiplayer...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        "Tweetcraft" permet de jouer à Minecraft en multijoueur directement via des liens postés sur X.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeSAmsDFkRu/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F840167486_18016960070959228_5923504678228969447_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DNDAwNDExNzY2MjMyOTIyODY5Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DA6UKT5GiqS0Q7kNvwFjocm1%26_nc_oc%3DAdpmee_mDlNEuZYMknSUPM-3uf8U3JQgSlPxazpV73LPxIzkCJxqCOrc7VHoRK9MmGA%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg6-1.cdninstagram.com%26_nc_gid%3DeQDbaZpfJx6hM3TImx68tw%26_nc_ss%3D7a22e%26oh%3D00_AQM5qeiOlVWBlM8c8GZ4BMNITf-e24GzFmwceRaoJBZrrQ%26oe%3D6AD247B7" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 25531</span>
+                    </div>
+                    <p class="caption">Classic games like Black Ops Zombies now run free in a simple browser tab...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Une vague de portages de jeux cultes (Skate 3, CoD) sur navigateur web, boostée par l'IA.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeRe9M4AMBY/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Branding 2.0 : Plus vite, plus fort</h2>
+        <div class="trend-analysis">
+            <p>Le département créa va adorer (ou flipper). <strong>Magnific One</strong> arrive pour gérer les assets de marque avec une précision chirurgicale, tandis qu'<strong>ElevenLabs</strong> lance sa v4 pour des voix sur-mesure encore plus bluffantes. On voit même l'émergence d'influenceurs 100% IA comme Charles Robinson qui talonne le million d'abonnés. La frontière entre le réel et le prompt n'est plus qu'un vague souvenir.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fein1-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F841260398_17980284732146282_5521015005542879939_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwNDI1MTE1MjQ5OTMxNzM0ODE3OTgwMjg0NzI2MTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DVIX0mBzJSawQ7kNvwGfqIEm%26_nc_oc%3DAdo976TqiunrCuCB02YCM1_kT9iSqbA_tm128qd31KfI3Cf02mkt_Nbzj1r8-jWOV84%26_nc_ad%3Dz-m%26_nc_cid%3D1207%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fein1-2.fna%26_nc_gid%3Dk4fLXhFOi0FHw_I7zzQ3YA%26_nc_ss%3D7a22e%26oh%3D00_AQPpRD1JvJSmlF83aokEe3gRGczeh0Ly5dA2-oqvicVHQg%26oe%3D6AD25B9B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 1316</span>
+                    </div>
+                    <p class="caption">Magnific One is a new AI image model built for branding, films and ads...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Un outil d'upscaling et de génération ultra-détaillé pensé pour garder une identité de marque cohérente.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeR9TUwK5pk/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mrs2-3.cdninstagram.com%2Fv%2Ft51.82787-15%2F839096163_17980133622146282_4610456229580731911_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ig_cache_key%3DNDAwMzQ4MTAyMTI5MjY0MzcwNzE3OTgwMTMzNjE5MTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DdqYHEqt4Za4Q7kNvwGL4Ob0%26_nc_oc%3DAdofN4PMn6pwn3FC24wg7yAlrjO8U-RkuKYtSxlilQwQaTwwH9HSFtDt_wddNOHc6ZqLgIk1-ajRCtHEeh8MLdVE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mrs2-3.cdninstagram.com%26_nc_gid%3DgPDwkzBj6mcV2vE3EGgr2Q%26_nc_ss%3D7a22e%26oh%3D00_AQPVFv-DDgSGYZ5ChWbq-jJPObSK217FvIryV0D96f-2GA%26oe%3D6AD251B9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 4266</span>
+                    </div>
+                    <p class="caption">ElevenLabs’ new Eleven v4 model lets you design any voice from a text prompt...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le nouveau modèle v4 permet de contrôler l'attitude (rires, chuchotements) avec des tags textuels.
+                    </div>
+                    <a href="https://www.instagram.com/p/DePOMcLKoV7/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbsb8-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F841644996_18002132387991209_7129973621522936383_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D100%26nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwNDI1Mzk5OTU1OTY5OTA3NQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DS9SxtuUBb8oQ7kNvwEMD1Du%26_nc_oc%3DAdo6sUS_Iwxi-6S3rvbmKVRMfiAVamRYf9ip6_eTa0IXbmtlknyKP3OxYx0SZWzfxiE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbsb8-2.fna%26_nc_gid%3DHgU6f6BzgIF3xDgnWzb-gw%26_nc_ss%3D7a22e%26oh%3D00_AQMKCS4KxVpiAKEbUsf5zF9Pc6LTfU0Qsg2U6MfQf0Pkug%26oe%3D6AD23243" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 66</span>
+                    </div>
+                    <p class="caption">Gamma 5, le nouveau Gamma, est sorti le 6 octobre pour changer les présentations...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Mise à jour majeure de l'outil de présentation IA : on peut désormais transformer un vieux PowerPoint en un clic.
+                    </div>
+                    <a href="https://www.instagram.com/p/DeR-5f9DKrJ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
