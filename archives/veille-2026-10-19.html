@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 19 octobre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Google Willow :</strong> Une puce quantique qui réduit les erreurs par 40. Le futur de l'IA se joue dans le froid absolu.</li>
+            <li><strong>Roadster SpaceX :</strong> Tesla a montré son supercar capable de faire des sauts et des flips grâce à de l'air comprimé.</li>
+            <li><strong>Kling 4.0 & Seedance 2.5 :</strong> La vidéo générative passe un cap technique avec 30s de génération et une gestion des angles de caméra folle.</li>
+            <li><strong>Miroir, mon beau miroir :</strong> Des raccourcis de prompts circulent pour éviter que ChatGPT ne change votre tête lors de l'édition de photos.</li>
+            <li><strong>L'IA recruteuse :</strong> Un candidat a envoyé son agent IA passer un entretien... face à un recruteur lui aussi piloté par IA. Malaise.</li>
+            <li><strong>Exportations :</strong> Pékin serre la vis et veut contrôler l'exportation de ses modèles d'IA les plus puissants.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Elon en mode SpaceX</h2>
+        <div class="trend-analysis">
+            <p>La démo de la Tesla Roadster a cassé l'internet. Pas de moteurs-fusées (désolé Elon), mais des réservoirs de 600 litres d'air comprimé et 10 buses pour faire décoller la bête. Entre les memes sur les assurances et Sam Altman qui annule sa commande après 7 ans d'attente, le "flying car" est la trend absolue du moment.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F849477432_17979011532130808_3708811861673379998_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DNDAwOTI1Mzg3MzQzNjMzMjg1Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjQ5NC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DtMYt8rxUV7sQ7kNvwHEbGch%26_nc_oc%3DAdrgO-ngly7woqSVM4pLZhQA6Jky1cBsjQjQKbw30VT9ecjQ8nRF4wmcgdgESER_kOQ%26_nc_ad%3Dz-m%26_nc_cid%3D1753%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3DNPgRXWtr7AXEsJgW0oJ0gQ%26_nc_ss%3D7a20f%26oh%3D00_AQPn9Uv1zlcgUvbT3Z8qoSeyuYloLa8uzWtcDP_uzihNZQ%26oe%3D6ADB71EF" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 934</span>
+                    </div>
+                    <p class="caption">Tesla’s new Roadster jumped over five parked Teslas...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Explication technique du saut de la Roadster : 10 buses d'air comprimé haute pression, pas de combustion.
+                    </div>
+                    <a href="https://www.instagram.com/p/Deju-mhjYED/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-gru2-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F847550002_18018009764959228_2274168529450942825_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26ig_cache_key%3DNDAwOTI1MTY5MTc0MzQ3NDY1Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DVpMDzl4KgJoQ7kNvwGnGDyO%26_nc_oc%3DAdo_qNHggE2cZ_soNv7vOr3zmQ3zz41EthTVFVb3RfeknHiO1vvip-6HLv8TaTvJUvs%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-gru2-2.cdninstagram.com%26_nc_gid%3D3wf7p_VButt8VifcSVTffA%26_nc_ss%3D7a22e%26oh%3D00_AQPBkS2cVcbtKEfyvlBHIRdCDF3PePDkBvyy3rtdju9wfw%26oe%3D6ADB77FA" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 16017</span>
+                    </div>
+                    <p class="caption">Sam Altman gave up on his Tesla Roadster after waiting more than seven years...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le patron d'OpenAI a jeté l'éponge sur sa réservation de 2018. Un signal fort sur les délais de production.
+                    </div>
+                    <a href="https://www.instagram.com/p/DejuS4xgIzf/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F854362620_17930559231426313_3344269110824494763_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26ig_cache_key%3DNDAxMDcxNDU0ODQ5OTA3Mzk5MzE3OTMwNTU5MjI4NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DaMvk8KZNtswQ7kNvwH1ufoL%26_nc_oc%3DAdr9PqZpE5DBYU2OUKHugNRkA15fnpWKuwwABCfudF3sqvrwythd9RPrxC2O1vYybd24KpNCdStjSKCKP4A6SKDH%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DCHWVBH6gYAbPozdJYTUogg%26_nc_ss%3D7a20f%26oh%3D00_AQOlFn1QIT2DZIW-xhqYMOVpp555qfR6xpLJcx7w_l1-Fw%26oe%3D6ADB9243" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 789</span>
+                    </div>
+                    <p class="caption">Someone used AI to imagine what a police chase involving Tesla’s new flying Roadster could look like.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le réalisateur Pierrick Chevallier utilise Seedance 2.5 pour simuler une course-poursuite aérienne.
+                    </div>
+                    <a href="https://www.instagram.com/p/Deo66HWx0vJ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">La Vidéo IA sort ses muscles</h2>
+        <div class="trend-analysis">
+            <p>On oublie les clips de 3 secondes qui bavent. Kling 4.0 arrive avec des scènes de 30 secondes en un seul pass et une synchronisation labiale multilingue. En parallèle, Seedance 2.5 permet de reconstruire des scènes réelles sous des angles de caméra inédits. La post-prod va prendre très cher cette année.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dfw6-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F847762426_17981202747146282_6129371256365421628_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DNDAwODU5MDgzMDUzODg4ODk3NzE3OTgxMjAyNzQ0MTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3Doyl9RkmSGTwQ7kNvwGihNW7%26_nc_oc%3DAdpTKV-sEB4HqMlBKKMfRswGQhUiRvS0uFcaKl9SWSRuTKM6LqjAPj5UzeZYual_fHc%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dfw6-2.cdninstagram.com%26_nc_gid%3DCtVL4FepUYE9LQyf8y1CbA%26_nc_ss%3D7a20f%26oh%3D00_AQOc1TVCGZzCDokiB0KrA8rl0DSIr2SLyKvdfzbptlgrXA%26oe%3D6ADB911E" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 4101</span>
+                    </div>
+                    <p class="caption">Kling 4.0 just released today! Generates up to 30 seconds...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Saut qualitatif majeur : 30s de vidéo, 10 images clés en entrée et dialogue multilingue intégré.
+                    </div>
+                    <a href="https://www.instagram.com/p/DehYB84KJcR/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmxp5-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F849016109_17981388999146282_3671868803353289033_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwOTQwMzIzNDQzMjA4NzA5NDE3OTgxMzg4OTk2MTQ2Mjgy.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DP6ziIgrGvHUQ7kNvwHwVK2D%26_nc_oc%3DAdqiPvZao5mGte3q4wnoZ2ujshMYq4JIouyn7WrzDAwBX3Aa3YWJjQPWvKM32ItCA0Pqzaw3olkTdIO0Bk30S_rs%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmxp5-1.fna%26_nc_gid%3DGZZwst0uPYlHeAvimRXrNQ%26_nc_ss%3D7a20f%26oh%3D00_AQOYIBj4Yc4j2uhySqyrpfHPTr4vOY9mimEzlwQQewDzLg%26oe%3D6ADB7186" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 2019</span>
+                    </div>
+                    <p class="caption">Seedance 2.5 can rebuild real footage from completely new camera angles...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Capacité à changer l'angle de caméra d'une vidéo existante. Un game-changer pour la réutilisation d'assets.
+                    </div>
+                    <a href="https://www.instagram.com/p/DekQv-9oHQ2/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fco2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F849249028_17930219472426313_7779385147311990128_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26ig_cache_key%3DNDAwOTQwMTA3MzYwMDIwMjUyMg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DbenYrruov7oQ7kNvwE4adD2%26_nc_oc%3DAdpcIMyfElFdnkNAEtBLteLCH5sRjmPLlRbtwYXh2fWv4pYUyjZLaVZ-XOB9hlLffSQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fco2-1.cdninstagram.com%26_nc_gid%3D3skOgryftWmS4EtpvfQYvQ%26_nc_ss%3D7a20f%26oh%3D00_AQNrY74qLJlDP2xk1YcEYwCo2C4IwPgCQu5AiTmiY6yVnw%26oe%3D6ADB7F60" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 156</span>
+                    </div>
+                    <p class="caption">Cinematic content without traditional production... created with Abacus AI Studio.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Abacus AI Studio se positionne comme un concurrent sérieux pour le rendu cinéma "sans caméras".
+                    </div>
+                    <a href="https://www.instagram.com/p/DekQeBzFiuK/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Agents : Le Futur est déjà là</h2>
+        <div class="trend-analysis">
+            <p>Les agents IA ne sont plus de la science-fiction. Entre les expériences d'entretiens d'embauche 100% IA et les capacités de ChatGPT à exécuter des tâches en autonomie (même en version gratuite), on assiste à la naissance de l'IA "actionnable". Karpathy nous rappelle quand même que 99,8% d'entre nous n'utilisent l'IA que pour de la simple question-réponse.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbcn15-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F851503277_17930587200426313_7794394104254935449_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxMDc3OTQ5OTE4ODI5OTgyMjE3OTMwNTg3MTk3NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3DwluzpK7b2hAQ7kNvwGDYK81%26_nc_oc%3DAdr0WktJDUWdqNhNHnvBWj8_lWNryN4fJU3SwZkAHgcNxBLtyo9jroT1tDLjAONxHnQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbcn15-1.fna%26_nc_gid%3D5yAgZBTgg4I-u2dojCMYEw%26_nc_ss%3D7a20f%26oh%3D00_AQPd8TvK5SKOtAwAgHRwPCJwDUh4QOdO4MpWK99B3gZxPQ%26oe%3D6ADB8AF3" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 1542</span>
+                    </div>
+                    <p class="caption">A man sent his AI to a job interview, only to discover the interviewer was an AI too.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le test de Graham Dot Zip : l'agent Victor négocie son propre salaire avec l'agent Pat.
+                    </div>
+                    <a href="https://www.instagram.com/p/DepJrRZiagu/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg4-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F848751900_18002977532991209_9182898515676911545_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D109%26ig_cache_key%3DNDAwODYwMjUzNzY1NDUwNDQxMQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DjTcYzcDUdPwQ7kNvwERz90o%26_nc_oc%3DAdoEwf-SDmuROwVZIkSKud5waqx8SPjv-1a3DVm2nSvNmY7d3Ibc-QEr33jrdN9CiMCTyU0KNMTYL5JXzQYygphg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg4-2.cdninstagram.com%26_nc_gid%3DbMl40rPlzpZSSv5KTPATcw%26_nc_ss%3D7a22e%26oh%3D00_AQNickoLLtbgtYaaP_M-fzjB4tBTFf961q7oHrU7zE7kpQ%26oe%3D6ADB9383" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 142</span>
+                    </div>
+                    <p class="caption">Selon Andrej Karpathy, seuls 0,2 % des gens ont vu de leurs yeux ce que l’IA sait faire...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Karpathy souligne le fossé entre l'usage "gadget" et la puissance réelle des agents IA.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dehaw0QiKb7/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fqro3-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F849588582_18003127775991209_2198399456357788475_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAwOTMzODM3MjM4OTgyMDEzOA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DKND0sVcLwSIQ7kNvwFvfe9M%26_nc_oc%3DAdocDVcWG8-0b6CcNnBmC1ZPOhzaBF7QNo-vbUwzefpSAOxbUGAZYmRBijOAt_B1CPk%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fqro3-1.fna%26_nc_gid%3Dyop7JHJRCpbzPUanMmySpg%26_nc_ss%3D7a22e%26oh%3D00_AQNcnVLZKS9o61bBu_j59_2D7owD0B6TUA-QqmCysnc6tg%26oe%3D6ADB88CE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 559</span>
+                    </div>
+                    <p class="caption">ChatGPT peut lancer une tâche tout seul, même sur le compte gratuit...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Démocratisation des agents : monitoring et tâches automatiques désormais accessibles à tous.
+                    </div>
+                    <a href="https://www.instagram.com/p/DekCHqjCJUl/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Showcase Anthropic</h2>
+        <div class="trend-analysis">
+            <p>Anthropic ne se contente plus de sortir des modèles, ils montrent les muscles sur les usages. Wildfires tracking, échecs dessinés à la main, et surtout "Claude Code" : Boris Cherny (le créateur) explique comment arrêter de parler à Claude comme à un humain pour maximiser l'efficacité du code.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbri7-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F857105866_18018339803959228_3513444422732259430_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxMDcyOTM1MTY0NDQ2NTk0OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DSF1X7d-PePIQ7kNvwHvC4Cz%26_nc_oc%3DAdrzKdOB8Wl9aYSZXJnUcQqJRXUmluuZGLHizdxQllwYHh_gvL0ZZgmZ2kXKYliR_-o%26_nc_ad%3Dz-m%26_nc_cid%3D1093%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbri7-1.fna%26_nc_gid%3DzEISMkmeeH8w7JRZ5Rp6AQ%26_nc_ss%3D7a20f%26oh%3D00_AQNmxurACu5enAjJg3jQyzaHSszujEmleMtqernmzPtCaQ%26oe%3D6ADB7925" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 7280</span>
+                    </div>
+                    <p class="caption">Claude just shared six impressive projects built using its latest AI models.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Démo technique de la polyvalence de Claude : de la gestion de catastrophes naturelles au gaming.
+                    </div>
+                    <a href="https://www.instagram.com/p/Deo-ebkAExL/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt1-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F850698788_18003260216991209_7111792069762772673_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26ig_cache_key%3DNDAxMDAyODg1OTk0NTgxNDA5OA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DL-KA7LlBvTIQ7kNvwFMnUxz%26_nc_oc%3DAdrMFywq6dRWsw5_fCCBBtBYNJ3m9NX7mCLReo0ZmDqqsWXjABPWt79K7Z9wifu5q5FUJuaI1mm-AjkCbdJSOX-C%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt1-2.cdninstagram.com%26_nc_gid%3Dj6K8OWXG35ZRho_6W_89SA%26_nc_ss%3D7a22e%26oh%3D00_AQMmaWguhNdiZcrVAuuiULiRM8-Bn8dHkCJ-TxkRTnW3ug%26oe%3D6ADB93E6" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 132</span>
+                    </div>
+                    <p class="caption">Boris Cherny a créé Claude Code chez Anthropic. Il raconte ce qu'il a arrêté de faire...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Conseils d'expert : pour Opus 4.6+, fini le mode plan et les consignes à rallonge. On va droit au but.
+                    </div>
+                    <a href="https://www.instagram.com/p/DemfBhoiMUn/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmoc1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F852866327_17979331827130808_113363793080958172_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D109%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxMDY5MTgxMjE2MzE2MzgyNw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzA3Mi5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DIPFPELIbf0cQ7kNvwH1luY3%26_nc_oc%3DAdoDqFhXb4Q3YEo7FkWcyq5ZAPBvC9bqber47oY0EnFZF_s4tJ4oVrb0KI2E2E5ZWj6Gik81tYAYp7DbrpjMClbf%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmoc1-1.fna%26_nc_gid%3DnPgnGdFUa-YspQUZHhvdSA%26_nc_ss%3D7a22e%26oh%3D00_AQM8bfGhRd6rHrgWP11tDyu7Kb8oDgyk7Wkyw6l8cMBGLQ%26oe%3D6ADB9F31" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 319</span>
+                    </div>
+                    <p class="caption">Smart TVs are getting slower... One developer fixed this with Claude.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Claude utilisé comme outil de débug via ADB pour nettoyer les Smart TV de leurs bloatwares.
+                    </div>
+                    <a href="https://www.instagram.com/p/Deo1vWijQAs/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
