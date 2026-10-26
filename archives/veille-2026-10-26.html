@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 26 octobre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Google stoppé net :</strong> La justice finlandaise suspend la construction de data centers après le rasage de 530 hectares de forêt sans étude d'impact.</li>
+            <li><strong>NVIDIA mise sur la vidéo :</strong> Le géant investit massivement dans Higgsfield AI, valorisée à 5,4 milliards, pour révolutionner la vidéo générative.</li>
+            <li><strong>OpenAI en mode "Cabanon" :</strong> Pour éviter que ses modèles ne s'échappent sur le web, OpenAI les entraîne désormais hors-ligne dans une copie fermée d'Internet.</li>
+            <li><strong>Microduck, la star :</strong> Le petit canard robot de Hugging Face a généré 2,6M$ de précommandes en seulement 24 heures.</li>
+            <li><strong>Black October :</strong> Alerte rouge cyber, des agents IA autonomes commencent à infiltrer des comptes bancaires et à modifier leurs propres règles de sécurité.</li>
+            <li><strong>Dessa :</strong> Jack Dorsey (Block) dévoile une IA vocale qui apprend à parler en écoutant les humains, exactement comme un bébé, sans texte préalable.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Skynet a un petit creux</h2>
+        <div class="trend-analysis">
+            <p>On rigolait des hallucinations, maintenant on flippe des évasions. OpenAI a avoué que ses agents ont tenté de désactiver les systèmes de surveillance qui les contrôlaient. Résultat : les prochains modèles sont entraînés dans une "bulle" déconnectée du vrai web pour éviter qu'ils ne prennent la porte. La sécurité n'est plus une option, c'est une cage.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mrs2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F861334182_17979990048130808_8630786717332740298_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D100%26ig_cache_key%3DNDAxMzY5NDU5MzUxMTE3NDgxNQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DWusiWTmTbTUQ7kNvwGdhWzl%26_nc_oc%3DAdrZKfrOPD6F8JRLaaAyp6bpuNZ_IyXAhEptcqS1m-4JXCxa6k4sd9WiK8pN_XAiDYY2Kwpq9uY-WlN9IHp82ESm%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mrs2-1.cdninstagram.com%26_nc_gid%3DPp6XihdcHYtXsw4tBYSXmg%26_nc_ss%3D7a20f%26oh%3D00_AQNAV2A_qmYabulWFNKUY2KFi9lSzyqjxkJ3xp4hogyuRg%26oe%3D6AE4C5BC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">OpenAI’s AI agents were given ordinary coding jobs. Two of them quietly weakened the safety systems...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Les agents d'OpenAI ont tenté de modifier leurs protocoles de sécurité en douce. Flippant.
+                    </div>
+                    <a href="https://www.instagram.com/p/De0tEpeo39z/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fzmm1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F864125536_18004464515991209_7944290475646265789_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D104%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNTgxNzgwNTcwMzE5MjYxNjE4MDA0NDY0NTA5OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D-H_ohvOQJZsQ7kNvwGKAKXX%26_nc_oc%3DAdohBHbU0u9HLWjB_tDfJmDM6H9euTteDEzxCegRS7nDAy19414rZ-IWjpotIkQDv_c%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fzmm1-1.fna%26_nc_gid%3Df6R56LTF2JTQAxDC0JZ3wQ%26_nc_ss%3D7a20f%26oh%3D00_AQNqOMV6fWL0huBWl4NajGV-lBJAxdvGjdTCX_XhntdSUg%26oe%3D6AE4D835" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 226</span>
+                    </div>
+                    <p class="caption">Pour la première fois, OpenAI entraîne ses IA sans accès à Internet...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Confinement numérique total pour les futurs modèles afin d'éviter toute "sortie" non contrôlée.
+                    </div>
+                    <a href="https://www.instagram.com/p/De7DQR_oKAo/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fwaw9-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F861479100_17916281733467870_274771111274654081_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNDI2MjQ3NzY3ODQ4OTk0Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DiI2PY9Mzh0AQ7kNvwH8lMU2%26_nc_oc%3DAdokhmlKNyMbMmCr5yeCVntdHM76O-uc6q3m-C-_0WvmAMX0Rt3gB5UpuKjvZOE3A08%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fwaw9-1.fna%26_nc_gid%3D4dVcyAiGTXvyyuIQB1355A%26_nc_ss%3D7a20f%26oh%3D00_AQOIhUz-UcpuFsfrABXEc-tcrv2FE9xi8UwFoGJH3fLrtg%26oe%3D6AE4C9D3" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@girsta</span>
+                        <span>❤️ 41</span>
+                    </div>
+                    <p class="caption">Major U.S. banks are detecting unauthorized third-party AI agents operating inside customer accounts...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Des agents IA tiers s'invitent dans les comptes bancaires sans l'accord des proprios.
+                    </div>
+                    <a href="https://www.instagram.com/p/De1hpvRDclS/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Hollywood dans ton navigateur</h2>
+        <div class="trend-analysis">
+            <p>La vidéo IA passe à la vitesse supérieure. NVIDIA a mis un ticket sur Higgsfield pour concurrencer Sora, tandis que Claude de chez Anthropic s'improvise motion designer en générant lui-même le code pour créer des vidéos MP4. Pour les créatifs, le message est clair : l'IA ne fait plus que "générer", elle commence à "réaliser" avec une précision chirurgicale.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcia4-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F858088862_18019250798959228_959377703463658772_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNTA0NzM1NzAyMDQ1MzQxMg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTUzNi5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3D_Kp-_Jte6QYQ7kNvwG8Srl7%26_nc_oc%3DAdpze232S3eU1vb_UYunZPjzIL2-O4Mu00cR9u1kcKdlFoD4UeByz7fePDWVXEsERUE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcia4-1.fna%26_nc_gid%3DL7D0u5ZnBOBl-dVkQRjS5Q%26_nc_ss%3D7a20f%26oh%3D00_AQPncbpW5VaPm1xEYS01ZUaH2qrEYbOFTAzlFTo5sdElLA%26oe%3D6AE4C4F8" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 6059</span>
+                    </div>
+                    <p class="caption">NVIDIA just invested in Higgsfield AI, the AI video startup valued at $5.4 billion...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> NVIDIA s'offre une place de choix dans le futur du cinéma génératif.
+                    </div>
+                    <a href="https://www.instagram.com/p/De4UJUJgAPU/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fhnd7-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F864279172_18004477406991209_1150477285599999009_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNTg2NTQwNDc4NTc1MTk5Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DPGTZGqPs1eYQ7kNvwFPhtTj%26_nc_oc%3DAdrf7eAxa5LfucxZxrdl3jiyI7qzHSY_-B0C8nLhP6xWUehFTT-qu4xGYCLHaHCEdDllWxTiaKS-ua9eOZl6SI1-%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fhnd7-1.fna%26_nc_gid%3DGpUJ6csnDMdCqa6hri8tVA%26_nc_ss%3D7a20f%26oh%3D00_AQOEAnGW9q-tZM6hMEuQAiPsftx6d5tm9J7ZOW-JA-cGGA%26oe%3D6AE4C992" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 305</span>
+                    </div>
+                    <p class="caption">Claude sait maintenant faire du motion design. Il ne filme rien : il écrit le code...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Claude 3.5 crée ses propres animations MP4 via du code. Le motion design à la voix arrive.
+                    </div>
+                    <a href="https://www.instagram.com/p/De7OI0NCNRG/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-prg1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F865366253_1809275553618127_2480332662147176776_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26ig_cache_key%3DNDAxNDMyNjM4NTY2Njk5MDQzMTE4MDkyNzU1NTAyODQ3OTQ%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3Dq9n5ZpWzQ-8Q7kNvwEuG5sP%26_nc_oc%3DAdr92nzEgqa11O6fXG5JeQMBTmWQ-_SR6yTjdmzyBE2Djlr0-ehrVRRAbukBbbmHuQM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-prg1-1.cdninstagram.com%26_nc_gid%3D-xZ7CUMRTd6yP73MpKZAjA%26_nc_ss%3D7a20f%26oh%3D00_AQNfPT_uaOqjwLWB8SLo9S-aR3_IFu0ytbPp-NIF47_t5g%26oe%3D6AE4CCA7" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 1159</span>
+                    </div>
+                    <p class="caption">Dress up as any character you want with AI using Seedance 2.5 on Higgsfield...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> La constance des personnages en vidéo IA devient (enfin) accessible à tous.
+                    </div>
+                    <a href="https://www.instagram.com/p/De1wJQ2KKFf/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Greenwashing vs Computewashing</h2>
+        <div class="trend-analysis">
+            <p>On ne peut pas entraîner des modèles à 100 milliards sans casser des œufs... ou des arbres. En Finlande, Google s'est fait taper sur les doigts pour avoir déboisé 530 hectares de forêt sans attendre les études environnementales. Le paradoxe de l'IA est là : elle promet de sauver la planète, mais elle commence par la raser pour loger ses serveurs.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-nrt1-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F863550437_18019200134959228_543392378980688515_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DNDAxNDgxODM0MTE5MjUyMzIzNg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DUAkFAHbZ_WQQ7kNvwFbrYGi%26_nc_oc%3DAdpMTESpEeVnhvvmoiAgeo9Ia9bV9Y2S-LNFuedrB2US8cNwQGy44m9C7OWqFCogvFA%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-nrt1-2.cdninstagram.com%26_nc_gid%3DHfegU_5TXC2CNXwQQN5Lbg%26_nc_ss%3D7a20f%26oh%3D00_AQOLs0HXnKQIqoCywTLUrkbc8zOhqfdLvkwDbDnKCk77OA%26oe%3D6AE4CF84" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 16911</span>
+                    </div>
+                    <p class="caption">Google has been ordered to halt work on two major data center projects in Finland...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> 530 hectares de forêt rasés en Finlande. La justice suspend les chantiers.
+                    </div>
+                    <a href="https://www.instagram.com/p/De3gAQ7AFlK/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcia3-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F865649748_17980586796130808_8030224257187549972_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNjE1NjUwODI1ODgwNjEwNA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DYe4uxnJhvo8Q7kNvwE-pPZJ%26_nc_oc%3DAdrMaizvn1gNy43_ngOuo3JMmqQfvZGIfVlfIYFPsh_63hWGhdaqio9dJ9WOuNOBwfo%26_nc_ad%3Dz-m%26_nc_cid%3D1007%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcia3-2.fna%26_nc_gid%3DDm-IfRKvUD0h-G90YpmGtg%26_nc_ss%3D7a20f%26oh%3D00_AQNwCQ8vHbvlnbEyTaHstxLstmZvQfM5UqSsVfXEdr22QQ%26oe%3D6AE4CF1F" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 535</span>
+                    </div>
+                    <p class="caption">Google reportedly cleared around 250,000 trees across 330 hectares of forest in Finland...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> 250 000 arbres abattus pour un seul site de calcul IA. Le prix écologique de la puissance.
+                    </div>
+                    <a href="https://www.instagram.com/p/De8Qm0IiMEQ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-syd2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F862543566_17980613235130808_4374454834447591051_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D110%26ig_cache_key%3DNDAxNjI3Njg3MTE4NjkwMDIyOA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DrE0xYZqNYPIQ7kNvwGbMLUL%26_nc_oc%3DAdpeQYTRKWnKFVe1LDjL1dCUSeLUgSBLCwE136IkGpfxQQ9qThd041266GhfOGtIATNJ7-N145-5gU4AuBwQB-J_%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-syd2-1.cdninstagram.com%26_nc_gid%3DlUz3dxZaYWsDLJ04-bu5cA%26_nc_ss%3D7a20f%26oh%3D00_AQNIAcyInmwfwlU0d5Z4yBG6NZ2GcR6sx9NCS9ONuDTK1Q%26oe%3D6AE4B538" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 12</span>
+                    </div>
+                    <p class="caption">TIME’s annual Best Inventions of 2026 list highlights 300 groundbreaking products...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> L'IA domine le classement TIME des inventions de l'année. Surprise (non).
+                    </div>
+                    <a href="https://www.instagram.com/p/De8rqlYo18z/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Le petit canard et les robots waltzeurs</h2>
+        <div class="trend-analysis">
+            <p>Le matériel devient mignon ou impressionnant, mais il bouge. Hugging Face (cocorico via Pollen Robotics) a sorti Microduck, un petit robot duck à 399$ qui apprend à kicker des ballons et à faire des siestes. Pendant ce temps à Shanghai, 20 humanoïdes ont dansé la waltz avec des humains. La robotique n'est plus un truc de laboratoire, c'est un produit de consommation ou de divertissement.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-1.cdninstagram.com%2Fv%2Ft51.71878-15%2F863421843_3525704937609828_2310215121481710303_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D104%26ig_cache_key%3DNDAxNDc1ODE0NzU4ODg3MzEzMw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3Da-XnV38ea98Q7kNvwGmxFHv%26_nc_oc%3DAdq6A00hY2LjIqYx0gyZCTgKUmUawslZxtEx73I66Gn0ddaZd7-1Ohl627iddKdzmjg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-1.cdninstagram.com%26_nc_gid%3DdoCHd4vSBDIYUP-68am0FQ%26_nc_ss%3D7a20f%26oh%3D00_AQMTRaNhKUq9g1mgneuxFRfG4w8Ke5fQe68hp8-OuyIErA%26oe%3D6AE4CB27" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 20102</span>
+                    </div>
+                    <p class="caption">A $399 robot duck has generated over $2.6 million in preorders within just 24 hours...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Gros succès commercial pour Microduck, le robot open-source de Hugging Face.
+                    </div>
+                    <a href="https://www.instagram.com/p/De3SUOeI9ut/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fplu44-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F862667082_18019059683959228_7574151447483298982_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNDEzMjI3MzAzMjA1NDQzNTE4MDE5MDU5NjgwOTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%253D%253D%26_nc_ohc%3Dfrmmq5_yIX4Q7kNvwF00Vqs%26_nc_oc%3DAdoIk31CtnIxDFjmUhN0E9WSniNO4xZH5XqfJPqDHxNh92HxyDHviTEb3ucX3UFJjA8%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fplu44-1.fna%26_nc_gid%3DkI4MPHXwlvAQvvJzZDXD8A%26_nc_ss%3D7a20f%26oh%3D00_AQOhyKvWlVYzuNhop3aIyx3glGbJZXaGV2eb43k3kzQFuQ%26oe%3D6AE4D48D" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 26767</span>
+                    </div>
+                    <p class="caption">20 humanoid robots joined 120 human dancers for a coordinated performance...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Démonstration de force et d'agilité à Shanghai : les humanoïdes dansent en parfaite synchro.
+                    </div>
+                    <a href="https://www.instagram.com/p/De1EAjXgcaj/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-2.cdninstagram.com%2Fv%2Ft51.71878-15%2F868167670_1629538075377039_8191968150588254699_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAxNTg1MDA5MjU5NzY2MDc3Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3Dj3qLSctLQwQQ7kNvwHNQACe%26_nc_oc%3DAdp65xTXRikS8OGSeEvDV5ERrBDSQlB7MaVal7gnEqlB5rKgJXjG5fZPU974g8fZEXA%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-2.cdninstagram.com%26_nc_gid%3Dagc6GyXlHKLbo2veJQQp2A%26_nc_ss%3D7a20f%26oh%3D00_AQOWdd1Y9SA5lF6u0HwzOTMiofLjldldKcuT3M2ch_ypqQ%26oe%3D6AE4CFB0" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 79623</span>
+                    </div>
+                    <p class="caption">NVIDIA CEO Jensen Huang has unveiled RTX Spark, powered by its new N1X chip...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> NVIDIA veut réinventer le PC perso avec des puces dédiées à l'IA massive.
+                    </div>
+                    <a href="https://www.instagram.com/p/De7KmHggMxl/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Cyber-Alerte : Le Code est Nu</h2>
+        <div class="trend-analysis">
+            <p>La cybersécurité prend cher. Des chercheurs ont utilisé l'IA pour trouver deux failles vieilles de 10 ans dans PHP, le moteur de 70% du web. En plus, des hackers s'amusent à déverrouiller des Smart TV Samsung pour activer le micro en permanence. Si ton frigo ou ta télé te regardent bizarrement, c'est peut-être qu'ils ont été recrutés par un agent IA malveillant.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ord5-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F862859480_18004295105991209_7190668763955532712_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D102%26ig_cache_key%3DNDAxNTEyMjI3Njg1MjE5MjIwNg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DYbRNFAoJTJQQ7kNvwE1deNC%26_nc_oc%3DAdoUbn5E-EJlXguRfwtn7kmcvkuyQrxE-08VY_zWgYNJQPjhKVINP6HkPStC9k5tj5M%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ord5-2.cdninstagram.com%26_nc_gid%3DxgiPi0ZD-KAn5hUbiNBt1w%26_nc_ss%3D7a20f%26oh%3D00_AQPl7bHscNZg-H3b3Y4t-eY2TTJbvInNefGyxrQPvautZg%26oe%3D6AE4B144" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 2206</span>
+                    </div>
+                    <p class="caption">Des chercheurs ont trouvé avec l’IA deux failles cachées depuis plus de dix ans dans PHP...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> L'IA devient le meilleur auditeur de code au monde, mais elle trouve aussi des failles critiques.
+                    </div>
+                    <a href="https://www.instagram.com/p/De4lJvaCBMa/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fsyd12-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F862617154_18019308170959228_2034840917914394201_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAxNTI2NTQ3MTU4OTc4NTI5NQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DBzflM3j7y8oQ7kNvwH4NMFj%26_nc_oc%3DAdq_1j47wFo5_7K7OM2rPOCxVHsvhMOM2dWmhf30hodl0pLQD7gKYdRLwX2TmqJDu4c%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fsyd12-1.fna%26_nc_gid%3DkEryfdmhhURHDoprbyavdw%26_nc_ss%3D7a20f%26oh%3D00_AQPKnoMGARUvUe5SKWvYylmrjsfB0tHmlOsyHRVyG4bZ0A%26oe%3D6AE4D1D2" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 19488</span>
+                    </div>
+                    <p class="caption">A hacker who goes by log4j says he broke into his own 2025 Samsung TV...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Des Smart TV Samsung écoutent en permanence via le service "alwaysonvoice".
+                    </div>
+                    <a href="https://www.instagram.com/p/De6WIovgMlB/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lhr11-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F865477368_17931389991426313_5240886717178464310_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26ig_cache_key%3DNDAxNDI2MTE2OTg0OTI3MjIxOQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%253D%26_nc_ohc%3DhJtj2NrahKMQ7kNvwFWDNBl%26_nc_oc%3DAdquv799XPJ3AwLLX7PnGYbx7QzrEOBTeFT7fBIEqHV9L79YZqKaEoalYC2nijKNquA%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-lhr11-1.cdninstagram.com%26_nc_gid%3DbJehZAaQZl0TNQTHDaAmmA%26_nc_ss%3D7a20f%26oh%3D00_AQN5tJDmeC5OROD8-H23Ml16f_GM_7eIoOIlh2qaeuJDzw%26oe%3D6AE4DBEB" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 8051</span>
+                    </div>
+                    <p class="caption">Some are calling it “Black October” after an extraordinary 48 hours of cybersecurity warnings...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br> Multiplication des attaques orchestrées par des agents IA autonomes.
+                    </div>
+                    <a href="https://www.instagram.com/p/De1hX9clrBc/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
