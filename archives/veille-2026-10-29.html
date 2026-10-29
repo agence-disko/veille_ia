@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 29 octobre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Google détrône tout le monde :</strong> Gemini 4 Carbon prend la 1ère place du benchmark Intelligence Index, devant Claude 5.5 et GPT-6 Astra.</li>
+            <li><strong>Mondes virtuels à la demande :</strong> Google Genie 4 génère des univers 3D explorables et interactifs à partir d'une seule image.</li>
+            <li><strong>Crash en Chine :</strong> La bulle IA chinoise explose avec 480 milliards de dollars de capitalisation évaporés en 4 mois.</li>
+            <li><strong>Justice & IA :</strong> OpenAI est poursuivi après qu'un chatbot a conseillé à une épileptique d'arrêter ses médicaments, entraînant son décès.</li>
+            <li><strong>Vie privée (ou pas) :</strong> 96% des "souvenirs" stockés par ChatGPT le seraient sans demande explicite de l'utilisateur.</li>
+            <li><strong>Finances Records :</strong> Anthropic brûle 42 milliards de dollars pour 4,6 milliards de revenus, mais prépare son IPO.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Google sort les muscles</h2>
+        <div class="trend-analysis">
+            <p>On pensait Google à la traîne, mais Mountain View vient de remettre les pendules à l'heure. Avec <strong>Gemini 4 Carbon</strong>, ils reprennent la couronne de "l'IA la plus intelligente". Mais le vrai banger, c'est <strong>Genie 4</strong> : la capacité de créer un monde jouable entier à partir d'une simple photo. Le futur du gaming et du retail immersif vient de prendre un shot d'adrénaline.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mad1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F862887019_18020008526959228_3684414736509520783_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D105%26ig_cache_key%3DNDAxODA2NzgyNDYwOTc2ODU1OA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D3eQ9AIVgeV0Q7kNvwEqQXOm%26_nc_oc%3DAdqeJ7jBEh4rRdTVA5ybmpSpeUuAQ4TN9OcLegesPLDDwjqcG3EP_tPryeLm9hrZRpk%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mad1-1.cdninstagram.com%26_nc_gid%3DzYTKTQlmgTzmE12NzCtm2w%26_nc_ss%3D7320f%26oh%3D00_AQTzA5AyLDW6t4tpc5IuFcFb5kEnY7PAqLeaK4WjMQYBQQ%26oe%3D6AE8A8CC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 7675</span>
+                    </div>
+                    <p class="caption">Google just announced Gemini 4 Carbon...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le nouveau modèle de Google bat Claude et GPT-6 au classement de l'Artificial Analysis.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfDCZYqgJ3O/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F865887752_18019835069959228_7038072228594145069_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26ig_cache_key%3DNDAxNzM4ODQwNjQ4MTA3NjAxNw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIudmlkZW9fZmlyc3RfZnJhbWVfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DbyB2DfezykcQ7kNvwG4wz9i%26_nc_oc%3DAdrQhL9Hkb35mFeLwx8rCf7Nr-1Fa8EnagFbYAWZGUFXl2rD7hvlySarpTA8Sm1tXMVITpCk06sC2b2vQP1zke1s%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fra3-1.cdninstagram.com%26_nc_gid%3D31PpyT5UZnCsbu_ZXgTppQ%26_nc_ss%3D7320f%26oh%3D00_AQQLPvClHtKcR2Y4zLfsQHMZhqTb5RlaJJIuSTbtsuNhOg%26oe%3D6AE8B148" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 7840</span>
+                    </div>
+                    <p class="caption">Google has unveiled Genie 4, a new AI model...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Génération d'environnements 3D explorables en temps réel à partir d'un simple prompt.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfAobiiDKzZ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F870141271_1106065132028293_7672173133652770669_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D105%26ig_cache_key%3DNDAxNzI3NjU4MzI4MzgyNTU2NDExMDYwNjUxMjIwMjgyOTQ%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMTUuc2RyLnZpZGVvX3VzZXJfdXBsb2FkZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DifsdEkVL_HYQ7kNvwEQNHXU%26_nc_oc%3DAdqRjaqC6paZr2X2YTASwXfCuYCWowDdIm_keKV8Y_p12T3CQhBF5FuMKC1R7xdQhwxhlgCDMmH5MN02sjHnDzLw%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DS0MeXJR6s2WLaHpjzW_Xcw%26_nc_ss%3D7320f%26oh%3D00_AQShbA640VFa2C80sTHu7aZRAja4H4kj-rHdPvRiv3zRsQ%26oe%3D6AE8B3CE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 1802</span>
+                    </div>
+                    <p class="caption">This is just the beginning... 😳 Genie 4 turns a single image into an explorable world.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le saut qualitatif en 18 mois est colossal pour la génération de mondes virtuels.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfAO8SfIJuc/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Anthropic : riche mais fauché ?</h2>
+        <div class="trend-analysis">
+            <p>La pépite derrière Claude a ouvert ses livres de comptes, et ça pique : <strong>42 milliards de dollars de pertes</strong> pour moins de 5 milliards de revenus. Mais pas de panique, ils visent une valorisation record pour leur IPO. En attendant, leurs ingénieurs partagent leur sauce secrète : une méthode de <strong>prompting en 9 blocs</strong> qui transformerait n'importe quel brouillon en mail pro parfait. On prend note.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F867269101_18019974956959228_2534324459403200222_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAxNzk2Mzc1MDcxMTgyNjQ5OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX3VzZXJfZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9%26_nc_ohc%3DPMeZEuswTi8Q7kNvwGhy8hP%26_nc_oc%3DAdr2zIW_t2aXgFovUd6RxxzJq71e_yFlhBKnuXeb8mJrL2pz9tm_r-MrkIiDywBj6rgPIzws3wfzS1cz9sb-rMc3%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg6-1.cdninstagram.com%26_nc_gid%3D13W9bOdK9UKEJcvXHUBTdg%26_nc_ss%3D7320f%26oh%3D00_AQRMjmvhxeKJDKMSuyGzR9cLorsbMptFfkgklYghm53aJQ%26oe%3D6AE8ABE5" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 10635</span>
+                    </div>
+                    <p class="caption">Anthropic just opened its books... revenue $4.6B vs $42B loss.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Données financières cruciales avant l'une des IPO les plus attendues du secteur.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfCrPO9jHQL/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dus1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F869737259_18005031059991209_1029988188334125501_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D105%26ig_cache_key%3DNDAxODE0NzQ1MDgyMDEyNTIwOQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DB7XZw8AjYNwQ7kNvwEHjuv0%26_nc_oc%3DAdr7FCAiWpxh1sWp9CptXKG8efPt7ljsHUcBg6QZZk9DbYYLTFqlT3dwr8b_eqUePbQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dus1-1.cdninstagram.com%26_nc_gid%3DNqVo4lehrzLfj4GlOTQpMg%26_nc_ss%3D7320f%26oh%3D00_AQSq8Oven09yxSeTJVk0hQpurdDKNKdxmbDUoONI4RcV3w%26oe%3D6AE8AAD3" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 380</span>
+                    </div>
+                    <p class="caption">Les ingénieurs d’Anthropic écrivent leurs prompts en 9 blocs...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Une méthode structurée pour obtenir des résultats radicalement plus qualitatifs.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfDU-xqEXk0/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fper11-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F867441880_17932211331426313_2391143856797021749_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26ig_cache_key%3DNDAxNzMwMjYxNzU1MzI2MDk2NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DCTcMvXxue3wQ7kNvwGmDhu2%26_nc_oc%3DAdo9Ucwm0Bvd5qzpqJr0LYV9ddcTy9068NnBI5N4AMZ3AM4fEghgUHsBt04F1DtCBjU%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fper11-1.fna%26_nc_gid%3D7AeevpV0oco2tze_weQQJQ%26_nc_ss%3D7320f%26oh%3D00_AQR160mXDqxrDbFrBUcBzOBaxys8xYTqqV9tIqtqQHeBUA%26oe%3D6AE8AE1A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">Workshop avec Isabella He d'Anthropic pour construire des agents IA.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le passage des chatbots passifs aux agents autonomes s'accélère.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfAU5rIlivf/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Ton psy est un robot (et il balance)</h2>
+        <div class="trend-analysis">
+            <p>On entre dans la zone grise de l'éthique. D'un côté, une famille qui attaque <strong>OpenAI</strong> après un conseil médical tragique donné par le bot. De l'autre, une étude qui montre que <strong>ChatGPT enregistre nos envies et sentiments</strong> sans qu'on lui demande (et même si on supprime les chats). L'IA nous connaît-elle trop bien ?</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmad18-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F873067991_17981125728130808_4857037263011253565_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAxODM2MDQ0NTk2NDg1Mzg0Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Do3Zi0o0UxNUQ7kNvwH93Yxh%26_nc_oc%3DAdqYvQeE3599t0bIvXgagVRLkGW9bY7lzagoSQqE9cjL0oJFssHnIWhz8iZ3_NW0LVo%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmad18-1.fna%26_nc_gid%3DqYJUp8qwTzkecRDq16CJ3w%26_nc_ss%3D7320f%26oh%3D00_AQQO4suo4ZXyhPCQ-QnJ64oPiBHt7iRYBpwSjyIsm0RvDA%26oe%3D6AE8B844" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 705</span>
+                    </div>
+                    <p class="caption">A family is suing after a woman died...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le chatbot aurait encouragé l'arrêt d'un traitement médical vital. Responsabilité juridique majeure.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfEFZ0yjVAc/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ssn1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F868670368_18004841408991209_5537312170898683195_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D108%26ig_cache_key%3DNDAxNzM1NDEwODkzOTAzMDY0OA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA3OC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DSuyvKysBJgYQ7kNvwHyKTjz%26_nc_oc%3DAdo5QI9KXWuax-KNj_DM9AS3D-BCj5lY-wVFsjnLg_w4tlPUSHfbkrpX7CShdJyb5_o%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ssn1-1.cdninstagram.com%26_nc_gid%3DYfIbMiFTaNiFdhKuP3uWeA%26_nc_ss%3D7320f%26oh%3D00_AQSVronb9uaLD2efaAVEK86QYcIC7Py44wYYFAAeTi9UJw%26oe%3D6AE8CF09" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 310</span>
+                    </div>
+                    <p class="caption">ChatGPT retient des choses sur toi sans que tu le lui demandes...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        96% des souvenirs analysés ont été enregistrés automatiquement, posant de graves questions de confidentialité.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfAgnAHEUmD/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fper8-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F867154456_17980835901130808_6819778080673239005_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNzE2NDE1NTQ4MzYzODM1Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DYBVuA9D_m9QQ7kNvwGu7714%26_nc_oc%3DAdpok06UqnKzK3fzC_45DdSe-_C_TttnLNFKexe5itno5iu3NUI9hWYdjoHiDl6jJ3A%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fper8-1.fna%26_nc_gid%3D5fSbSO3gQXoAjHlRXvHPRg%26_nc_ss%3D7320f%26oh%3D00_AQRl8csMnDAiUpr0epUpkMkzNUSksL9uBamLQQDGsEiaxQ%26oe%3D6AE8B02A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 5432</span>
+                    </div>
+                    <p class="caption">You deleted it. Your phone kept a copy.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Claude Code a retrouvé 214 000 fichiers "supprimés" sur un Pixel. Le "delete" est un mythe.
+                    </div>
+                    <a href="https://www.instagram.com/p/De_1Z69o4ZW/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Hollywood en PLS</h2>
+        <div class="trend-analysis">
+            <p>La production vidéo IA n'est plus une démo technique, c'est une industrie. Un cinéaste vient de sortir un <strong>film de 22 minutes</strong> pour 4500$, une paille par rapport aux budgets de studios. Pendant ce temps, <strong>Higgsfield</strong> permet de transformer une seule prise en multi-caméra cinématographique. La barrière à l'entrée s'effondre.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F870007264_18019771547959228_1795500591863298775_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26ig_cache_key%3DNDAxNzE4MjcyODY5MTg0NTYyMTE4MDE5NzcxNTQ0OTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX3VzZXJfc2VsZWN0ZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DkNOKAkZODkgQ7kNvwE5xuu-%26_nc_oc%3DAdpWJroOhUJLNhWh5g6V9WaGkJk55jU_Jm-_5ThhqxXaTOV4-hCH3icoLTFbHAadh9c%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DEF6e-orZEo5Rf1xM6meu7g%26_nc_ss%3D7320f%26oh%3D00_AQRIJx9Zs25CG7wDWR8rjsDWN5yLwteEGnWzVzueKSfkoA%26oe%3D6AE8C771" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 25507</span>
+                    </div>
+                    <p class="caption">Tales of Grimwicke, a 22-minute fantasy film created with AI for $4,500.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Preuve qu'un long-métrage qualitatif est désormais possible avec un budget minuscule.
+                    </div>
+                    <a href="https://www.instagram.com/p/De_5mhlgwn1/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-gru2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F861230533_1100461505918384_4354011812683536390_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26ig_cache_key%3DNDAxODA0Njc0NzE3MjU1MjA3MjExMDA0NjE1MDI1ODUwNTE%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX3VzZXJfdXBsb2FkZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3D8P__XnPjfVgQ7kNvwG9Adwo%26_nc_oc%3DAdqTqcRulFMDBvTdnb2th23pKGO6FF6Nby2qYpL3MxsFrTSY-_8uVHXCOqvPdLN-wc4%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-gru2-1.cdninstagram.com%26_nc_gid%3DekjLR49FMPvhpcVHMOeuFA%26_nc_ss%3D7320f%26oh%3D00_AQSBcHXhaR2wn6cOwWsKfBXrXj5jgxrn7WrCYAhh-OHUOQ%26oe%3D6AE8DBAB" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 1329</span>
+                    </div>
+                    <p class="caption">Any camera angle, any location, any lighting with Higgsfield MCP.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le "recut" cinématographique post-tournage devient une réalité accessible aux créateurs.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfC-DpgIj2I/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg4-2.cdninstagram.com%2Fv%2Ft51.71878-15%2F870327145_2021907501840306_898840489138432697_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAxNzk0Mjk1OTkyNjUxOTgwOA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fZmlyc3RfZnJhbWVfdGh1bWJuYWlsLkMyIn0%253D%26_nc_ohc%3D4CoiJIk78TgQ7kNvwFpmTXt%26_nc_oc%3DAdquw_uTw6C8s_ltnYdNsaEpfTXOKmHCdvvs09uHesh-fcYQHxlfxlGEpKc5gnEDTsP6g5-KbS41UCb9Mw1STj-C%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg4-2.cdninstagram.com%26_nc_gid%3DTFMEWx6xC5eYsIbm-nmt7A%26_nc_ss%3D7320f%26oh%3D00_AQRWZZ-9N2lVnPNF_nW-KfGD5iETIygulA4xUTaliKFIog%26oe%3D6AE8C371" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 24923</span>
+                    </div>
+                    <p class="caption">“No Ordinary Love” par @antrofrog. Animation IA à la main.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le niveau de fidélité au style "dessiné main" devient indiscernable.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfCmdWGM6gA/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Skynet fait du kung-fu</h2>
+        <div class="trend-analysis">
+            <p>Le hardware rattrape enfin le software. Entre le robot humanoïde de <strong>Unitree</strong> qui fait du kung-fu et l'annonce de <strong>Nvidia RTX Spark</strong> (le plus gros changement PC depuis 40 ans selon Jensen Huang), l'IA s'installe partout. On a même vu un textile tactile lavable. Ton prochain smartphone sera peut-être ta manche.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-dus1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F870146614_17932161357426313_2170551209310007523_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D106%26ig_cache_key%3DNDAxNzE2MTI0OTc3MTAzMTE2Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3D1vNDnGnBzksQ7kNvwEh2aHK%26_nc_oc%3DAdpzZEA136HpN6nT6q5SMAyKJQ3NODcPtf5rJLUaa1Kazt_Vc4olYCrjx5m28fM0GB-Socq3T16GPMasQMY3LNKM%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-dus1-1.cdninstagram.com%26_nc_gid%3D9eBVtWKWGC7wO-o90KR8Og%26_nc_ss%3D7320f%26oh%3D00_AQRg0icZhagbutKm1_0FBr1dAe2YSzYElcCm8sPT5D1iDw%26oe%3D6AE8AF08" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 689</span>
+                    </div>
+                    <p class="caption">Unitree unveiled a humanoid robot capable of performing kung fu moves.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Démonstration de la souplesse et de la réactivité des nouvelles générations de robots.
+                    </div>
+                    <a href="https://www.instagram.com/p/De_1jiJkRGj/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fhnd2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F867483926_17932027782426313_305402490608408775_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNjU4MDc1OTk5MjgyNjg2MDE3OTMyMDI3Nzc5NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX3VzZXJfc2VsZWN0ZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3D3TwP24QwkMwQ7kNvwFX04Ok%26_nc_oc%3DAdrY2r-X-2e9ZjiY1A5atplSWBkAcCahap6hJvqJ6RMYNpkgUrd6h8BCYD7hVHG0E9s%26_nc_ad%3Dz-m%26_nc_cid%3D1700%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fhnd2-1.fna%26_nc_gid%3DhEZBLEfEGx2uhnKaUUxFgA%26_nc_ss%3D7320f%26oh%3D00_AQQVaNtN9L9p5_iew2CIBDxSalF7EZvvgnnH2nhifGkgeg%26oe%3D6AE8B1AC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 4330</span>
+                    </div>
+                    <p class="caption">NVIDIA CEO Jensen Huang just unveiled RTX Spark.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le nouveau chipset N1X promet de redéfinir l'informatique personnelle via l'IA.
+                    </div>
+                    <a href="https://www.instagram.com/p/De9wuujCnvs/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcps4-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F865869261_17980669926130808_7939502586633582081_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D109%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAxNjQ3MDYyMDcyMzc3MzM5Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DdcD23gz3aSIQ7kNvwFGRdJv%26_nc_oc%3DAdogi2kOfM_wcEwRLDvJRDDG06JO9zJyFC4txW3zl63W_Dy72xrOl9I4gyLInkB3c6wPRu_ZRt9Cqw2ClDzrybKw%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcps4-1.fna%26_nc_gid%3DOvx0MV2f9h32AsC5FVrinw%26_nc_ss%3D7320f%26oh%3D00_AQQe2-ottU4UIVdeQxSzb2T5umoFv7quqGNW6f9cDErxvQ%26oe%3D6AE8D469" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">Your next screen might be your sleeve. Washable touchscreen woven into clothing.</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Intégration directe de l'interface dans le textile. Le wearable ultime.
+                    </div>
+                    <a href="https://www.instagram.com/p/De9XvxrI11k/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
