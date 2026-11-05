@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 05 novembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Andrej Karpathy</strong> (ex-OpenAI) a cloné YouTube en 2 heures chrono avec Claude pour créer "HackerTube".</li>
+            <li><strong>Sam Altman</strong> s'est renommé "Ram Altman" après une polémique sur l'utilisation de la mémoire RAM dans nos PC.</li>
+            <li><strong>Canva</strong> annonce le licenciement de 22% de ses effectifs (1271 personnes) malgré sa rentabilité.</li>
+            <li><strong>ChatGPT Images 2.6</strong> est sorti : création de GIFs par prompt et nouveaux modèles d'édition ultra-rapides.</li>
+            <li><strong>Élections US :</strong> La victoire des Démocrates au Congrès pourrait mener à une interdiction pure et simple de l'IA superintelligente.</li>
+            <li><strong>Stack Overflow</strong> est officiellement en soins palliatifs : le nombre de questions est passé de centaines de milliers à moins de 1000 par mois.</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Touche pas à ma RAM</h2>
+        <div class="trend-analysis">
+            <p>Le patron d'OpenAI, Sam Altman, a jeté un pavé dans la mare en déclarant qu'il était "terrible" que tant de RAM dorme dans nos ordinateurs personnels alors qu'elle pourrait être optimisée dans le cloud. Résultat ? Une pluie de mèmes, des boucles d'oreilles en barrettes de RAM et un changement de blaze sur X pour "Ram Altman". Quand le cloud veut piquer ton hardware, ça grince.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams4-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F878870657_18020819498959228_1994686510397002249_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DNDAyMTU3NzkzNzgxNDg3ODgxNA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DdmZfyVzGRJMQ7kNvwFI2fQS%26_nc_oc%3DAdowvdjFgaIAT1qoNmJPYjglK7kGatV9GMG_Gpp6caerEGEuEBF0bZADOAUX8wupZjE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams4-1.cdninstagram.com%26_nc_gid%3D5UvKzWO5dc7y_iyswq_cFQ%26_nc_ss%3D7a20f%26oh%3D00_AQSYfd5REnKXRv3WsFH906snwhaef1k_X3IsFngqXIRBlw%26oe%3D6AF1EBE7" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 13661</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Sam Altman suggère que la RAM des PC devrait être dans le cloud. Internet répond avec des bijoux en barrettes de RAM.</p>
+                    <a href="https://www.instagram.com/p/DfPg9iTACeu/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fagp5-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F878413773_18021115463959228_6650295649514762231_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAyMzA5NzQxMTY5NzI3NzQyOQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DrhmnC4TDZqAQ7kNvwF6CQ9d%26_nc_oc%3DAdpQx43TzwGe60NCC0i3b3FKLkqjrUWMIBURr7beNiSzM-KSohgHG_4BRdK1X9AGtUY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fagp5-1.fna%26_nc_gid%3DeNRHXtB3UddX1Is-yjO95w%26_nc_ss%3D7a20f%26oh%3D00_AQQmrEXjHZQUXQs37l_LKmy6_DHTeG3J5IsQQQhlgm_W9w%26oe%3D6AF1EA71" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 10753</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Sam Altman se renomme "Ram Altman" sur X après le backlash sur ses commentaires RAM.</p>
+                    <a href="https://www.instagram.com/p/DfU6eiWgL48/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ber1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F887473827_17982175530130808_4126550914935412520_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAyMzE1OTQyMzU3NTg4NjM3Nw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DeRa-ERRxgGIQ7kNvwEd6rjS%26_nc_oc%3DAdpzgbNrIcMbXbaB9t51gpeKh_zSq9hhheV6jLBGnaXx30a5D278zKckzwd55M0tbUI%26_nc_ad%3Dz-m%26_nc_cid%3D1365%26_nc_zt%3D23%26_nc_ht%3Dscontent-ber1-1.cdninstagram.com%26_nc_gid%3DxpQBL3UmDVSuGbWl0iHTcA%26_nc_ss%3D7a20f%26oh%3D00_AQR7mgkTLU5OA11-X-zLcgtL_m_SSDdWTLasAJ_qqfD_3A%26oe%3D6AF2119A" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 2147</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Focus sur la citation "I want you to have so much RAM", mantra ironique du moment.</p>
+                    <a href="https://www.instagram.com/p/DfVUdvGAayS/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">L'Oncle Sam veut tout couper</h2>
+        <div class="trend-analysis">
+            <p>Suite aux élections US, les Démocrates reprennent le contrôle et l'IA est dans leur viseur. Au programme : des moratoires sur les nouveaux data centers pour cause de consommation électrique délirante et une proposition de loi pour bannir l'intelligence artificielle superintelligente (ASI). Goldman Sachs prévient : 45% des projets de data centers pourraient être mis sur pause.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-gmp1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F886633212_17982111777130808_5290371937019073178_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26ig_cache_key%3DNDAyMjk0NjAyNTk0NTU1NDU0OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzA3Mi5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DgN9e54PGBjQQ7kNvwGsJRjD%26_nc_oc%3DAdqRAxVB2ihMPYJutxeX02mCILQHrc_C3JJxQwdG130GyD2Dh69DX9UIJ3JO_6gi3IMabRsu7xdyewv3Bho0liZT%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-gmp1-1.cdninstagram.com%26_nc_gid%3DTzdI0GuoNDQGw6BCRkEWHg%26_nc_ss%3D7a20f%26oh%3D00_AQSffC8PFcwISHHb4Cln9_XTvyuwMXKPOc7npf-J_kuznw%26oe%3D6AF207AC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 1217</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Les Démocrates gagnent le Congrès et le Sénat. L'industrie de l'IA s'attend à un tour de vis réglementaire.</p>
+                    <a href="https://www.instagram.com/p/DfUYBrxjTAk/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fcmp1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F887032565_17982168972130808_7379391987469356462_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D107%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyMzEzMDM1MDA0ODA1OTA4MA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D5-7H7SF87-wQ7kNvwE-QCIV%26_nc_oc%3DAdrXzyc8annjdE0nG6dWTjjHI4ohebtdh_Dbx8oqN2iyaI94FueBmBmza7rs6e0yIqU%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fcmp1-1.fna%26_nc_gid%3DxZwxKXgTVIjos0bvKWI3dA%26_nc_ss%3D7a20f%26oh%3D00_AQSZYDg4u2lq7lKjPAZ6Ba4wxwtSy46MAURK_M5grcmW-A%26oe%3D6AF21715" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 3396</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Goldman Sachs prévient que 45% des projets de data centers IA US pourraient être gelés par les nouveaux gouverneurs.</p>
+                    <a href="https://www.instagram.com/p/DfVB83OjeUY/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F887604222_17982219699130808_7445533921271187330_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26ig_cache_key%3DNDAyMzQwMzM2NjY5NjEyMDA0OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzA3Mi5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DXpjQ9q7R2G8Q7kNvwEodXqh%26_nc_oc%3DAdp86HXwp9mBHc7jf82AUepAcqaDrVekvLzfAPm-f-4J5HP91o0HHkQpZz6nqaw6Nes%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3DBnpDmG4Aj1N6Zzdp-63O3A%26_nc_ss%3D7a20f%26oh%3D00_AQRuaa_jKbk4EodyraWLnbv1g8sSTqb2abiBqi2wDoF5lg%26oe%3D6AF1F3FE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 563</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Une représentante démocrate demande l'interdiction de l'IA superintelligente dès le premier jour de mandat.</p>
+                    <a href="https://www.instagram.com/p/DfWABFaCBnX/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Dev is Dead?</h2>
+        <div class="trend-analysis">
+            <p>La fin de Stack Overflow approche. Le site qui a sauvé des millions de développeurs voit son activité s'effondrer car tout le monde pose désormais ses questions à Claude ou Cursor. Symbole du changement : Andrej Karpathy (l'un des cerveaux d'OpenAI) a créé HackerTube, une alternative à YouTube triée sur le volet, en seulement 2 heures avec Claude. Le code devient un langage de commande, plus de saisie.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmel14-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F878367730_18020928671959228_1313507796643464896_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D111%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyMjEzNzM4MTE0NTU2NDgwMA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DnSugB2psX6IQ7kNvwHi0jb-%26_nc_oc%3DAdrQYamXRoe1aKlHKDuZ84YBSOP-rGHHJ1aHsvBtb8rTEoa-AFKFA15aaPjOFLSAVlA%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmel14-1.fna%26_nc_gid%3D9rBr4K1QYEJTJqhPkowFfg%26_nc_ss%3D70a8c%26oh%3D00_AQQa2xacDqO1GK9ZUqhOLizEjYAkegxFe9bJfysn7vPwJA%26oe%3D6AF1E1C1" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@evolving.ai</span><span>❤️ 5821</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Chute historique de Stack Overflow : moins de 1000 questions en Septembre 2026 contre des centaines de milliers autrefois.</p>
+                    <a href="https://www.instagram.com/p/DfRgKNRAFaA/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-waw2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F884884749_17933258850426313_4344433556907194643_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D109%26ig_cache_key%3DNDAyMTYxNzY4MzQwOTMyMzk4OQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D_Say60TL0iYQ7kNvwGvbKmw%26_nc_oc%3DAdqRGN73nS47piBhDsYyxl-jXAYgYZcUJy1wD-dwNEeGSCO8LTc-xp_wBzE_qxyy4VE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-waw2-1.cdninstagram.com%26_nc_gid%3DeEiTEOvCWjIBchaMJ1ONFA%26_nc_ss%3D7a20f%26oh%3D00_AQQ5ldEBZOvdvseYTNMCjIkY34rF7TKiwfSlU_fEaJ-Iog%26oe%3D6AF1F3CC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ -1</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Karpathy utilise Claude pour bâtir HackerTube en 2h. Le futur de la curation vidéo est là.</p>
+                    <a href="https://www.instagram.com/p/DfPqBTilna4/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fsyd12-1.fna.fbcdn.net%2Fv%2Ft51.71878-15%2F883415991_1126551316437057_4315801863130343003_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyMjIwMTcwMjA5MDQ0MTMwODE4MDA1ODg4Mjc2OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fdXNlcl9zZWxlY3RlZF90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DFObYPNw9tZQQ7kNvwF_yMqw%26_nc_oc%3DAdp3T3mjzZiG0dzY8whBIE9kfdGdGt7_Z_ZALdyIUl6WTl29qU4a-AgTzWATMR8J-YY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fsyd12-1.fna%26_nc_gid%3DqZJ8EvvyTrda7Okn6FIPIg%26_nc_ss%3D7a20f%26oh%3D00_AQRCJ7YwXVZ5qiZ3Os7BjQypU-Ij6PleY8y6jDt9iVFH-A%26oe%3D6AF1FC9B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 90</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Analyse du projet HackerTube : 43 millions de commentaires triés par l'IA pour ne garder que le meilleur.</p>
+                    <a href="https://www.instagram.com/p/DfRuyM0EoJc/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Spécial Updates & Tools</h2>
+        <div class="trend-analysis">
+            <p>On ne chôme pas chez OpenAI : ChatGPT Images 2.6 permet enfin de générer des GIFs directement. Côté création d'apps, Runway lance son "App Studio" pour générer des interfaces complètes par simple texte. Et pour les photographes du dimanche, de nouveaux prompts permettent de transformer un selfie de chambre en portrait LinkedIn pro via DALL-E 3.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F888311474_17982233145130808_8630000155089631657_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D111%26ig_cache_key%3DNDAyMzQ4NDQ0NDI0NTAzMDMwNg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DDgPBIOP9Mm8Q7kNvwHB7HBB%26_nc_oc%3DAdqKQfVDFfC--VpxulfC88P2LX_w4F2RNvToy0scyexlXUYQnEhCIsRTv3-egPBqy6fGBq88d4ehzk7eGIeujQ0-%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3DP1ZUM8zDMjELukkC6mDLAA%26_nc_ss%3D7a20f%26oh%3D00_AQQBTm4myPRgDyuHC_Ah-NiKVq0UZkQBFpWcXv3a6H6aRA%26oe%3D6AF1E24C" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ 151</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Sortie de ChatGPT Images 2.6 : création de GIFs, contrôles de vitesse et nouveaux modèles Flare & Sunburst.</p>
+                    <a href="https://www.instagram.com/p/DfWSiOOo8B_/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg4-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F885019107_17982000252130808_6266860809770819828_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26ig_cache_key%3DNDAyMjMzMTU2OTIzMzk5MzU4Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3D7-KRACnstr0Q7kNvwFz81t_%26_nc_oc%3DAdpQmatUD4hVigLqKRMXTcmgKHQoPaFDPO8rGuhEORJKrbmrxKDL8Yikduxo8ypzdu2MV6JyWJEaDLgzk36xD8Yc%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg4-2.cdninstagram.com%26_nc_gid%3DS6P2GpHAW7GyTjlRhgMxmw%26_nc_ss%3D7a20f%26oh%3D00_AQTCJQDPpmPSVZF0j9eB4k4AwgiMxYFJgXiQTCvmW4iuTA%26oe%3D6AF20407" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@theartificialintelligence</span><span>❤️ -1</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Runway lance App Studio : décrivez l'app, l'IA l'écrit, la teste et la déploie sans code.</p>
+                    <a href="https://www.instagram.com/p/DfSMbraI3ea/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F875247168_18006064754991209_1883881230352388758_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D109%26ig_cache_key%3DNDAyMzExNDA1MDQ3NzUwMTI2Mw%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DdYF-N3m1zs8Q7kNvwFGz43-%26_nc_oc%3DAdpd1ILwlnmtgZaWXqLasm_9pKuYSJyVxdPMVVVMn1UqeL7AzaGdHeLVflwFvGND7Gv0ZDbCOA-isAXP3LZudRBV%26_nc_ad%3Dz-m%26_nc_cid%3D1429%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3D-TUw66jZbJHUjnk8vqEdJQ%26_nc_ss%3D7a20f%26oh%3D00_AQQ6P5fom_ByvZl4ANRlbsDFnF-xEHP1gwHn85_SoW8ivA%26oe%3D6AF20868" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 607</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> 6 prompts magiques pour transformer une photo de téléphone en photo de studio pro.</p>
+                    <a href="https://www.instagram.com/p/DfU-UbDmENR/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Vibe Check & Culture</h2>
+        <div class="trend-analysis">
+            <p>Halloween 2026 restera l'année du "Usage Limit". À San Francisco, le costume le plus populaire était le message d'erreur de Claude ou ChatGPT. Pendant ce temps, Boston Dynamics continue de nous préparer au futur avec un robot Atlas capable de soulever des frigos de 23kg sans broncher. Et attention : vos textes générés par IA contiennent désormais des filigranes invisibles imposés par l'Europe.</p>
+        </div>
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-cdg6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F885128753_17933236059426313_4156522664468623035_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DNDAyMTUzODgyNzMwNjQ3MjMxMg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Do0lYJQ_ktf4Q7kNvwEkBgzT%26_nc_oc%3DAdq41pvm4stn-0ODR8j8w4k0JVPttHrFzOCMF-S5Av8cIdNtXSosXkHSX5ZdIatG4h99iK488RtIm_q7hr0nZKpL%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-cdg6-1.cdninstagram.com%26_nc_gid%3D8pk74cxAYB_g1Rx53flFwg%26_nc_ss%3D7a20f%26oh%3D00_AQQP1ut318RrKvRZuy7cbWUr3OFBvChPjcxdKmlBIEUykQ%26oe%3D6AF1F796" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 7422</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Halloween à SF : les costumes "Claude Usage Limit" font le buzz. L'angoisse de la limite de tokens est réelle.</p>
+                    <a href="https://www.instagram.com/p/DfPYGa4Fi03/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fjpa11-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F887011217_17933432772426313_7592336159496996978_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyMjQxMDIxOTQ4MDUzNzc1OTE3OTMzNDMyNzY2NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX3VzZXJfc2VsZWN0ZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DMce6LjAckrcQ7kNvwFNjMUH%26_nc_oc%3DAdrAPbLxLeOsKprHLtTlvCXXB0R8gLQscYJmiIgjfiq59TZwlEJRuKZsjw22839xxvQ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fjpa11-1.fna%26_nc_gid%3DYivhhhGi5dzWuHHCDilAhQ%26_nc_ss%3D7a20f%26oh%3D00_AQSTbNurnQ_X_umqbO8xj4wHVL9_T4nY_KFMcq7fy0R6dQ%26oe%3D6AF1E6F3" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@longliveai</span><span>❤️ 1009</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Atlas (Boston Dynamics) soulève désormais des mini-frigos. Le robot s'est entraîné des millions d'heures en simulation.</p>
+                    <a href="https://www.instagram.com/p/DfSeMhxCdqf/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ber1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F882776013_18005929625991209_265222334001230472_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D103%26ig_cache_key%3DNDAyMjM5NzQ1OTkzMTE3NzYzOQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3Ds95n42Gd0hUQ7kNvwGqbMgM%26_nc_oc%3DAdpHGcS_CALdhkPvujSOi5sWVGaYhy9sVWy9YSwil_Dfn-MM1vvLsw7ZlecuZdux9Uh91EIBPLpc2CQ7kVwZXzKS%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ber1-1.cdninstagram.com%26_nc_gid%3DO6BPhK8yRHkm0L6uitHdwQ%26_nc_ss%3D7a20f%26oh%3D00_AQThb4c3OlvBrifXhSRm6TEEB3mk6Dm3LPHp-I-9oYqq7Q%26oe%3D6AF205BE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta"><span>@information.ia</span><span>❤️ 313</span></div>
+                    <p class="insight"><strong>💡 La news :</strong> Obligation européenne : ChatGPT et Claude marquent désormais leurs textes de manière invisible.</p>
+                    <a href="https://www.instagram.com/p/DfSb0vsnCk1/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
