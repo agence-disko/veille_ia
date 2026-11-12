@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>Veille IA - DISKO INSIDER</title>
+    <style>
+        :root {
+            --disko-black: #0A0A0A;
+            --disko-dark: #1A1A1A;
+            --disko-gray: #F3F4F6;
+            --disko-light: #FFFFFF;
+            --disko-border: #E5E7EB;
+            --accent: #111827;
+        }
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--disko-gray);
+            color: var(--disko-black);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        h1, h2, h3, .btn, .main-header p { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+        .main-header {
+            background-color: var(--disko-black);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            border-bottom: 4px solid var(--disko-dark);
+        }
+        .main-header img.logo {
+            max-height: 45px;
+            margin-bottom: 1.5rem;
+        }
+        .main-header h1 {
+            color: var(--disko-light);
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+        .main-header p {
+            color: #9CA3AF;
+            font-size: 1rem;
+            margin: 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+
+        .news-section {
+            background: var(--disko-light);
+            padding: 2.5rem;
+            border: 2px solid var(--disko-black);
+            box-shadow: 8px 8px 0px var(--disko-black);
+            margin-bottom: 4rem;
+        }
+        .news-section h2 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            border-bottom: 2px solid var(--disko-border);
+            padding-bottom: 1rem;
+            color: var(--disko-black);
+        }
+        .news-section ul { padding-left: 1.2rem; }
+        .news-section li { margin-bottom: 0.9rem; font-size: 1.05rem; }
+
+        .trend-block {
+            margin-bottom: 3.5rem;
+        }
+        .trend-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 0 0.75rem 0;
+            color: var(--disko-black);
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .trend-analysis {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #374151;
+            border-left: 4px solid var(--disko-black);
+            padding-left: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .post-card {
+            background: var(--disko-light);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--disko-border);
+            transition: all 0.2s ease;
+        }
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 6px 6px 0px var(--disko-black);
+        }
+        .post-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--disko-gray);
+            border-bottom: 1px solid var(--disko-border);
+        }
+        .post-content { padding: 1rem; flex-grow: 1; display: flex; flex-direction: column;}
+        .meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .caption {
+            font-size: 0.85rem;
+            color: var(--disko-dark);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .insight {
+            background: var(--disko-gray);
+            padding: 1rem;
+            font-size: 0.85rem;
+            color: var(--disko-black);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            border-left: 3px solid var(--disko-black);
+        }
+        .btn {
+            display: block;
+            text-align: center;
+            background: var(--disko-black);
+            color: var(--disko-light);
+            text-decoration: none;
+            padding: 0.75rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.2s;
+        }
+        .btn:hover { background: #333333; }
+    </style>
+</head>
+<body>
+
+<header class="main-header">
+    <img src="https://images.teamtailor-cdn.com/images/s3/teamtailor-production/gallery_picture-v6/image_uploads/0b42b25a-cefb-4761-96a5-2f9b3a585662/original.png" alt="Altavia Disko" class="logo">
+    <h1>Disko Insider</h1>
+    <p>La veille IA de Disko &nbsp;•&nbsp; Édition du 12 novembre 2026</p>
+</header>
+
+<div class="container">
+    <div class="news-section">
+        <h2>Si tu as passé la semaine dans une grotte</h2>
+        <ul>
+            <li><strong>Claude Fable 5.2</strong> débarque et prend la 1ère place mondiale des benchmarks d'intelligence.</li>
+            <li><strong>Séisme chez Nvidia :</strong> Jensen Huang visé par une enquête interne pour une liaison avec une espionne chinoise présumée.</li>
+            <li>Anthropic lance <strong>Claude Sheets</strong> : des tableurs intelligents qui gèrent formules et tris via de simples prompts.</li>
+            <li><strong>PwC</strong> va former 85 000 employés à la pensée critique pour contrer l'automatisation excessive par l'IA.</li>
+            <li>Amazon dévoile le <strong>Ring Drone Cam</strong>, une caméra de sécurité volante qui patrouille ton salon en 2K.</li>
+            <li>Le patron d'Anthropic, Dario Amodei, prédit que l'IA éradiquera le cancer et Alzheimer d'ici 10 ans.</li>
+            <li>ByteDance lance <strong>Seedance 2.0</strong> : la génération de vidéo 10s tombe à 0,29$ (du jamais vu).</li>
+        </ul>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Anthropic roule sur le game</h2>
+        <div class="trend-analysis">
+            <p>Pendant qu'OpenAI peaufine ses mises à jour, Anthropic vient de lâcher <strong>Claude Fable 5.2</strong>. Résultat ? Numéro 1 au classement d'Artificial Analysis. Mais le vrai coup de génie, c'est l'IPO imminente avec <strong>20 milliards de dollars</strong> d'investissement de Google et Nvidia. Dario Amodei ne vend plus juste un chatbot, il vend un futur sans cancer et des puces Broadcom à 161 milliards de dollars.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fwaw8-2.fna.fbcdn.net%2Fv%2Ft51.71878-15%2F902598046_1704825254570666_2846209162301403064_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D108%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyNzQ3NTA2OTk5MDY5ODU0NQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNjQwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DRlM8bsnUX-gQ7kNvwHrqBiv%26_nc_oc%3DAdqtTThJLH4Y_LvpyE2n3ydrNu8wEnLMSo1OKnbcf160AKHEqbLafoBTCvy17RO61Q0%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fwaw8-2.fna%26_nc_gid%3Df0yBDw5tF1xS2q1kgjZ2UQ%26_nc_ss%3D7a20f%26oh%3D00_AQQN2LzQyTjl5g7CmEjeaZxb3dS8t0Qc3zWSrjUKRvsg-w%26oe%3D6AFB41D3" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 1023</span>
+                    </div>
+                    <p class="caption">Claude Fable 5.2 est sorti hier...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Fable 5.2 devient le nouveau roi du benchmark, plus rapide et efficace que la version précédente.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfkd3NgiLvW/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.frtm1-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F899129339_17919192537467870_1480818387991525896_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyNzk4NTA3MTY5OTM1ODI4Mg%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DI9CqyEkGJ7wQ7kNvwFgecqk%26_nc_oc%3DAdpHxxxliPPqjby3jN3QD9L-BRpDjSMCmMaRt42XvG3mDwyhF6x0YSdqJs7qtbgEG9c%26_nc_ad%3Dz-m%26_nc_cid%3D1207%26_nc_zt%3D23%26_nc_ht%3Dinstagram.frtm1-1.fna%26_nc_gid%3DSHsp-0W1q1VjU2eoKYDt9Q%26_nc_ss%3D7a20f%26oh%3D00_AQStkA5ozarNHAQwyVMFc_bDIqdVeQAd2_pvYwxwwOKkSA%26oe%3D6AFB36F9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@girsta</span>
+                        <span>❤️ 77</span>
+                    </div>
+                    <p class="caption">Dario Amodei closed Anthropic’s 42-minute IPO roadshow video...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le CEO d'Anthropic prédit que l'IA guérira les maladies majeures (cancer, Alzheimer) d'ici 10 ans.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfmRzxyDaUS/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fpbc1-2.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F900738739_18651224275038643_130095584674101165_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D100%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODIwOTAyMDAwOTAyNzk4ODE4NjUxMjI0MjcyMDM4NjQz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjcyMC5zZHIudmlkZW9fdXNlcl9zZWxlY3RlZF90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3D2aGwPaCOUrMQ7kNvwH7UYUB%26_nc_oc%3DAdqHk5krhfizz3jVEL1S6IIVpy4evwYS70ALAHg_l8wC8p3tJoSnAeaGK7K9sApIs_g%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fpbc1-2.fna%26_nc_gid%3DuPQqi9UMRumBV7zRrkXpXw%26_nc_ss%3D7a20f%26oh%3D00_AQQJm-s2q6_UnzPybMjYF-HkvA6zThH-03V-rAmTwePfLQ%26oe%3D6AFB4C5E" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@bariqrifki</span>
+                        <span>❤️ 328</span>
+                    </div>
+                    <p class="caption">Anthropic entre en bourse. Google et Nvidia achètent 20 milliards...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Introduction en bourse massive pour Anthropic, soutenue par les deux plus gros géants de la tech.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfnEsLmqZmU/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lhr6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F894457758_17983164240130808_2372922529360487422_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D106%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODAyODUzMjc0NzQ3MTI2NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzA3Mi5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DL6OTmyWVr3QQ7kNvwGFDV6A%26_nc_oc%3DAdrxy5xTWJ8LP3lCDCZ7pkKTSA_MwfxfGUBABhfY-FHHi8GkWJXUvxjPz_-rnIHedeA%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-lhr6-1.cdninstagram.com%26_nc_gid%3Dw8M3L6be_WwVdFYsrYYzlQ%26_nc_ss%3D7a20f%26oh%3D00_AQT1OwL8_9mgc0P77Iu2Fpl4vJ1gG8-l1ThwFBbmgXpnXg%26oe%3D6AFB2AE0" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">Broadcom is selling Anthropic its AI chips...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Un deal de location de puces de 161 milliards de dollars avec Broadcom pour alimenter les futurs modèles de Claude.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfmbp7IDWak/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Vrai drama chez Nvidia</h2>
+        <div class="trend-analysis">
+            <p>C'est digne d'un film d'espionnage. <strong>Jensen Huang</strong>, le visage de la révolution IA, est au coeur d'un scandale de liaison avec une femme soupçonnée d'être une <strong>espionne chinoise</strong>. Le board d'Nvidia a mandaté un cabinet d'avocats ultra-puissant (Wachtell Lipton) pour enquêter. L'enjeu : un "backdoor" de 7,5 milliards de dollars de puces envoyées illégalement vers la Chine. Sa place de CEO ne tient plus qu'à un fil.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-mad1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F893301655_17934244737426313_5421466728101636474_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyNjYwNTI1NTYwNDgwNzk2Ng%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DpEokTt8JkIUQ7kNvwGz8Kg0%26_nc_oc%3DAdqxKFkcsKvUGAT_cQi8JEWDT_mKujbvSjohZvQKHDFwpw6wyllJ2sRIDpRP0_5cACAMsYxYnrc5IdIewS8XkkRW%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-mad1-1.cdninstagram.com%26_nc_gid%3D3kKd_X_krb6UVow32lfMSw%26_nc_ss%3D7a20f%26oh%3D00_AQTiRtNVaPULqKUXYkiG6u8g69xsOuLXRSA1u0oFi79xzA%26oe%3D6AFB3ADA" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">NVIDIA CEO Jensen Huang has admitted to an affair...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le patron de Nvidia avoue son infidélité, déclenchant une crise de gouvernance majeure.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfhYEZJlkFv/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-itm1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F899273545_18022259291959228_687380850276787906_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D100%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODU5NDcwMTY3NzQwODAyNA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DvkSI02Mg5CMQ7kNvwEg1sk6%26_nc_oc%3DAdpJEV-fhT4B6E4ffoJvKwGw69xsuYO8qOGLe-MBCcgDYGT7tIXaW7oTIUhxYyF0NfY%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-itm1-1.cdninstagram.com%26_nc_gid%3DxxWfdzJ8IcNs1jQqLjhnqg%26_nc_ss%3D7a20f%26oh%3D00_AQSKx7h1jjeVIKIbJEqxyB36ZQZbkN3c3YL6J6xqm1P7bw%26oe%3D6AFB45D9" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 1148</span>
+                    </div>
+                    <p class="caption">Nvidia is reportedly preparing to remove Jensen Huang as CEO...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le board étudie le départ du co-fondateur suite aux révélations sur Kimberly Powell.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfocY0hAHQU/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-man2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F898505037_17983208070130808_1330387478837299899_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D102%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODIwOTYwMTQyMTYwOTg2Ng%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMzA3Mi5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DOMe5puym_hEQ7kNvwGG_nGO%26_nc_oc%3DAdqw795PEHws76myMpAXHRdHVZpxXW97n-pvR9D4j5OgaZeVYPPkhfAa0xgPUx9aUbs%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-man2-1.cdninstagram.com%26_nc_gid%3DP1x0ojuHmKdz7hMAiIcHLg%26_nc_ss%3D7a20f%26oh%3D00_AQQ91WrHga5dFmOFjnm3L_oLX7aadApCQqQwkNF5Dl0YOA%26oe%3D6AFB2E10" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ 550</span>
+                    </div>
+                    <p class="caption">NVIDIA's board just brought in a heavy hitter...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Wachtell Lipton, le cabinet qui a forcé Elon Musk à racheter Twitter, enquête désormais sur Huang.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfnE0pFjYuK/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-icn2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F905073186_18022183550959228_1490508175509931972_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D1%26ig_cache_key%3DNDAyODE5NDgxODYyMTQ0MzE3NA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3DC5tGl7wZc-4Q7kNvwEstGnq%26_nc_oc%3DAdoNlBWUw05YdwfLjEpzT7tpdQurNFZa_cdBKnBgbGT_X1UFrnTumyOJLnRg93Jj-1n__qlVmY2vHr8SAlWHv_Bu%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-icn2-1.cdninstagram.com%26_nc_gid%3DTZdvBDdLr8_GTvOrn_i5CA%26_nc_ss%3D7a20f%26oh%3D00_AQTn3wBCiyOC54QGbZvlcqbE-jwg3WQuRvlHJ57mLvDp_w%26oe%3D6AFB1AEC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 9715</span>
+                    </div>
+                    <p class="caption">Jensen Huang’s affair may have opened a $7.5 billion back door...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le scandale personnel cache une fuite massive de technologies souveraines vers la Chine.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfnBdxsAE5I/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Bye Bye Excel ?</h2>
+        <div class="trend-analysis">
+            <p>On ne demande plus à l'IA d'écrire un poème, on lui demande de bosser. <strong>Claude Sheets</strong> arrive pour tuer le tableur traditionnel. Tu lui balances 200 lignes en vrac, il te les range, vire les doublons et sort les formules de calcul en 3 minutes. Ajoutez à ça les <strong>Whiteboards</strong> pour brainstormer visuellement, et l'écosystème Office prend un sacré coup de vieux.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lga3-1.cdninstagram.com%2Fv%2Ft51.71878-15%2F899911292_2327768134624704_7136664222127197674_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D101%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODE4NDI0MjA4OTY3Nzc4OA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNjQwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DCN8W0pM3-IoQ7kNvwFlnyIX%26_nc_oc%3DAdoYbK172YjodZQar4KN8UPxlgk4geeHjNepIRh1DZuEnIuuJfBKPQQoPwH9LqFgBhE%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-lga3-1.cdninstagram.com%26_nc_gid%3DEZVVJS6qT6lDVRyYplX1hQ%26_nc_ss%3D7a20f%26oh%3D00_AQQmWhLXpxOmeZRrK5fkDSs1uVAsY_xoHWuBbXnDgvAjGw%26oe%3D6AFB3308" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 471</span>
+                    </div>
+                    <p class="caption">Claude Sheets est sorti hier, en bêta...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'IA gère désormais des tableurs entiers avec des vraies formules fonctionnelles.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfm_HHnpZna/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ber1-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F902586085_17934591231426313_2627420383294941684_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODA2MjQwOTU0NDYyOTc2MA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19maXJzdF9mcmFtZV90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DJ90sJSKIrAwQ7kNvwEWju1f%26_nc_oc%3DAdpAvnL1hl8v5S3BLsf1I1KUKeCgZCb1KELpfUttiUE2kV6wpmwr4fP9XSTOfxvw3k4%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ber1-1.cdninstagram.com%26_nc_gid%3DBmCOStp2Ck4VCWidQ2QULA%26_nc_ss%3D7a20f%26oh%3D00_AQRFAj8sNpkTBvBktsi4fkTURNYUJito_aLqtFkFFFEbgA%26oe%3D6AFB4FEE" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 1647</span>
+                    </div>
+                    <p class="caption">RIP Microsoft Office? Anthropic just launched Claude Whiteboards...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Claude devient un outil de collaboration complet (whiteboards, data analysis).
+                    </div>
+                    <a href="https://www.instagram.com/p/DfmkCspFruV/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-ams2-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F894172964_17982871245130808_5739211718927140900_n.heic%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D105%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyNjc4OTk0OTM4MTYyNzA3OA%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D9X8dud9Zw3gQ7kNvwEROCtc%26_nc_oc%3DAdqhCMWf63zpXt9gZ46RZlAQs_PTWqrhba-AjWPuTfFXhmabD1Wh-Bu1iw69dv3DDtNiIzIs0TxBNzMQSShsQbCZ%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-ams2-1.cdninstagram.com%26_nc_gid%3DYDrz1nBBr5WHC7DDi73HDA%26_nc_ss%3D7a20f%26oh%3D00_AQTM7xkFT03-MO7zwuOvWph5JRVBUvdeV2B56uQUYIPXaA%26oe%3D6AFB1DB8" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@theartificialintelligence</span>
+                        <span>❤️ -1</span>
+                    </div>
+                    <p class="caption">One of the engineers building Claude Code says AI is making it too easy to stop thinking...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le revers de la médaille : les experts s'inquiètent de la perte de pensée critique face à l'efficacité de Claude.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfig8s1ARfQ/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">Robots : Le futur est (un peu) cassé</h2>
+        <div class="trend-analysis">
+            <p>On nous promettait Terminator, on a des drones qui se perdent dans le salon. Amazon lance sa division <strong>Ring Robotics</strong> avec un drone à 250$ qui surveille ta maison. Côté pro, les IA de recrutement (Burger King) pètent des câbles face aux blagueurs torse nu, et les robots de sécurité se font berner par des passants malins. On n'est pas encore tout à fait prêts pour l'insurrection des machines.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fbcn2-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F900759257_17919229701467870_190931932611112144_n.jpg%3Fstp%3Ddst-jpg_e35_tt6%26_nc_cat%3D104%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODExMTQ0MDkwMDMzMDI1MQ%253D%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9%26_nc_ohc%3D7rA-iCn0HUAQ7kNvwGen06U%26_nc_oc%3DAdrwCfnhk2VZrFElVFiALdmIemfZIN5LwY8zU-wvC5nOKz--9YOMhLOQweQ6fG9PZAI%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fbcn2-1.fna%26_nc_gid%3Dvwv7jOwSTi48T-FqspJiyQ%26_nc_ss%3D7a20f%26oh%3D00_AQRQcTc1mSl8rmvDPtDZrlOTqhfgbconKGD0Z6-6xk3-4A%26oe%3D6AFB4C57" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@girsta</span>
+                        <span>❤️ 31</span>
+                    </div>
+                    <p class="caption">Amazon Ring announced the Ring Drone Cam...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Le "Ring Drone Cam" patrouille de façon autonome dans les maisons avec évitement d'obstacles.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfm3GhEjReD/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-lhr6-1.cdninstagram.com%2Fv%2Ft51.82787-15%2F902585610_18021989750959228_8557886839104457696_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D103%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyNzM4Mzc1NTkxNTM4MDE5MjE4MDIxOTg5NzQ3OTU5MjI4.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMDYuc2RyLnZpZGVvX3VzZXJfc2VsZWN0ZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DmUanuZBgXRsQ7kNvwFIvYlK%26_nc_oc%3DAdrvmhsQB2xj2LShzRP7fCzUV8LwPJwhRRb4ssz0BTVsSj1EvxtppWNQ01PbQWFrLw5PAkYHIKn_B8iGWwdhiefC%26_nc_zt%3D23%26_nc_ht%3Dscontent-lhr6-1.cdninstagram.com%26_nc_gid%3DSayNWrrMWL1OOxxwNadvnQ%26_nc_ss%3D70a8c%26oh%3D00_AQTWBeqV8F8XlNGuXQF8peM7pwhRw2eMn8u6-QWrHISM3w%26oe%3D6AFB32DC" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@evolving.ai</span>
+                        <span>❤️ 22052</span>
+                    </div>
+                    <p class="caption">Someone decided to test Burger King’s AI job interviewer...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Fail hilarant de l'IA de recrutement "Karen" incapable de gérer un candidat au comportement décalé.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfkJDAhg8Xg/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fmel18-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F902586086_17934612141426313_820855738683574008_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D104%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODE0MTM3MzE4OTg2NDg4NjE3OTM0NjEyMTQ0NDI2MzEz.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX3VzZXJfc2VsZWN0ZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DjeK_ILsslTYQ7kNvwHK4ROl%26_nc_oc%3DAdqyStOhdqIq79saPZCndtymiB6f188tQC3fvXdlxZpjd1X6W0WSqXsO5MoKRu-UM6E%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fmel18-1.fna%26_nc_gid%3Dv_A7UDO9BvCGbL4CU6ntbw%26_nc_ss%3D7a20f%26oh%3D00_AQRb2IFaO5vQfg36sja7q5oyt7-PmuQBxykWnOCVPb3azA%26oe%3D6AFB1EDD" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@longliveai</span>
+                        <span>❤️ 934</span>
+                    </div>
+                    <p class="caption">This security robot just got outsmarted...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        Preuve que les robots de surveillance actuels sont encore facilement contournables.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfm1TymCT22/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="trend-block">
+        <h2 class="trend-title">La vidéo à prix cassé</h2>
+        <div class="trend-analysis">
+            <p>Le coût de la créativité est en train de s'effondrer. ByteDance (TikTok) vient de sortir <strong>Seedance 2.0</strong> : 0,29$ pour 10 secondes de vidéo haute qualité. C'est l'offre la moins chère du marché. En parallèle, <strong>CapCut PC</strong> déploie EditPilot pour monter tes vidéos par IA. Tu décris tes transitions et ta musique, l'IA fait le job. La création vidéo devient une commodité accessible à tous.</p>
+        </div>
+
+        <div class="grid">
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Finstagram.fsyd13-1.fna.fbcdn.net%2Fv%2Ft51.82787-15%2F893440122_2237277506836434_747679601367438793_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D105%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyNjY5MjMwMDA0NzkxODg5MjIyMzcyNzc0ODY4MzY0MzY%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX3VzZXJfdXBsb2FkZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DlgfnseiKz6oQ7kNvwFChBjL%26_nc_oc%3DAdoZTjNe5EsyuOb8M3Zr-03HyqdSuRSGlWv6i5TnQsmcjCEOyfsAF15UzmrLMC6bifawEZnFPC4aS0PwEmUSAART%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dinstagram.fsyd13-1.fna%26_nc_gid%3DISbj62yG7CsXZTBwUmi3Fw%26_nc_ss%3D7a20f%26oh%3D00_AQTh3RSpTPBbZB__qvBJYhLJvlYPY1UOpY3bqxmsXkEW6A%26oe%3D6AFB34CB" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 3674</span>
+                    </div>
+                    <p class="caption">10 seedance 2.0 generations...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        La barrière de prix de la vidéo IA explose : 10 vidéos pour moins de 3 dollars.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfhr1AEKCcs/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-gmp1-1.cdninstagram.com%2Fv%2Ft51.71878-15%2F898110174_1494434312592103_7791834635425687379_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D110%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODA0MTUxODQ5NjUxMjM0MDE4MDA3MDIwNDI1OTkxMjA5.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fdXNlcl9zZWxlY3RlZF90aHVtYm5haWwuQzMifQ%253D%253D%26_nc_ohc%3DXcGzQgaY338Q7kNvwEuC1p2%26_nc_oc%3DAdrWKP5aLer3NB4j5cdkq1N1h8w7y70ZbfIU5qHBCA58vXWehmmqebRnzvs8986JSFg%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-gmp1-1.cdninstagram.com%26_nc_gid%3DdljT7D_2gCijYl_NLfAoIw%26_nc_ss%3D7a20f%26oh%3D00_AQRv3M9nqPTz2JX3iRJVjqb9ZLEueH2w5RKM15DPINoD5A%26oe%3D6AFB2521" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@information.ia</span>
+                        <span>❤️ 16</span>
+                    </div>
+                    <p class="caption">Ta pub IA est générée ? Le montage, c'est EditPilot...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        CapCut PC intègre un assistant IA pour monter tes publicités par simple commande vocale ou textuelle.
+                    </div>
+                    <a href="https://www.instagram.com/p/DfmemtqgnlU/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <img src="https://wsrv.nl/?url=https%3A%2F%2Fscontent-fra3-2.cdninstagram.com%2Fv%2Ft51.82787-15%2F893358463_1882173162937961_4863383855509636958_n.jpg%3Fstp%3Ddst-jpg_e15_tt6%26_nc_cat%3D107%26_nc_map%3Durlgen_bucketless%26ig_cache_key%3DNDAyODE2NjEyNTU5MTc5Mjk3MDE4ODIxNzMxNTYyNzEyOTU%253D.3-ccb7-5%26ccb%3D7-5%26_nc_sid%3D58cdad%26efg%3DeyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMTUuc2RyLnZpZGVvX3VzZXJfdXBsb2FkZWRfdGh1bWJuYWlsLkMzIn0%253D%26_nc_ohc%3DwSAqJ1cRgUkQ7kNvwEqejen%26_nc_oc%3DAdpk57D1i_bE7awPCSCKWIsVzV7lXKfYKKCPIDJ0lCfuWXx0S6_th6y0pSYW6za2u_k%26_nc_ad%3Dz-m%26_nc_cid%3D0%26_nc_zt%3D23%26_nc_ht%3Dscontent-fra3-2.cdninstagram.com%26_nc_gid%3DzM5HTp-p7M-LyFDvh0ExMQ%26_nc_ss%3D7a20f%26oh%3D00_AQSyMuB5Vq3iXW2OshYwxTkuxZ0Xx4lRdMz7hHqvgauzIQ%26oe%3D6AFB232B" alt="Post image" class="post-img">
+                <div class="post-content">
+                    <div class="meta">
+                        <span>@rourke</span>
+                        <span>❤️ 1422</span>
+                    </div>
+                    <p class="caption">Comment “AI” for all these claude color grade commands...</p>
+                    <div class="insight">
+                        <strong>💡 Pourquoi c'est une news :</strong><br>
+                        L'intégration du Higgsfield MCP dans Claude permet de faire du color grading pro en une phrase.
+                    </div>
+                    <a href="https://www.instagram.com/p/Dfm67_EKQ1K/" target="_blank" class="btn">Voir le post</a>
+                </div>
+            </article>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
